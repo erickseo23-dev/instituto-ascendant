@@ -20,6 +20,7 @@ import BlogArticle from "./pages/BlogArticle";
 import MujerSuperpoderosa from "./pages/MujerSuperpoderosa";
 import MujerSuperpoderosaMasterclass from "./pages/MujerSuperpoderosaMasterclass";
 import Contacto from "./pages/Contacto";
+import Eventos from "./pages/Eventos";
 
 
 function Router() {
@@ -41,6 +42,7 @@ function Router() {
       <Route path={"/mujer-superpoderosa"} component={MujerSuperpoderosa} />
       <Route path={"/mujer-superpoderosa/masterclass"} component={MujerSuperpoderosaMasterclass} />
       <Route path={"/contacto"} component={Contacto} />
+      <Route path={"/eventos"} component={Eventos} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

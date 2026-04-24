@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { getUpcomingEvents, getDateParts } from "@/lib/eventos";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import StickyBanner from "@/components/StickyBanner";
 import ContactForm from "@/components/ContactForm";
@@ -862,60 +863,23 @@ function TestimonialsSection() {
 
 /* ─── SECTION 8: UPCOMING EVENTS ─── */
 function EventsSection() {
-  const events = [
-    {
-      day: "19",
-      month: "ABR",
-      year: "2026",
-      tag: "Taller Gratuito",
-      tagColor: "bg-[#C4963C]",
-      title: "Taller Online Gratuito: KS Healing y la Consciencia Crística - Latinoamérica",
-      desc: "Una experiencia vivencial de 3 horas para conectar con la Energía KS, despertar tu sensibilidad energética y preparar tu campo para la transformación. Impartido por YOHEV.",
-      meta: ["Online en vivo", "Impartido por YOHEV"],
+  const sharedEvents = getUpcomingEvents("instituto").slice(0, 4);
+  const events = sharedEvents.map((e) => {
+    const dateParts = getDateParts(e.date);
+    return {
+      day: dateParts.day,
+      month: dateParts.month,
+      year: dateParts.year,
+      tag: e.type === "taller" ? "Taller" : e.type === "certificacion" ? "Certificación" : e.type === "retiro" ? "Retiro" : "Evento",
+      tagColor: `bg-[${e.accent}]`,
+      title: e.title,
+      desc: e.description,
+      meta: [e.location, e.instructor === "yohev" ? "Impartido por YOHEV" : "Impartido por Claribel"],
       cta: "Más Información",
-      accent: "#C4963C",
-      link: "https://kshealing.com",
-    },
-    {
-      day: "19",
-      month: "ABR",
-      year: "2026",
-      tag: "Taller Gratuito",
-      tagColor: "bg-[#C4963C]",
-      title: "Taller Online Gratuito: KS Healing y la Consciencia Crística - Europa",
-      desc: "Una experiencia vivencial de 3 horas para conectar con la Energía KS, despertar tu sensibilidad energética y preparar tu campo para la transformación. Impartido por YOHEV.",
-      meta: ["Online en vivo", "Impartido por YOHEV"],
-      cta: "Más Información",
-      accent: "#C4963C",
-      link: "https://kshealing.com",
-    },
-    {
-      day: "26",
-      month: "ABR",
-      year: "2026",
-      tag: "Certificación",
-      tagColor: "bg-[#5A7A5A]",
-      title: "Certificación Internacional en KS Healing Nivel Básico",
-      desc: "Únete a una comunidad global de profesionales transformando vidas a través de la Energía KS. Certificación Internacional en 3 módulos intensivos (26 Abr - 10 May).",
-      meta: ["Online en vivo", "3 módulos intensivos"],
-      cta: "Más Información",
-      accent: "#5A7A5A",
-      link: "https://kshealing.com",
-    },
-    {
-      day: "15",
-      month: "MAY",
-      year: "2026",
-      tag: "Retiro Sagrado",
-      tagColor: "bg-[#7B6B8A]",
-      title: "Retiro Sagrado: Transformación Profunda con YOHEV",
-      desc: "Una experiencia inmersiva de transformación profunda. Retiro presencial donde experimentarás transmisiones intensivas de Energía KS en comunidad.",
-      meta: ["Presencial", "Múltiples días"],
-      cta: "Más Información",
-      accent: "#7B6B8A",
-      link: "https://kshealing.com",
-    },
-  ];
+      accent: e.accent,
+      link: e.link,
+    };
+  });
 
   return (
     <section id="eventos" className="py-16 lg:py-24 bg-[#FAF8F5]">
