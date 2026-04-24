@@ -23,7 +23,7 @@ export default function Home() {
         <div className="container py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/manus-storage/curso_logo_v2_f1b939af.png"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
               alt="Mujer Superpoderosa"
               className="h-12 w-12 rounded-full object-cover"
             />
@@ -102,7 +102,7 @@ export default function Home() {
             {/* Image */}
             <div className="flex justify-center order-2 md:order-1">
               <img
-                src="/manus-storage/woman_hero_section_46d6349c.png"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80"
                 alt="Mujer empoderada"
                 className="w-full max-w-xs rounded-3xl shadow-xl object-cover"
                 style={{ maxHeight: "420px" }}
@@ -150,28 +150,28 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="p-6 border-border/50 overflow-hidden">
-                <img src="/manus-storage/woman_neurobiologia_990532bc.png" alt="Neurobiología" className="w-full h-40 object-cover rounded-xl mb-4" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Neurobiología" className="w-full h-40 object-cover rounded-xl mb-4" />
                 <Brain className="w-7 h-7 text-accent mb-3" />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Neurobiología Femenina</h3>
                 <p className="text-foreground/70 text-sm">Comprende por qué tu cerebro procesa la información de manera única y cómo eso es una ventaja evolutiva.</p>
               </Card>
 
               <Card className="p-6 border-border/50 overflow-hidden">
-                <img src="/manus-storage/woman_empoderamiento_1a74cd74.png" alt="Regulación Emocional" className="w-full h-40 object-cover rounded-xl mb-4" />
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Regulación Emocional" className="w-full h-40 object-cover rounded-xl mb-4" />
                 <Heart className="w-7 h-7 text-accent mb-3" />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Regulación Emocional</h3>
                 <p className="text-foreground/70 text-sm">Aprende técnicas de Meditación Ascendente para regularte sin suprimir tu intensidad emocional.</p>
               </Card>
 
               <Card className="p-6 border-border/50 overflow-hidden">
-                <img src="/manus-storage/woman_intuicion_d44e27ea.png" alt="Poder de Influencia" className="w-full h-40 object-cover rounded-xl mb-4" />
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Poder de Influencia" className="w-full h-40 object-cover rounded-xl mb-4" />
                 <Zap className="w-7 h-7 text-accent mb-3" />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Poder de Influencia</h3>
                 <p className="text-foreground/70 text-sm">Transforma tu empatía en influencia estratégica y liderazgo coherente sin manipulación.</p>
               </Card>
 
               <Card className="p-6 border-border/50 overflow-hidden">
-                <img src="/manus-storage/woman_latina_1_40ac4190.png" alt="Abundancia Integral" className="w-full h-40 object-cover rounded-xl mb-4" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Abundancia Integral" className="w-full h-40 object-cover rounded-xl mb-4" />
                 <Users className="w-7 h-7 text-accent mb-3" />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Abundancia Integral</h3>
                 <p className="text-foreground/70 text-sm">Crea abundancia en relaciones, salud, propósito y recursos materiales desde una perspectiva holística.</p>
@@ -300,10 +300,10 @@ export default function Home() {
             </div>
             {/* Image collage */}
             <div className="grid grid-cols-2 gap-4">
-              <img src="/manus-storage/woman_latina_2_e1ce3bc9.png" alt="Mujer transformada" className="w-full h-52 object-cover rounded-2xl shadow-md" />
-              <img src="/manus-storage/woman_latina_3_d3521be4.png" alt="Mujer empoderada" className="w-full h-52 object-cover rounded-2xl shadow-md mt-8" />
-              <img src="/manus-storage/masterclass_feature_2_033c2d95.png" alt="Mujer abundante" className="w-full h-52 object-cover rounded-2xl shadow-md -mt-4" />
-              <img src="/manus-storage/masterclass_feature_3_e11646ae.png" alt="Mujer consciente" className="w-full h-52 object-cover rounded-2xl shadow-md mt-4" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Mujer transformada" className="w-full h-52 object-cover rounded-2xl shadow-md" />
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80" alt="Mujer empoderada" className="w-full h-52 object-cover rounded-2xl shadow-md mt-8" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Mujer abundante" className="w-full h-52 object-cover rounded-2xl shadow-md -mt-4" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Mujer consciente" className="w-full h-52 object-cover rounded-2xl shadow-md mt-4" />
             </div>
           </div>
         </div>
@@ -316,7 +316,7 @@ export default function Home() {
             {/* Claribel image */}
             <div className="flex justify-center">
               <img
-                src="/manus-storage/woman_claribel_9d8f0e6b.png"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80"
                 alt="Claribel Puga"
                 className="w-full max-w-xs rounded-3xl shadow-2xl object-cover"
                 style={{ maxHeight: "460px" }}

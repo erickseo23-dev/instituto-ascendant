@@ -54,6 +54,7 @@ const IMAGES = {
   dart: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/TbnksHm6DJKE8fEG5mQxeC/dart-transformation-TF27VyAxEhnWSiaDP7NJGD.webp",
   retreatYohev: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/TbnksHm6DJKE8fEG5mQxeC/sacred-retreat-yohev-m2UcDLktMF8ENyk65NX68A.webp",
   communityCircle: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
+  mujerSuperpoderosa: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80",
   // Founder photos
   claribel: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/TbnksHm6DJKE8fEG5mQxeC/claribel_v3_cf0792df.png",
   yohev: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/TbnksHm6DJKE8fEG5mQxeC/yohev_v3_74292756.png",
@@ -336,6 +337,17 @@ function FeaturedPrograms() {
       cta: "Reservar lugar",
       ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
     },
+    {
+      tag: "Empoderamiento Femenino",
+      tagColor: "bg-[#7B6B8A]",
+      title: "Mujer Superpoderosa",
+      subtitle: "Descubre la biología de tu poder — neurociencia + consciencia espiritual",
+      date: "Próximamente",
+      format: "Online · 8 semanas",
+      image: IMAGES.mujerSuperpoderosa,
+      cta: "Más información",
+      ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
+    },
   ];
 
   return (
@@ -370,7 +382,7 @@ function FeaturedPrograms() {
                     <p className="text-white/70 text-xs mb-3 line-clamp-2">{course.subtitle}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-white/50 text-xs flex items-center gap-1"><Calendar className="w-3 h-3" /> {course.date}</span>
-                      <a href={course.title === "Taller KS Healing y La Consciencia Crística" ? "https://kshealing.com/taller-ks-healing" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : "#"} className={`inline-flex items-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
+                      <a href={course.title === "Taller KS Healing y La Consciencia Crística" ? "https://kshealing.com/taller-ks-healing" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : "#"} className={`inline-flex items-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
                         {course.cta}
                       </a>
                     </div>
@@ -398,7 +410,7 @@ function FeaturedPrograms() {
                     <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {course.date}</span>
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {course.format}</span>
                   </div>
-                  <a href={course.title === "Taller KS Healing y La Consciencia Crística" ? "https://kshealing.com/taller-ks-healing" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : "#"} className={`inline-flex items-center justify-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
+                  <a href={course.title === "Taller KS Healing y La Consciencia Crística" ? "https://kshealing.com/taller-ks-healing" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : "#"} className={`inline-flex items-center justify-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
                     {course.cta} <ArrowRight className="w-3 h-3" />
                   </a>
                 </div>
