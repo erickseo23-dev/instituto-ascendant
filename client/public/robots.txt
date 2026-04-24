@@ -1,0 +1,42 @@
+# Instituto Ascendant - Robots Configuration
+# Last updated: 2026-03-05
+
+# Default rules for all bots
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /api
+Disallow: /.env
+Disallow: /node_modules
+Disallow: /config
+Disallow: /src
+
+# Crawl delay
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://institutoascendant.com/sitemap.xml
+
+# Host preference
+Host: institutoascendant.com
