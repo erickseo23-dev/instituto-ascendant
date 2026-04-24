@@ -225,9 +225,9 @@ function HeroSection() {
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#C4963C] text-white font-semibold rounded-md hover:bg-[#B08530] transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
               Explorar Programas <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="https://kshealing.com/taller-ks-healing"
+            <a href="/recursos-gratuitos"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/15 backdrop-blur-sm text-white font-medium rounded-md border border-white/30 hover:bg-white/25 transition-all duration-300 text-sm sm:text-base">
-              <Calendar className="w-4 h-4" /> Próximo Taller Gratuito
+              Recursos Gratuitos
             </a>
           </div>
         </motion.div>
@@ -271,6 +271,17 @@ function CredibilityBar() {
 /* ─── SECTION 3: FEATURED PROGRAMS — Immediately actionable ─── */
 function FeaturedPrograms() {
   const featuredCourses = [
+    {
+      tag: "Empoderamiento Femenino",
+      tagColor: "bg-[#7B6B8A]",
+      title: "Mujer Superpoderosa",
+      subtitle: "Descubre la biología de tu poder — neurociencia + consciencia espiritual",
+      date: "Próximamente",
+      format: "Online · 4 semanas",
+      image: IMAGES.mujerSuperpoderosa,
+      cta: "Más información",
+      ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
+    },
     {
       tag: "Taller Gratuito",
       tagColor: "bg-[#5A7A5A]",
@@ -335,17 +346,6 @@ function FeaturedPrograms() {
       format: "Online · 4 horas",
       image: IMAGES.retreatYohev,
       cta: "Reservar lugar",
-      ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
-    },
-    {
-      tag: "Empoderamiento Femenino",
-      tagColor: "bg-[#7B6B8A]",
-      title: "Mujer Superpoderosa",
-      subtitle: "Descubre la biología de tu poder — neurociencia + consciencia espiritual",
-      date: "Próximamente",
-      format: "Online · 8 semanas",
-      image: IMAGES.mujerSuperpoderosa,
-      cta: "Más información",
       ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
     },
   ];

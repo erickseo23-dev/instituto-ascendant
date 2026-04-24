@@ -135,6 +135,76 @@ export default function Sobre() {
           </div>
         </div>
       </section>
+
+      {/* Fundadores */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
+              Los Fundadores
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Dos maestros, una visión: integrar la claridad pedagógica, el rigor científico y la profundidad espiritual en un ecosistema de transformación auténtica.
+            </p>
+          </div>
+
+          {/* Claribel Puga */}
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div className="order-2 md:order-1">
+              <div className="w-full h-96 bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg flex items-center justify-center">
+                <Users className="w-32 h-32 text-amber-700 opacity-30" />
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <h3 className="text-4xl font-bold text-gray-900 mb-2 font-serif">
+                Dra. Claribel Puga
+              </h3>
+              <p className="text-amber-700 font-semibold text-lg mb-6">
+                Fundadora y Directora Pedagógica del Instituto Ascendant
+              </p>
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  Claribel Puga es médico cirujano con maestría en Neurociencias aplicadas a la espiritualidad. Su carrera ha estado dedicada a integrar el conocimiento científico con la comprensión profunda de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos rigurosos y transformadores.
+                </p>
+                <p>
+                  En 2010, creó la técnica de Meditación Isiaca, basada en la canalización de la Energía Isiaca (energía de la Divinidad Femenina). Posteriormente, en 2012, desarrolló la Meditación Ascendente, un método progresivo que conduce al practicante a través de tres fases de expansión de consciencia: intrínseca, extrínseca y holística.
+                </p>
+                <p>
+                  Lo que distingue el trabajo de Claribel es su compromiso con la claridad. No promete milagros ni experiencias espectaculares. En su lugar, ofrece un camino riguroso, comprensible y aplicable a la vida cotidiana. Claribel es la mentora principal del Instituto Ascendant, la mente estructuradora de los métodos y la voz que guía los procesos formativos fundamentales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* YOHEV */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="w-full h-96 bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg flex items-center justify-center">
+                <Users className="w-32 h-32 text-amber-700 opacity-30" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2 font-serif">
+                YOHEV (Erick Gurrola)
+              </h3>
+              <p className="text-amber-700 font-semibold text-lg mb-6">
+                Fundador y Director de Enseñanzas del Instituto Ascendant
+              </p>
+              <div className="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  YOHEV, cuyo nombre espiritual representa la integración de la consciencia divina en la forma humana, es el creador del sistema KS Healing Systems® y maestro de consciencia crística. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y el rigor mental, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
+                </p>
+                <p>
+                  KS Healing Systems® es un sistema de sanación energética basado en la consciencia crística, que integra técnicas de transformación profunda, reprogramación energética y activación de potenciales dormidos. El método de YOHEV no busca escapar de la realidad, sino integrar la espiritualidad en la vida cotidiana de forma práctica, responsable y coherente.
+                </p>
+                <p>
+                  Juntos, Claribel y YOHEV han creado un ecosistema educativo único donde la transformación personal se entiende como un proceso coherente, progresivo y aplicable a la vida real. Su colaboración es un modelo de cómo dos maestros con enfoques complementarios pueden crear algo mayor que la suma de sus partes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

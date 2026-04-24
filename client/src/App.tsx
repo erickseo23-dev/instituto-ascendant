@@ -19,6 +19,7 @@ import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import MujerSuperpoderosa from "./pages/MujerSuperpoderosa";
 import MujerSuperpoderosaMasterclass from "./pages/MujerSuperpoderosaMasterclass";
+import Contacto from "./pages/Contacto";
 
 
 function Router() {
@@ -39,6 +40,7 @@ function Router() {
       <Route path={"/blog/:slug"} component={BlogArticle} />
       <Route path={"/mujer-superpoderosa"} component={MujerSuperpoderosa} />
       <Route path={"/mujer-superpoderosa/masterclass"} component={MujerSuperpoderosaMasterclass} />
+      <Route path={"/contacto"} component={Contacto} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
