@@ -17,6 +17,8 @@ import Videos from "./pages/Videos";
 import RecursosGratuitos from "./pages/RecursosGratuitos";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
+import MujerSuperpoderosa from "./pages/MujerSuperpoderosa";
+import MujerSuperpoderosaMasterclass from "./pages/MujerSuperpoderosaMasterclass";
 
 
 function Router() {
@@ -35,6 +37,8 @@ function Router() {
       <Route path={"/recursos-gratuitos"} component={RecursosGratuitos} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/blog/:slug"} component={BlogArticle} />
+      <Route path={"/mujer-superpoderosa"} component={MujerSuperpoderosa} />
+      <Route path={"/mujer-superpoderosa/masterclass"} component={MujerSuperpoderosaMasterclass} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

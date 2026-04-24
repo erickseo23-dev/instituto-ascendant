@@ -4,6 +4,7 @@ import { Link } from "wouter";
 
 const navLinks = [
   { label: "Meditación Ascendente", href: "/meditacion-ascendente" },
+  { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa" },
   { label: "Programas", href: "/programas" },
   { label: "Blog", href: "/blog" },
   { label: "Recursos Gratuitos", href: "/recursos-gratuitos" },
