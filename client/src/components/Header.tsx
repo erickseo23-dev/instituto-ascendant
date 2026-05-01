@@ -26,7 +26,11 @@ const navLinks = [
   { label: "Sobre Nosotros", href: "/sobre" },
 ];
 
-export default function Header() {
+interface HeaderProps {
+  hideNav?: boolean;
+}
+
+export default function Header({ hideNav = false }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -65,6 +69,7 @@ export default function Header() {
 
           <nav className="hidden lg:flex items-center gap-0.5">
             {/* Programas Dropdown */}
+            {!hideNav && <>
             <div className="relative group">
               <button
                 className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md flex items-center gap-1 ${
@@ -121,6 +126,8 @@ export default function Header() {
               </div>
             </div>
 
+            {!hideNav && </>
+            }
             <a
               href="https://cursos.institutoascendant.com/library"
               target="_blank"
@@ -144,6 +151,7 @@ export default function Header() {
         <div className="lg:hidden bg-[#FAF8F5] border-t border-[#C4963C20] shadow-lg">
           <nav className="px-4 py-4 space-y-1">
             {/* Mobile Programas */}
+            {!hideNav && <>
             <button
               onClick={() => setOpenDropdown(openDropdown === "programas" ? null : "programas")}
               className="w-full text-left px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors flex items-center justify-between"
@@ -201,6 +209,8 @@ export default function Header() {
               </div>
             )}
 
+            </>
+            }
             <a
               href="https://cursos.institutoascendant.com/library"
               target="_blank"

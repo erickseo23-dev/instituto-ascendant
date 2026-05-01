@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <StickyBanner />
-      <Header />
+      <Header hideNav={true} />
 
       {/* Page Title Banner */}
       <div className="w-full text-center py-5 border-b border-[#C4963C]/30" style={{ background: "linear-gradient(135deg, #fdf8f0 0%, #fef3e2 100%)", marginTop: "0" }}>
@@ -529,8 +529,8 @@ export default function Home() {
               <h4 className="font-semibold text-white text-sm mb-4 uppercase tracking-wider">Contacto</h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-[#C4963C]" /> <a href="mailto:info@institutoascendant.com" className="hover:text-[#C4963C] transition-colors">info@institutoascendant.com</a></li>
-                <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#C4963C]" /> +52 (55) 1234-5678</li>
-                <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#C4963C]" /> Ciudad de México, México</li>
+                <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#C4963C]" /> +52 (311) 393-1660</li>
+                <li className="flex items-start gap-2"><MapPin className="w-4 h-4 text-[#C4963C] mt-0.5 shrink-0" /> <span>Av. Insurgentes 2177<br/>Tepic, Nay. Méx.</span></li>
               </ul>
             </div>
           </div>
