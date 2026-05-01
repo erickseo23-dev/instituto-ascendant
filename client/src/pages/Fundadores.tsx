@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { setSEOMetadata } from '@/config/seo';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Award, BookOpen, Users } from 'lucide-react';
 
 export default function Fundadores() {
@@ -41,8 +42,12 @@ export default function Fundadores() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             {/* Imagen */}
             <div className="order-2 md:order-1">
-              <div className="w-full h-96 bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg flex items-center justify-center">
-                <Users className="w-32 h-32 text-amber-700 opacity-30" />
+              <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/sHKEkhDDoBLqCaMN.png"
+                  alt="Claribel Puga"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 
@@ -102,8 +107,11 @@ export default function Fundadores() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Imagen */}
             <div>
-              <div className="w-full h-96 bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg flex items-center justify-center">
-                <Users className="w-32 h-32 text-amber-700 opacity-30" />
+              <div className="w-full h-96 bg-gradient-to-br from-amber-100 to-amber-50 rounded-lg flex items-center justify-center border-2 border-dashed border-amber-300">
+                <div className="text-center text-amber-600">
+                  <Users className="w-16 h-16 mx-auto mb-3 opacity-40" />
+                  <p className="text-sm font-medium">Foto próximamente</p>
+                </div>
               </div>
             </div>
 
@@ -219,10 +227,17 @@ export default function Fundadores() {
             </div>
           </div>
 
-          <div className="mt-12 bg-gradient-to-r from-amber-50 to-white rounded-lg p-8 border border-amber-100">
-            <p className="text-gray-700 text-lg leading-relaxed text-center">
-              La colaboración entre Claribel y YOHEV no es una yuxtaposición de dos enfoques, sino una integración orgánica donde cada uno complementa y potencia el trabajo del otro. Claribel proporciona la base estructural, pedagógica y neuro-integrativa; YOHEV expande esa base hacia dimensiones de consciencia más amplias y simbólicamente ricas. El resultado es un ecosistema educativo coherente, responsable y transformador.
-            </p>
+          <div className="mt-12 rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/jhyJULYUCngnsrFq.png"
+              alt="YOHEV y Claribel Puga, fundadores del Instituto Ascendant"
+              className="w-full h-80 object-cover object-top"
+            />
+            <div className="bg-gradient-to-r from-amber-50 to-white p-8 border border-amber-100 border-t-0">
+              <p className="text-gray-700 text-lg leading-relaxed text-center">
+                La colaboración entre Claribel y YOHEV no es una yuxtaposición de dos enfoques, sino una integración orgánica donde cada uno complementa y potencia el trabajo del otro. Claribel proporciona la base estructural, pedagógica y neuro-integrativa; YOHEV expande esa base hacia dimensiones de consciencia más amplias y simbólicamente ricas. El resultado es un ecosistema educativo coherente, responsable y transformador.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -244,6 +259,7 @@ export default function Fundadores() {
           </a>
         </div>
       </section>
+    <Footer />
     </div>
   );
 }
