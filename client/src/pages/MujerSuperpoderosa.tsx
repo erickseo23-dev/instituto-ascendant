@@ -161,7 +161,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm" style={{ color: "#c8a8d8" }}>
               <span className="flex items-center gap-2">🎥 <span>Grabaciones disponibles si no puedes asistir en vivo</span></span>
               <span className="hidden sm:block" style={{ color: "rgba(196,150,60,0.4)" }}>·</span>
-              <span className="flex items-center gap-2">🔒 <span>Acceso de por vida al contenido</span></span>
+              <span className="flex items-center gap-2">🔒 <span>Acceso por 6 meses al contenido</span></span>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@ export default function Home() {
                 "Meditaciones Isiacas",
                 "Audios de Hipnosis para cada nivel",
                 "4 Masterclasses en vivo con Claribel Puga vía zoom",
-                "Acceso de por vida",
+                "Acceso por 6 meses",
                 "Acceso Preferencial a otras actividades con Claribel",
                 "Acceso a la Comunidad exclusiva de Mujeres Superpoderosas",
               ].map((item, i) => (
@@ -456,7 +456,7 @@ export default function Home() {
                   "Meditaciones Isiacas y Audios de Hipnosis",
                   "4 Masterclasses en vivo por Zoom",
                   "Acceso a la Comunidad exclusiva",
-                  "Acceso de por vida al contenido",
+                  "Acceso por 6 meses al contenido",
                   "Acceso Preferencial a actividades con Claribel",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">

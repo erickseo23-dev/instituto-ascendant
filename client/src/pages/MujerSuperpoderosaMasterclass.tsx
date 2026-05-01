@@ -356,7 +356,7 @@ export default function Masterclass() {
 
           <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
             <div className="text-5xl font-bold mb-2" style={{ color: "#5a4a6a" }}>$297 <span className="text-2xl font-normal" style={{ color: "#a89ab8" }}>USD</span></div>
-            <p className="text-sm mb-6" style={{ color: "#a89ab8" }}>Pago único · Acceso de por vida</p>
+            <p className="text-sm mb-6" style={{ color: "#a89ab8" }}>Pago único · Acceso por 6 meses</p>
             
             <ul className="text-left space-y-3 mb-8">
               {[
@@ -365,7 +365,7 @@ export default function Masterclass() {
                 "Diario de Metaconsciencia (30 días)",
                 "Meditaciones y audios de hipnosis",
                 "Materiales de apoyo descargables",
-                "Acceso de por vida al material",
+                "Acceso por 6 meses al material",
                 "Comunidad privada de alumnas",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm" style={{ color: "#7a6a8a" }}>
