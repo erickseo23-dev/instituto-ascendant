@@ -106,27 +106,27 @@ function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const programas = [
-    { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa" },
-    { label: "Meditación Ascendente®", href: "/meditacion-ascendente" },
-    { label: "KS Healing Systems®", href: "https://kshealing.com" },
-    { label: "DART", href: "https://kshealing.com/dart" },
-    { label: "Genética Sagrada", href: "https://kshealing.com/genetica-sagrada" },
+    { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
+    { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
+    { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },
+    { label: "DART", href: "https://kshealing.com/dart", disabled: false },
+    { label: "Genética Sagrada", href: "https://kshealing.com/genetica-sagrada", disabled: false },
   ];
 
   const tienda = [
-    { label: "Todos", href: "/tienda" },
-    { label: "Cursos", href: "/tienda?categoria=cursos" },
-    { label: "Libros", href: "/tienda?categoria=libros" },
-    { label: "Meditaciones", href: "/tienda?categoria=meditaciones" },
-    { label: "Retiros", href: "/tienda?categoria=retiros" },
-    { label: "Sesiones Personalizadas", href: "/tienda?categoria=sesiones" },
+    { label: "Todos", href: "/tienda", disabled: true },
+    { label: "Cursos", href: "/tienda?categoria=cursos", disabled: true },
+    { label: "Libros", href: "/tienda?categoria=libros", disabled: true },
+    { label: "Meditaciones", href: "/tienda?categoria=meditaciones", disabled: true },
+    { label: "Retiros", href: "/tienda?categoria=retiros", disabled: true },
+    { label: "Sesiones Personalizadas", href: "/tienda?categoria=sesiones", disabled: true },
   ];
 
   const navLinks = [
-    { label: "Blog", href: "/blog" },
-    { label: "Recursos Gratuitos", href: "/recursos-gratuitos" },
-    { label: "Videos", href: "/videos" },
-    { label: "Sobre Nosotros", href: "/sobre" },
+    { label: "Blog", href: "/blog", disabled: false },
+    { label: "Recursos Gratuitos", href: "/recursos-gratuitos", disabled: true },
+    { label: "Videos", href: "/videos", disabled: true },
+    { label: "Sobre Nosotros", href: "/sobre", disabled: false },
   ];
 
   return (
@@ -164,47 +164,46 @@ function Header() {
                 Programas
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
-              <div className="absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
-                {programas.map((prog) => (
-                  <a
-                    key={prog.href}
-                    href={prog.href}
-                    target={prog.href.startsWith("http") ? "_blank" : undefined}
-                    className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors"
-                  >
-                    {prog.label}
-                  </a>
-                ))}
+              <div className="absolute left-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                {programas.map((prog) =>
+                  prog.disabled ? (
+                    <span key={prog.href} className="flex items-center justify-between px-4 py-2.5 text-[#2D2D2D]/40 text-sm cursor-default select-none">
+                      {prog.label}
+                      <span className="text-[9px] uppercase tracking-wider text-[#C4963C]/60 ml-2">Pronto</span>
+                    </span>
+                  ) : (
+                    <a key={prog.href} href={prog.href} target={prog.href.startsWith("http") ? "_blank" : undefined} className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors">
+                      {prog.label}
+                    </a>
+                  )
+                )}
               </div>
             </div>
 
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md hover:bg-[#C4963C10] ${
-                  scrolled ? "text-[#2D2D2D]" : "text-white/90 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.disabled ? (
+                <span key={link.href} className={`px-3.5 py-2 text-[13px] font-medium rounded-md cursor-default select-none opacity-40 ${scrolled ? "text-[#2D2D2D]" : "text-white/90"}`}>
+                  {link.label}
+                </span>
+              ) : (
+                <a key={link.href} href={link.href} className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md hover:bg-[#C4963C10] ${scrolled ? "text-[#2D2D2D]" : "text-white/90 hover:text-white"}`}>
+                  {link.label}
+                </a>
+              )
+            )}
 
-            {/* Tienda Dropdown */}
+            {/* Tienda Dropdown — todos desactivados */}
             <div className="relative group">
-              <button
-                className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md flex items-center gap-1 ${
-                  scrolled ? "text-[#2D2D2D]" : "text-white/90"
-                } hover:bg-[#C4963C10]`}
-              >
+              <button className={`px-3.5 py-2 text-[13px] font-medium rounded-md flex items-center gap-1 opacity-40 cursor-default ${scrolled ? "text-[#2D2D2D]" : "text-white/90"}`}>
                 Tienda
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
-              <div className="absolute right-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+              <div className="absolute right-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
                 {tienda.map((item) => (
-                  <a key={item.href} href={item.href} className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors">
+                  <span key={item.href} className="flex items-center justify-between px-4 py-2.5 text-[#2D2D2D]/40 text-sm cursor-default select-none">
                     {item.label}
-                  </a>
+                    <span className="text-[9px] uppercase tracking-wider text-[#C4963C]/60 ml-2">Pronto</span>
+                  </span>
                 ))}
               </div>
             </div>
@@ -245,49 +244,38 @@ function Header() {
             </button>
             {openDropdown === "programas" && (
               <div className="pl-4 space-y-1">
-                {programas.map((prog) => (
-                  <a
-                    key={prog.href}
-                    href={prog.href}
-                    onClick={() => setMobileOpen(false)}
-                    target={prog.href.startsWith("http") ? "_blank" : undefined}
-                    className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md"
-                  >
-                    {prog.label}
-                  </a>
-                ))}
+                {programas.map((prog) =>
+                  prog.disabled ? (
+                    <span key={prog.href} className="flex items-center justify-between px-4 py-2.5 text-[#2D2D2D]/40 text-sm cursor-default select-none rounded-md">
+                      {prog.label}
+                      <span className="text-[9px] uppercase tracking-wider text-[#C4963C]/60">Pronto</span>
+                    </span>
+                  ) : (
+                    <a key={prog.href} href={prog.href} onClick={() => setMobileOpen(false)} target={prog.href.startsWith("http") ? "_blank" : undefined} className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md">
+                      {prog.label}
+                    </a>
+                  )
+                )}
               </div>
             )}
 
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                className="block px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors">
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.disabled ? (
+                <span key={link.href} className="block px-4 py-3 text-[#2D2D2D]/40 font-medium rounded-md cursor-default select-none">
+                  {link.label}
+                </span>
+              ) : (
+                <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors">
+                  {link.label}
+                </a>
+              )
+            )}
 
-            {/* Mobile Tienda */}
-            <button
-              onClick={() => setOpenDropdown(openDropdown === "tienda" ? null : "tienda")}
-              className="w-full text-left px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors flex items-center justify-between"
-            >
+            {/* Mobile Tienda — desactivada */}
+            <button className="w-full text-left px-4 py-3 text-[#2D2D2D]/40 font-medium rounded-md cursor-default flex items-center justify-between">
               Tienda
-              <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === "tienda" ? "rotate-180" : ""}`} />
+              <ChevronDown className="w-4 h-4" />
             </button>
-            {openDropdown === "tienda" && (
-              <div className="pl-4 space-y-1">
-                {tienda.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            )}
 
             <a href="https://cursos.institutoascendant.com/library"
               target="_blank"
