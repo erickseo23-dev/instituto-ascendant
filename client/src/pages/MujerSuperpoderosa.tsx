@@ -428,18 +428,24 @@ export default function Home() {
             <div className="rounded-3xl p-8 md:p-10 relative overflow-hidden" style={{ background: "rgba(240,216,255,0.05)", border: "1px solid rgba(196,150,60,0.4)" }}>
               {/* Badge de promoción */}
               <div className="absolute top-0 right-0">
-                <div className="text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-3xl" style={{ background: "#C4963C", color: "#1a0a2e" }}>
-                  33% OFF • 24 HRS
+                <div className="text-sm font-black px-5 py-3 rounded-bl-2xl rounded-tr-3xl" style={{ background: "linear-gradient(135deg, #e8b84b, #C4963C)", color: "#1a0a2e", letterSpacing: "0.05em" }}>
+                  🔥 33% OFF · 24 HRS
                 </div>
               </div>
 
               {/* Precio normal tachado */}
-              <p className="text-base line-through mb-1" style={{ color: "rgba(200,168,216,0.5)" }}>Precio regular: $150 USD</p>
+              <div className="flex items-center justify-center gap-3 mb-3 mt-4">
+                <span className="text-2xl font-bold line-through" style={{ color: "rgba(200,168,216,0.65)" }}>$150 USD</span>
+                <span className="text-sm font-bold px-3 py-1 rounded-full" style={{ background: "rgba(232,90,90,0.2)", color: "#ff8080", border: "1px solid rgba(232,90,90,0.4)" }}>Precio regular</span>
+              </div>
 
               {/* Precio promocional */}
-              <div className="flex items-end justify-center gap-2 mb-2">
-                <span className="text-6xl md:text-7xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C" }}>$100</span>
-                <span className="text-xl mb-3 font-semibold" style={{ color: "#f0d8ff" }}>USD</span>
+              <div className="flex items-end justify-center gap-2 mb-1">
+                <span className="text-7xl md:text-8xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C" }}>$100</span>
+                <span className="text-2xl mb-4 font-semibold" style={{ color: "#f0d8ff" }}>USD</span>
+              </div>
+              <div className="inline-block px-4 py-1.5 rounded-full mb-6 text-sm font-semibold" style={{ background: "rgba(196,150,60,0.15)", color: "#e8b84b", border: "1px solid rgba(196,150,60,0.4)" }}>
+                ✨ Ahorras $50 USD — solo por 24 horas
               </div>
               <p className="text-sm mb-6" style={{ color: "#c8a8d8" }}>Precio especial durante las 24 horas posteriores a la Masterclass</p>
 
