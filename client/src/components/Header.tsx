@@ -67,67 +67,69 @@ export default function Header({ hideNav = false }: HeaderProps) {
             </a>
           </Link>
 
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            {/* Programas Dropdown */}
-            {!hideNav && <>
-            <div className="relative group">
-              <button
-                className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md flex items-center gap-1 ${
-                  scrolled ? "text-[#2D2D2D]" : "text-white/90"
-                } hover:bg-[#C4963C10]`}
-              >
-                Programas
-                <ChevronDown className="w-3.5 h-3.5" />
-              </button>
-              <div className="absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
-                {programas.map((prog) => (
-                  <Link key={prog.href} href={prog.href}>
+            {!hideNav && (
+              <>
+                {/* Programas Dropdown */}
+                <div className="relative group">
+                  <button
+                    className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md flex items-center gap-1 ${
+                      scrolled ? "text-[#2D2D2D]" : "text-white/90"
+                    } hover:bg-[#C4963C10]`}
+                  >
+                    Programas
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  </button>
+                  <div className="absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                    {programas.map((prog) => (
+                      <Link key={prog.href} href={prog.href}>
+                        <a
+                          target={prog.href.startsWith("http") ? "_blank" : undefined}
+                          className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors"
+                        >
+                          {prog.label}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
                     <a
-                      target={prog.href.startsWith("http") ? "_blank" : undefined}
-                      className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors"
+                      className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md hover:bg-[#C4963C10] ${
+                        scrolled ? "text-[#2D2D2D]" : "text-white/90 hover:text-white"
+                      }`}
                     >
-                      {prog.label}
+                      {link.label}
                     </a>
                   </Link>
                 ))}
-              </div>
-            </div>
 
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a
-                  className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md hover:bg-[#C4963C10] ${
-                    scrolled ? "text-[#2D2D2D]" : "text-white/90 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              </Link>
-            ))}
+                {/* Tienda Dropdown */}
+                <div className="relative group">
+                  <button
+                    className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md flex items-center gap-1 ${
+                      scrolled ? "text-[#2D2D2D]" : "text-white/90"
+                    } hover:bg-[#C4963C10]`}
+                  >
+                    Tienda
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  </button>
+                  <div className="absolute right-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                    {tienda.map((item) => (
+                      <Link key={item.href} href={item.href}>
+                        <a className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors">
+                          {item.label}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
 
-            {/* Tienda Dropdown */}
-            <div className="relative group">
-              <button
-                className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md flex items-center gap-1 ${
-                  scrolled ? "text-[#2D2D2D]" : "text-white/90"
-                } hover:bg-[#C4963C10]`}
-              >
-                Tienda
-                <ChevronDown className="w-3.5 h-3.5" />
-              </button>
-              <div className="absolute right-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
-                {tienda.map((item) => (
-                  <Link key={item.href} href={item.href}>
-                    <a className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors">
-                      {item.label}
-                    </a>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {!hideNav && </>
-            }
             <a
               href="https://cursos.institutoascendant.com/library"
               target="_blank"
@@ -150,67 +152,68 @@ export default function Header({ hideNav = false }: HeaderProps) {
       {mobileOpen && (
         <div className="lg:hidden bg-[#FAF8F5] border-t border-[#C4963C20] shadow-lg">
           <nav className="px-4 py-4 space-y-1">
-            {/* Mobile Programas */}
-            {!hideNav && <>
-            <button
-              onClick={() => setOpenDropdown(openDropdown === "programas" ? null : "programas")}
-              className="w-full text-left px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors flex items-center justify-between"
-            >
-              Programas
-              <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === "programas" ? "rotate-180" : ""}`} />
-            </button>
-            {openDropdown === "programas" && (
-              <div className="pl-4 space-y-1">
-                {programas.map((prog) => (
-                  <Link key={prog.href} href={prog.href}>
-                    <a
-                      onClick={() => setMobileOpen(false)}
-                      target={prog.href.startsWith("http") ? "_blank" : undefined}
-                      className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md"
-                    >
-                      {prog.label}
-                    </a>
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <a
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors"
+            {!hideNav && (
+              <>
+                {/* Mobile Programas */}
+                <button
+                  onClick={() => setOpenDropdown(openDropdown === "programas" ? null : "programas")}
+                  className="w-full text-left px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors flex items-center justify-between"
                 >
-                  {link.label}
-                </a>
-              </Link>
-            ))}
+                  Programas
+                  <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === "programas" ? "rotate-180" : ""}`} />
+                </button>
+                {openDropdown === "programas" && (
+                  <div className="pl-4 space-y-1">
+                    {programas.map((prog) => (
+                      <Link key={prog.href} href={prog.href}>
+                        <a
+                          onClick={() => setMobileOpen(false)}
+                          target={prog.href.startsWith("http") ? "_blank" : undefined}
+                          className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md"
+                        >
+                          {prog.label}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                )}
 
-            {/* Mobile Tienda */}
-            <button
-              onClick={() => setOpenDropdown(openDropdown === "tienda" ? null : "tienda")}
-              className="w-full text-left px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors flex items-center justify-between"
-            >
-              Tienda
-              <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === "tienda" ? "rotate-180" : ""}`} />
-            </button>
-            {openDropdown === "tienda" && (
-              <div className="pl-4 space-y-1">
-                {tienda.map((item) => (
-                  <Link key={item.href} href={item.href}>
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
                     <a
                       onClick={() => setMobileOpen(false)}
-                      className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md"
+                      className="block px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors"
                     >
-                      {item.label}
+                      {link.label}
                     </a>
                   </Link>
                 ))}
-              </div>
+
+                {/* Mobile Tienda */}
+                <button
+                  onClick={() => setOpenDropdown(openDropdown === "tienda" ? null : "tienda")}
+                  className="w-full text-left px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors flex items-center justify-between"
+                >
+                  Tienda
+                  <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === "tienda" ? "rotate-180" : ""}`} />
+                </button>
+                {openDropdown === "tienda" && (
+                  <div className="pl-4 space-y-1">
+                    {tienda.map((item) => (
+                      <Link key={item.href} href={item.href}>
+                        <a
+                          onClick={() => setMobileOpen(false)}
+                          className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] rounded-md"
+                        >
+                          {item.label}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </>
             )}
 
-            </>
-            }
             <a
               href="https://cursos.institutoascendant.com/library"
               target="_blank"
