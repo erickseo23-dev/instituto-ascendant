@@ -1,8 +1,11 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Zap, Heart, Brain, Users } from "lucide-react";
+import { ArrowRight, CheckCircle2, Zap, Heart, Brain, Users, Sparkles, Youtube, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import RegistrationModal from "@/components/RegistrationModal";
+import Header from "@/components/Header";
+import StickyBanner from "@/components/StickyBanner";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -18,27 +21,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/curso_imagen_iconica_1262d323.webp"
-              alt="Mujer Superpoderosa"
-              className="h-12 w-12 rounded-full object-cover"
-            />
-            <span className="text-xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#7a4a8a" }}>Claribel Puga</span>
-          </div>
-          <div className="hidden md:flex gap-8 text-sm">
-            <a href="#curso" className="text-foreground/70 hover:text-foreground transition">Sobre el Curso</a>
-            <a href="#modulos" className="text-foreground/70 hover:text-foreground transition">Módulos</a>
-            <a href="#beneficios" className="text-foreground/70 hover:text-foreground transition">Beneficios</a>
-          </div>
-        </div>
-      </nav>
+      <StickyBanner />
+      <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative pt-[200px] pb-20 md:pt-[220px] md:pb-32 overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: "radial-gradient(circle at 20% 50%, #8b7d9e 0%, transparent 50%)",
         }}></div>
@@ -377,31 +364,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 border-t border-border">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <h3 className="font-semibold text-foreground mb-4">Instituto Ascendant</h3>
-                <p className="text-sm text-foreground/60">Crecimiento de la Consciencia Creadora</p>
+      {/* Footer — idéntico al del sitio principal */}
+      <footer className="bg-[#2D2D2D] text-white/70">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-14 lg:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className="w-9 h-9 rounded-full bg-[#C4963C] flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-white" />
+                </div>
+                <span className="font-serif text-lg font-semibold text-white">Instituto Ascendant</span>
               </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-4">Enlaces</h3>
-                <ul className="space-y-2 text-sm text-foreground/60">
-                  <li><a href="#curso" className="hover:text-foreground transition">Sobre el Curso</a></li>
-                  <li><a href="#modulos" className="hover:text-foreground transition">Módulos</a></li>
-                  <li><a href="#beneficios" className="hover:text-foreground transition">Beneficios</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-4">Contacto</h3>
-                <p className="text-sm text-foreground/60">www.clarimental.com</p>
+              <p className="text-sm leading-relaxed mb-5">Instituto para el Crecimiento de la Consciencia Creadora. Desarrollo espiritual consciente, sanación energética y crecimiento personal.</p>
+              <div className="flex gap-3">
+                {([Youtube, Instagram, Facebook] as React.ElementType[]).map((Icon, i) => (
+                  <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#C4963C] hover:text-white transition-all duration-300">
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
               </div>
             </div>
 
-            <div className="pt-8 border-t border-border text-center text-sm text-foreground/60">
-              <p>© 2026 Claribel Puga. Instituto Ascendant. Todos los derechos reservados.</p>
+            {/* Programs */}
+            <div>
+              <h4 className="font-semibold text-white text-sm mb-4 uppercase tracking-wider">Programas</h4>
+              <ul className="space-y-2.5 text-sm">
+                {["KS Healing Systems®", "Meditación Ascendente®", "Desarrollo de la Consciencia", "Certificaciones", "Talleres Gratuitos"].map((item) => (
+                  <li key={item}><a href="#" className="hover:text-[#C4963C] transition-colors">{item}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Instituto */}
+            <div>
+              <h4 className="font-semibold text-white text-sm mb-4 uppercase tracking-wider">Instituto</h4>
+              <ul className="space-y-2.5 text-sm">
+                {["Sobre Nosotros", "Fundadores", "Testimonios", "Blog", "Preguntas Frecuentes"].map((item) => (
+                  <li key={item}><a href="#" className="hover:text-[#C4963C] transition-colors">{item}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold text-white text-sm mb-4 uppercase tracking-wider">Contacto</h4>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-[#C4963C]" /> <a href="mailto:info@institutoascendant.com" className="hover:text-[#C4963C] transition-colors">info@institutoascendant.com</a></li>
+                <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#C4963C]" /> +52 (55) 1234-5678</li>
+                <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#C4963C]" /> Ciudad de México, México</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-white/10">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+            <p>&copy; 2026 Instituto Ascendant para el Crecimiento de la Consciencia Creadora. Todos los derechos reservados.</p>
+            <div className="flex gap-4">
+              <a href="/privacidad" className="hover:text-white/60 transition-colors">Aviso de Privacidad</a>
+              <a href="/terminos" className="hover:text-white/60 transition-colors">Términos y Condiciones</a>
+              <a href="/cookies" className="hover:text-white/60 transition-colors">Política de Cookies</a>
             </div>
           </div>
         </div>
