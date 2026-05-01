@@ -333,7 +333,7 @@ export default function Sobre() {
             <img
               src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/gKDElLLqtYazdaEh.png"
               alt="YOHEV y Claribel Puga, fundadores del Instituto Ascendant"
-              className="w-full h-80 object-cover object-top"
+              className="w-full object-contain"
             />
             <div className="bg-gradient-to-r from-amber-50 to-white p-8 border border-amber-100 border-t-0">
               <p className="text-gray-700 text-lg leading-relaxed text-center">
