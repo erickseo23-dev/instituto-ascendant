@@ -8,7 +8,7 @@ export default function Fundadores() {
   useEffect(() => {
     setSEOMetadata({
       title: 'Fundadores | YOHEV y Claribel Puga',
-      description: 'Conoce a los fundadores del Instituto Ascendant: YOHEV (Erick Gurrola) y Claribel Puga. Sus historias de transformación y enseñanzas.',
+      description: 'Conoce a los fundadores del Instituto Ascendant: YOHEV (Dr. Erick Gurrola) y Claribel Puga. Sus historias de transformación y enseñanzas.',
       keywords: ['YOHEV', 'Claribel Puga', 'Erick Gurrola', 'maestros', 'facilitadores'],
       type: 'website',
     });
@@ -110,15 +110,15 @@ export default function Fundadores() {
             {/* Contenido */}
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-2 font-serif">
-                YOHEV (Erick Gurrola)
+                YOHEV (Dr. Erick Gurrola)
               </h2>
               <p className="text-amber-700 font-semibold text-lg mb-6">
-                Fundador y Director de Enseñanzas del Instituto Ascendant
+                Creador y Director de KS Healing Systems
               </p>
 
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  YOHEV (Erick Gurrola), médico cirujano y maestro de consciencia crística, es el creador del sistema KS Healing Systems®. Su formación médica le otorga una base sólida para su trabajo en sanación, integrando la comprensión del cuerpo humano con la dimensión espiritual y energética de la transformación. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
+                  YOHEV (Dr. Erick Gurrola), médico cirujano y maestro de consciencia crística, es el creador del sistema KS Healing Systems®. Su formación médica le otorga una base sólida para su trabajo en sanación, integrando la comprensión del cuerpo humano con la dimensión espiritual y energética de la transformación. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
                 </p>
 
                 <p>
@@ -146,7 +146,7 @@ export default function Fundadores() {
                 </div>
                 <div className="flex items-start gap-3">
                   <Award className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Creador de KS Healing Systems®</span>
+                  <span className="text-gray-700">Creador y Director de KS Healing Systems®</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Award className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />

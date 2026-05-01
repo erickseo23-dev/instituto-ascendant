@@ -42,7 +42,7 @@ export default function Sobre() {
           
           <div className="prose prose-lg max-w-4xl text-gray-700 space-y-6">
             <p>
-              El Instituto Ascendant para el Crecimiento de la Consciencia Creadora (I3C) nace de la visión de integrar el conocimiento científico, la claridad pedagógica y la profundidad espiritual en un ecosistema educativo coherente. Fundado por Claribel Puga y YOHEV (Erick Gurrola), el Instituto representa una respuesta a la necesidad contemporánea de métodos de transformación personal que respeten tanto la inteligencia como la sensibilidad del ser humano.
+              El Instituto Ascendant para el Crecimiento de la Consciencia Creadora (I3C) nace de la visión de integrar el conocimiento científico, la claridad pedagógica y la profundidad espiritual en un ecosistema educativo coherente. Fundado por Claribel Puga y YOHEV (Dr. Erick Gurrola), el Instituto representa una respuesta a la necesidad contemporánea de métodos de transformación personal que respeten tanto la inteligencia como la sensibilidad del ser humano.
             </p>
 
             <p>
@@ -50,7 +50,7 @@ export default function Sobre() {
             </p>
 
             <p>
-              YOHEV (Erick Gurrola), facilitador de transformación y maestro de KS Healing Systems, aporta profundidad en la sanación energética y la activación de la consciencia crística. Su trabajo se centra en la liberación de patrones limitantes y la activación del potencial transformador inherente en cada ser humano.
+              YOHEV (Dr. Erick Gurrola), facilitador de transformación y maestro de KS Healing Systems, aporta profundidad en la sanación energética y la activación de la consciencia crística. Su trabajo se centra en la liberación de patrones limitantes y la activación del potencial transformador inherente en cada ser humano.
             </p>
 
             <p>
@@ -185,14 +185,14 @@ export default function Sobre() {
             </div>
             <div>
               <h3 className="text-4xl font-bold text-gray-900 mb-2 font-serif">
-                YOHEV (Erick Gurrola)
+                YOHEV (Dr. Erick Gurrola)
               </h3>
               <p className="text-amber-700 font-semibold text-lg mb-6">
-                Fundador y Director de Enseñanzas del Instituto Ascendant
+                Creador y Director de KS Healing Systems
               </p>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  YOHEV (Erick Gurrola), médico cirujano y maestro de consciencia crística, es el creador del sistema KS Healing Systems®. Su formación médica le otorga una base sólida para su trabajo en sanación, que integra la comprensión del cuerpo humano con la dimensión espiritual y energética de la transformación. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
+                  YOHEV (Dr. Erick Gurrola), médico cirujano y maestro de consciencia crística, es el creador del sistema KS Healing Systems®. Su formación médica le otorga una base sólida para su trabajo en sanación, que integra la comprensión del cuerpo humano con la dimensión espiritual y energética de la transformación. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
                 </p>
                 <p>
                   KS Healing Systems® es un sistema de sanación energética basado en la consciencia crística, que integra técnicas de transformación profunda, reprogramación energética y activación de potenciales dormidos. El método de YOHEV no busca escapar de la realidad, sino integrar la espiritualidad en la vida cotidiana de forma práctica, responsable y coherente.
