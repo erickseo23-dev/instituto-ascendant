@@ -44,7 +44,7 @@ export default function Fundadores() {
             <div className="order-2 md:order-1">
               <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/sHKEkhDDoBLqCaMN.png"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/nwGavpoqKAaVGwVd.png"
                   alt="Claribel Puga"
                   className="w-full h-full object-cover object-top"
                 />
@@ -62,7 +62,7 @@ export default function Fundadores() {
 
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  Claribel Puga es maestra en Neurociencias aplicadas a la espiritualidad, con una profunda dedicación a integrar el conocimiento científico con la comprensión de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos rigurosos y transformadores.
+                  Claribel Puga es maestra en Neurociencias aplicadas a la espiritualidad, con una profunda dedicación a integrar el conocimiento científico con la comprensión de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos profundos y transformadores.
                 </p>
 
                 <p>
@@ -70,7 +70,7 @@ export default function Fundadores() {
                 </p>
 
                 <p>
-                  Lo que distingue el trabajo de Claribel es su compromiso con la claridad. No promete milagros ni experiencias espectaculares. En su lugar, ofrece un camino riguroso, comprensible y aplicable a la vida cotidiana. Su pedagogía respeta la inteligencia del estudiante y evita tanto la infantilización como la intelectualización fría. Claribel es la mentora principal del Instituto Ascendant, la mente estructuradora de los métodos y la voz que guía los procesos formativos fundamentales.
+                  Lo que distingue el trabajo de Claribel es su compromiso con la claridad. No promete milagros ni experiencias espectaculares. En su lugar, ofrece un camino claro, comprensible y aplicable a la vida cotidiana. Su pedagogía respeta la inteligencia del estudiante y evita tanto la infantilización como la intelectualización fría. Claribel es la mentora principal del Instituto Ascendant, la mente estructuradora de los métodos y la voz que guía los procesos formativos fundamentales.
                 </p>
 
                 <p>
@@ -107,11 +107,12 @@ export default function Fundadores() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Imagen */}
             <div>
-              <div className="w-full h-96 bg-gradient-to-br from-amber-100 to-amber-50 rounded-lg flex items-center justify-center border-2 border-dashed border-amber-300">
-                <div className="text-center text-amber-600">
-                  <Users className="w-16 h-16 mx-auto mb-3 opacity-40" />
-                  <p className="text-sm font-medium">Foto próximamente</p>
-                </div>
+              <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/XmWKwgGzBsvlHEmq.jpg"
+                  alt="YOHEV Dr. Erick Gurrola"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 
@@ -185,7 +186,7 @@ export default function Fundadores() {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-amber-700 font-bold">•</span>
-                  <span>Pedagogía rigurosa y comprensible</span>
+                  <span>Pedagogía profunda y comprensible</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-amber-700 font-bold">•</span>
@@ -229,7 +230,7 @@ export default function Fundadores() {
 
           <div className="mt-12 rounded-lg overflow-hidden shadow-lg">
             <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/jhyJULYUCngnsrFq.png"
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/gKDElLLqtYazdaEh.png"
               alt="YOHEV y Claribel Puga, fundadores del Instituto Ascendant"
               className="w-full h-80 object-cover object-top"
             />
