@@ -157,14 +157,14 @@ export default function Sobre() {
             </div>
             <div className="order-1 md:order-2">
               <h3 className="text-4xl font-bold text-gray-900 mb-2 font-serif">
-                Dra. Claribel Puga
+                Claribel Puga
               </h3>
               <p className="text-amber-700 font-semibold text-lg mb-6">
                 Fundadora y Directora Pedagógica del Instituto Ascendant
               </p>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  Claribel Puga es médico cirujano con maestría en Neurociencias aplicadas a la espiritualidad. Su carrera ha estado dedicada a integrar el conocimiento científico con la comprensión profunda de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos profundos y transformadores.
+                  Claribel Puga es maestra en Neurociencias aplicadas a la espiritualidad, con una profunda dedicación a integrar el conocimiento científico con la comprensión de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos profundos y transformadores.
                 </p>
                 <p>
                   En 2010, creó la técnica de Meditación Isiaca, basada en la canalización de la Energía Isiaca (energía de la Divinidad Femenina). Posteriormente, en 2012, desarrolló la Meditación Ascendente, un método progresivo que conduce al practicante a través de tres fases de expansión de consciencia: intrínseca, extrínseca y holística.

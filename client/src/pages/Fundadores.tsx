@@ -49,7 +49,7 @@ export default function Fundadores() {
             {/* Contenido */}
             <div className="order-1 md:order-2">
               <h2 className="text-4xl font-bold text-gray-900 mb-2 font-serif">
-                Dra. Claribel Puga
+                Claribel Puga
               </h2>
               <p className="text-amber-700 font-semibold text-lg mb-6">
                 Fundadora y Directora Pedagógica del Instituto Ascendant
@@ -57,7 +57,7 @@ export default function Fundadores() {
 
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  Claribel Puga es médico cirujano con maestría en Neurociencias aplicadas a la espiritualidad. Su carrera ha estado dedicada a integrar el conocimiento científico con la comprensión profunda de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos rigurosos y transformadores.
+                  Claribel Puga es maestra en Neurociencias aplicadas a la espiritualidad, con una profunda dedicación a integrar el conocimiento científico con la comprensión de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos rigurosos y transformadores.
                 </p>
 
                 <p>

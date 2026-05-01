@@ -701,7 +701,7 @@ function FoundersSection() {
     {
       name: "Dr. Erick Gurrola (YOHEV)",
       role: "Director de KS Healing Systems®",
-      bio: "Médico cirujano y maestro de marcos espirituales avanzados. Creador de KS Healing Systems® y del método DART de renovación arquetípica. Su enseñanza aporta profundidad simbólica, estructura energética y visión de consciencia expandida al ecosistema Ascendant.",
+      bio: "Maestro de marcos espirituales avanzados. Creador de KS Healing Systems® y del método DART de renovación arquetípica. Su enseñanza aporta profundidad simbólica, estructura energética y visión de consciencia expandida al ecosistema Ascendant.",
       accent: "#5A7A5A",
       tags: ["KS Healing Systems®", "DART", "Consciencia Expandida"],
       photo: IMAGES.yohev,
