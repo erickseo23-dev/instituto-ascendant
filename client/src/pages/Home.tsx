@@ -693,7 +693,7 @@ function FoundersSection() {
     {
       name: "Claribel Puga",
       role: "Fundadora del Instituto Ascendant",
-      bio: "Maestra en neurociencias aplicadas a la espiritualidad, creadora del Método Ascendant y de la Meditación Ascendente®. Su enfoque integra rigor mental, comprensión emocional y espiritualidad consciente. Con más de 218,000 suscriptores en YouTube, Claribel es la voz principal del ecosistema Ascendant.",
+      bio: "Maestra en neurociencias aplicadas a la espiritualidad, creadora del Método Ascendant y de la Meditación Ascendente®. Su enfoque integra claridad mental, comprensión emocional y espiritualidad consciente. Con más de 218,000 suscriptores en YouTube, Claribel es la voz principal del ecosistema Ascendant.",
       accent: "#C4963C",
       tags: ["Método Ascendant", "Meditación Ascendente®", "Neurociencias"],
       photo: IMAGES.claribel,

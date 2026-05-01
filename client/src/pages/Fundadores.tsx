@@ -30,7 +30,7 @@ export default function Fundadores() {
             Los Fundadores
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Dos maestros, una visión: integrar la claridad pedagógica, el rigor científico y la profundidad espiritual en un ecosistema de transformación auténtica.
+            Dos maestros, una visión: integrar la claridad pedagógica, la honestidad intelectual y la profundidad espiritual en un ecosistema de transformación auténtica.
           </p>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function Fundadores() {
 
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  YOHEV, cuyo nombre espiritual representa la integración de la consciencia divina en la forma humana, es el creador del sistema KS Healing Systems® y maestro de consciencia crística. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y el rigor mental, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
+                  YOHEV, cuyo nombre espiritual representa la integración de la consciencia divina en la forma humana, es el creador del sistema KS Healing Systems® y maestro de consciencia crística. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
                 </p>
 
                 <p>

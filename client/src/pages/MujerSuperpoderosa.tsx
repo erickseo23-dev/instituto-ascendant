@@ -403,7 +403,7 @@ export default function Home() {
             </p>
 
             <p className="text-foreground/70 mb-8">
-              Su enfoque integra el rigor científico con la profundidad espiritual, enseñando a las mujeres a reconocer y activar sus habilidades neurobiológicas innatas desde un lugar de consciencia y coherencia.
+              Su enfoque integra la claridad científica con la profundidad espiritual, enseñando a las mujeres a reconocer y activar sus habilidades neurobiológicas innatas desde un lugar de consciencia y coherencia.
             </p>
 
             <div className="inline-block px-6 py-3 bg-background rounded-lg border border-border">

@@ -30,7 +30,7 @@ export default function Sobre() {
             Instituto Ascendant
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Un espacio dedicado al crecimiento de la consciencia creadora, donde la espiritualidad se integra con claridad, rigor y responsabilidad hacia la transformación personal y colectiva.
+            Un espacio dedicado al crecimiento de la consciencia creadora, donde la espiritualidad se integra con claridad, honestidad y responsabilidad hacia la transformación personal y colectiva.
           </p>
         </div>
       </section>
@@ -46,7 +46,7 @@ export default function Sobre() {
             </p>
 
             <p>
-              Claribel Puga, maestra en neurociencias aplicadas a la espiritualidad, desarrolló durante años las técnicas de Meditación Isiaca y Meditación Ascendente, métodos progresivos que conducen al practicante hacia estados crecientes de consciencia lúcida y presencia auténtica. Su enfoque integrador combina el rigor mental con la comprensión emocional y la apertura espiritual.
+              Claribel Puga, maestra en neurociencias aplicadas a la espiritualidad, desarrolló durante años las técnicas de Meditación Isiaca y Meditación Ascendente, métodos progresivos que conducen al practicante hacia estados crecientes de consciencia lúcida y presencia auténtica. Su enfoque integrador combina la claridad mental con la comprensión emocional y la apertura espiritual.
             </p>
 
             <p>
@@ -95,7 +95,7 @@ export default function Sobre() {
               <ul className="text-gray-700 space-y-2">
                 <li>• Autenticidad y transparencia</li>
                 <li>• Responsabilidad pedagógica</li>
-                <li>• Rigor y profundidad</li>
+                <li>• Profundidad y autenticidad</li>
                 <li>• Inclusión y accesibilidad</li>
               </ul>
             </div>
@@ -144,7 +144,7 @@ export default function Sobre() {
               Los Fundadores
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Dos maestros, una visión: integrar la claridad pedagógica, el rigor científico y la profundidad espiritual en un ecosistema de transformación auténtica.
+              Dos maestros, una visión: integrar la claridad pedagógica, la honestidad intelectual y la profundidad espiritual en un ecosistema de transformación auténtica.
             </p>
           </div>
 
@@ -164,13 +164,13 @@ export default function Sobre() {
               </p>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  Claribel Puga es médico cirujano con maestría en Neurociencias aplicadas a la espiritualidad. Su carrera ha estado dedicada a integrar el conocimiento científico con la comprensión profunda de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos rigurosos y transformadores.
+                  Claribel Puga es médico cirujano con maestría en Neurociencias aplicadas a la espiritualidad. Su carrera ha estado dedicada a integrar el conocimiento científico con la comprensión profunda de la consciencia humana. Desde su infancia, desarrolló dones de clarividencia y clariaudiencia que, lejos de ser utilizados de forma mística vacía, los canalizó hacia la creación de métodos pedagógicos profundos y transformadores.
                 </p>
                 <p>
                   En 2010, creó la técnica de Meditación Isiaca, basada en la canalización de la Energía Isiaca (energía de la Divinidad Femenina). Posteriormente, en 2012, desarrolló la Meditación Ascendente, un método progresivo que conduce al practicante a través de tres fases de expansión de consciencia: intrínseca, extrínseca y holística.
                 </p>
                 <p>
-                  Lo que distingue el trabajo de Claribel es su compromiso con la claridad. No promete milagros ni experiencias espectaculares. En su lugar, ofrece un camino riguroso, comprensible y aplicable a la vida cotidiana. Claribel es la mentora principal del Instituto Ascendant, la mente estructuradora de los métodos y la voz que guía los procesos formativos fundamentales.
+                  Lo que distingue el trabajo de Claribel es su compromiso con la claridad. No promete milagros ni experiencias espectaculares. En su lugar, ofrece un camino claro, comprensible y aplicable a la vida cotidiana. Claribel es la mentora principal del Instituto Ascendant, la mente estructuradora de los métodos y la voz que guía los procesos formativos fundamentales.
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function Sobre() {
               </p>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  YOHEV, cuyo nombre espiritual representa la integración de la consciencia divina en la forma humana, es el creador del sistema KS Healing Systems® y maestro de consciencia crística. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y el rigor mental, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
+                  YOHEV, cuyo nombre espiritual representa la integración de la consciencia divina en la forma humana, es el creador del sistema KS Healing Systems® y maestro de consciencia crística. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
                 </p>
                 <p>
                   KS Healing Systems® es un sistema de sanación energética basado en la consciencia crística, que integra técnicas de transformación profunda, reprogramación energética y activación de potenciales dormidos. El método de YOHEV no busca escapar de la realidad, sino integrar la espiritualidad en la vida cotidiana de forma práctica, responsable y coherente.
