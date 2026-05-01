@@ -43,7 +43,7 @@ export default function Header({ hideNav = false }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-[72px] md:top-[88px] left-0 right-0 z-40 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         scrolled
           ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-[0_1px_0_#C4963C20]"
           : "bg-transparent"
