@@ -24,6 +24,13 @@ export default function Home() {
       <StickyBanner />
       <Header />
 
+      {/* Page Title Banner */}
+      <div className="w-full text-center py-5" style={{ background: "linear-gradient(135deg, #2d1b4e 0%, #4a1a3a 100%)", marginTop: "0" }}>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-wide" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C", letterSpacing: "0.05em" }}>
+          Mujer Superpoderosa
+        </h1>
+      </div>
+
       {/* Hero Section */}
       <section className="relative pt-[200px] pb-20 md:pt-[220px] md:pb-32 overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{
@@ -52,7 +59,8 @@ export default function Home() {
                 <p className="text-sm italic text-foreground/60" style={{ fontFamily: "'Lora', serif" }}>Toma tu luz, tu fuerza y tu poder</p>
                 <Button 
                   size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-white text-base h-12 px-8"
+                  className="text-base h-12 px-8 font-semibold shadow-lg"
+                  style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
                   onClick={() => handleOpenModal("course")}
                 >
                   Unirme al Programa <ArrowRight className="ml-2 w-4 h-4" />
@@ -342,7 +350,8 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-white text-base h-12 px-8"
+                className="text-base h-12 px-8 font-semibold shadow-lg"
+                style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
                 onClick={() => handleOpenModal("course")}
               >
                 Unirme al Programa
