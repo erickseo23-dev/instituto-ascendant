@@ -116,6 +116,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fechas del Programa */}
+      <section className="py-12 md:py-16" style={{ background: "linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 100%)" }}>
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C4963C" }}>Próxima Edición</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: "#f0d8ff" }}>
+              Programa Mayo 2026
+            </h2>
+            <p className="text-sm mb-10" style={{ color: "#c8a8d8" }}>
+              Si no puedes asistir en vivo, tendrás acceso a las grabaciones.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              {/* Sesión de Bienvenida */}
+              <div className="rounded-2xl p-6 text-left" style={{ background: "rgba(196,150,60,0.12)", border: "1px solid rgba(196,150,60,0.35)" }}>
+                <span className="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4" style={{ background: "rgba(196,150,60,0.2)", color: "#C4963C" }}>Sesión de Bienvenida</span>
+                <p className="text-2xl font-bold mb-1" style={{ fontFamily: "'Playfair Display', serif", color: "#f0d8ff" }}>Miércoles 6</p>
+                <p className="text-base font-semibold mb-3" style={{ color: "#C4963C" }}>de Mayo · 12:00 hrs CDMX</p>
+                <p className="text-xs" style={{ color: "#c8a8d8" }}>Inicio oficial del programa. Conoce a tu comunidad y prepárate para la transformación.</p>
+              </div>
+
+              {/* Masterclasses en Vivo */}
+              <div className="md:col-span-2 rounded-2xl p-6" style={{ background: "rgba(240,216,255,0.06)", border: "1px solid rgba(240,216,255,0.15)" }}>
+                <span className="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4" style={{ background: "rgba(240,216,255,0.1)", color: "#f0d8ff" }}>4 Masterclasses en Vivo · Zoom</span>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {[
+                    { dia: "Sáb 9", mes: "Mayo" },
+                    { dia: "Sáb 16", mes: "Mayo" },
+                    { dia: "Sáb 23", mes: "Mayo" },
+                    { dia: "Sáb 30", mes: "Mayo" },
+                  ].map((fecha, i) => (
+                    <div key={i} className="rounded-xl p-3 text-center" style={{ background: "rgba(196,150,60,0.08)", border: "1px solid rgba(196,150,60,0.2)" }}>
+                      <p className="text-xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#f0d8ff" }}>{fecha.dia}</p>
+                      <p className="text-xs font-semibold" style={{ color: "#C4963C" }}>{fecha.mes}</p>
+                      <p className="text-xs mt-1" style={{ color: "#c8a8d8" }}>12:00 hrs</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs mt-4 text-center" style={{ color: "#c8a8d8" }}>Todos los sábados de Mayo · 12:00 hrs Ciudad de México</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm" style={{ color: "#c8a8d8" }}>
+              <span className="flex items-center gap-2">🎥 <span>Grabaciones disponibles si no puedes asistir en vivo</span></span>
+              <span className="hidden sm:block" style={{ color: "rgba(196,150,60,0.4)" }}>·</span>
+              <span className="flex items-center gap-2">🔒 <span>Acceso de por vida al contenido</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The Problem Section */}
       <section className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container">
