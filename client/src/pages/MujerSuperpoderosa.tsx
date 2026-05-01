@@ -142,28 +142,28 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="p-6 border-border/50 overflow-hidden">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/woman_neurobiologia_930b563d.png" alt="Neurobiología" className="w-full h-40 object-cover rounded-xl mb-4" />
-                <Brain className="w-7 h-7 text-accent mb-3" />
+                <Brain className="w-7 h-7 mb-3" style={{ color: "#C4963C" }} />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Neurobiología Femenina</h3>
                 <p className="text-foreground/70 text-sm">Comprende por qué tu cerebro procesa la información de manera única y cómo eso es una ventaja evolutiva.</p>
               </Card>
 
               <Card className="p-6 border-border/50 overflow-hidden">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/woman_empoderamiento_064106fe.png" alt="Regulación Emocional" className="w-full h-40 object-cover rounded-xl mb-4" />
-                <Heart className="w-7 h-7 text-accent mb-3" />
+                <Heart className="w-7 h-7 mb-3" style={{ color: "#C4963C" }} />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Regulación Emocional</h3>
                 <p className="text-foreground/70 text-sm">Aprende técnicas de Meditación Ascendente para regularte sin suprimir tu intensidad emocional.</p>
               </Card>
 
               <Card className="p-6 border-border/50 overflow-hidden">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/woman_intuicion_05b92881.png" alt="Poder de Influencia" className="w-full h-40 object-cover rounded-xl mb-4" />
-                <Zap className="w-7 h-7 text-accent mb-3" />
+                <Zap className="w-7 h-7 mb-3" style={{ color: "#C4963C" }} />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Poder de Influencia</h3>
                 <p className="text-foreground/70 text-sm">Transforma tu empatía en influencia estratégica y liderazgo coherente sin manipulación.</p>
               </Card>
 
               <Card className="p-6 border-border/50 overflow-hidden">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/woman_latina_1_06ba1f6e.png" alt="Abundancia Integral" className="w-full h-40 object-cover rounded-xl mb-4" />
-                <Users className="w-7 h-7 text-accent mb-3" />
+                <Users className="w-7 h-7 mb-3" style={{ color: "#C4963C" }} />
                 <h3 className="text-lg font-semibold mb-2 text-foreground">Abundancia Integral</h3>
                 <p className="text-foreground/70 text-sm">Crea abundancia en relaciones, salud, propósito y recursos materiales desde una perspectiva holística.</p>
               </Card>
