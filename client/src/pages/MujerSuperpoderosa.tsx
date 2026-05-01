@@ -42,7 +42,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left: Text */}
               <div className="text-left">
-            <p className="text-sm font-semibold tracking-widest uppercase text-accent mb-3">Mujer Superpoderosa</p>
+            <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#1a0a2e" }}>Mujer Superpoderosa</p>
             <h1 
               className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight"
               style={{ fontFamily: "'Playfair Display', serif" }}
