@@ -148,7 +148,7 @@ function Header() {
                 Instituto Ascendant
               </span>
               <span className={`text-[9px] lg:text-[10px] tracking-[0.18em] uppercase transition-colors duration-500 ${scrolled ? "text-[#C4963C]" : "text-white/70"}`}>
-                Crecimiento de la Consciencia
+                Para el Crecimiento de la Consciencia Creadora
               </span>
             </div>
           </a>
