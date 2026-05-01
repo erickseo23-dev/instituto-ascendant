@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Hero Section */}
-      <section className="relative pt-[180px] pb-16 md:pt-[200px] md:pb-24 overflow-hidden">
+      <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: "radial-gradient(circle at 20% 50%, #8b7d9e 0%, transparent 50%)",
         }}></div>
