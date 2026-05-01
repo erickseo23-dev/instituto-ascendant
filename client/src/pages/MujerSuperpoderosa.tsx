@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       {/* Video Section — Grabación Masterclass */}
-      <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, #fef3e2 0%, #fdf8f0 100%)" }}>
+      <section className="py-8 md:py-10" style={{ background: "linear-gradient(180deg, #fef3e2 0%, #fdf8f0 100%)" }}>
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <p className="text-center text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#C4963C" }}>Grabación de la Masterclass</p>
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Hero Section */}
-      <section className="relative pt-[200px] pb-20 md:pt-[220px] md:pb-32 overflow-hidden">
+      <section className="relative pt-[180px] pb-16 md:pt-[200px] md:pb-24 overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: "radial-gradient(circle at 20% 50%, #8b7d9e 0%, transparent 50%)",
         }}></div>
