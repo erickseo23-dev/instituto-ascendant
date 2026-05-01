@@ -416,6 +416,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Precio */}
+      <section className="py-16 md:py-20" style={{ background: "linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 60%, #1a0a2e 100%)" }}>
+        <div className="container">
+          <div className="max-w-xl mx-auto text-center">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C4963C" }}>Inversión</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ fontFamily: "'Playfair Display', serif", color: "#f0d8ff" }}>
+              Transforma tu vida por menos de lo que imaginas
+            </h2>
+
+            <div className="rounded-3xl p-8 md:p-10 relative overflow-hidden" style={{ background: "rgba(240,216,255,0.05)", border: "1px solid rgba(196,150,60,0.4)" }}>
+              {/* Badge de promoción */}
+              <div className="absolute top-0 right-0">
+                <div className="text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-3xl" style={{ background: "#C4963C", color: "#1a0a2e" }}>
+                  33% OFF • 24 HRS
+                </div>
+              </div>
+
+              {/* Precio normal tachado */}
+              <p className="text-base line-through mb-1" style={{ color: "rgba(200,168,216,0.5)" }}>Precio regular: $150 USD</p>
+
+              {/* Precio promocional */}
+              <div className="flex items-end justify-center gap-2 mb-2">
+                <span className="text-6xl md:text-7xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C" }}>$100</span>
+                <span className="text-xl mb-3 font-semibold" style={{ color: "#f0d8ff" }}>USD</span>
+              </div>
+              <p className="text-sm mb-6" style={{ color: "#c8a8d8" }}>Precio especial durante las 24 horas posteriores a la Masterclass</p>
+
+              {/* Lo que incluye */}
+              <div className="text-left space-y-2 mb-8 px-2">
+                {[
+                  "8 Módulos en video + Manuales PDF",
+                  "Meditaciones Isiacas y Audios de Hipnosis",
+                  "4 Masterclasses en vivo por Zoom",
+                  "Acceso a la Comunidad exclusiva",
+                  "Acceso de por vida al contenido",
+                  "Acceso Preferencial a actividades con Claribel",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 text-base" style={{ color: "#C4963C" }}>✓</span>
+                    <span className="text-sm" style={{ color: "#f0d8ff" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                className="w-full py-4 rounded-xl text-base font-bold shadow-lg transition-all hover:scale-[1.02]"
+                style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
+                onClick={() => handleOpenModal("course")}
+              >
+                Quiero unirme por $100 USD →
+              </button>
+
+              <p className="text-xs mt-4" style={{ color: "rgba(200,168,216,0.6)" }}>Después de las 24 hrs el precio regresa a $150 USD</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-background to-card">
         <div className="container">
