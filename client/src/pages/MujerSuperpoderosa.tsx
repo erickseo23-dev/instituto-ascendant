@@ -25,7 +25,7 @@ export default function Home() {
       <Header />
 
       {/* Page Title Banner */}
-      <div className="w-full text-center py-5" style={{ background: "linear-gradient(135deg, #2d1b4e 0%, #4a1a3a 100%)", marginTop: "0" }}>
+      <div className="w-full text-center py-5 border-b border-[#C4963C]/30" style={{ background: "linear-gradient(135deg, #fdf8f0 0%, #fef3e2 100%)", marginTop: "0" }}>
         <h1 className="text-3xl md:text-4xl font-bold tracking-wide" style={{ fontFamily: "'Playfair Display', serif", color: "#1a0a2e", letterSpacing: "0.05em" }}>
           Mujer Superpoderosa
         </h1>
