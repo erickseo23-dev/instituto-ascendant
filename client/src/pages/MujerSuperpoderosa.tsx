@@ -36,26 +36,15 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <p className="text-center text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#C4963C" }}>Grabación de la Masterclass</p>
-            {/* Placeholder — reemplazar src del iframe cuando la grabación esté disponible */}
-            {/* Para activar: reemplaza el div de abajo por: <div className="relative w-full" style={{ paddingBottom: "56.25%" }}><iframe className="absolute inset-0 w-full h-full rounded-2xl shadow-2xl" src="https://www.youtube.com/embed/VIDEO_ID" title="Masterclass Mujer Superpoderosa" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> */}
-            <div
-              className="relative w-full rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center"
-              style={{ paddingBottom: "56.25%", background: "linear-gradient(135deg, #2d1b4e 0%, #4a1a3a 60%, #1a0a2e 100%)" }}
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-lg" style={{ background: "rgba(196,150,60,0.15)", border: "2px solid #C4963C" }}>
-                  <Youtube className="w-10 h-10" style={{ color: "#C4963C" }} />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#f0d8ff" }}>
-                  Grabación próximamente disponible
-                </h3>
-                <p className="text-sm md:text-base max-w-md" style={{ color: "#c8a8d8" }}>
-                  La grabación completa de la Masterclass <strong style={{ color: "#f0d8ff" }}>Mujer Superpoderosa</strong> estará disponible aquí muy pronto.
-                </p>
-                <span className="px-4 py-1.5 rounded-full text-xs font-semibold" style={{ background: "rgba(196,150,60,0.2)", color: "#C4963C", border: "1px solid rgba(196,150,60,0.4)" }}>
-                  Disponible solo para alumnas inscritas
-                </span>
-              </div>
+            <div className="relative w-full rounded-2xl shadow-2xl overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/mW1DUgT8mas"
+                title="Grabación Masterclass Mujer Superpoderosa"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
