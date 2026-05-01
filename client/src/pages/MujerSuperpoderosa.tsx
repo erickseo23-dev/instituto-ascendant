@@ -91,7 +91,7 @@ export default function Home() {
                   size="lg" 
                   className="text-base h-12 px-8 font-semibold shadow-lg"
                   style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
-                  onClick={() => handleOpenModal("course")}
+                  onClick={() => { const el = document.getElementById('precio'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }}
                 >
                   Unirme al Programa <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -417,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* Precio */}
-      <section className="py-16 md:py-20" style={{ background: "linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 60%, #1a0a2e 100%)" }}>
+      <section id="precio" className="py-16 md:py-20" style={{ background: "linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 60%, #1a0a2e 100%)" }}>
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C4963C" }}>Inversión</p>
@@ -435,7 +435,7 @@ export default function Home() {
 
               {/* Precio normal tachado */}
               <div className="flex items-center justify-center gap-3 mb-3 mt-4">
-                <span className="text-2xl font-bold line-through" style={{ color: "rgba(200,168,216,0.65)" }}>$150 USD</span>
+                <span className="text-2xl font-bold line-through" style={{ color: "rgba(255,255,255,0.85)" }}>$150 USD</span>
                 <span className="text-sm font-bold px-3 py-1 rounded-full" style={{ background: "rgba(232,90,90,0.2)", color: "#ff8080", border: "1px solid rgba(232,90,90,0.4)" }}>Precio regular</span>
               </div>
 
@@ -444,7 +444,7 @@ export default function Home() {
                 <span className="text-7xl md:text-8xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C" }}>$100</span>
                 <span className="text-2xl mb-4 font-semibold" style={{ color: "#f0d8ff" }}>USD</span>
               </div>
-              <div className="inline-block px-4 py-1.5 rounded-full mb-6 text-sm font-semibold" style={{ background: "rgba(196,150,60,0.15)", color: "#e8b84b", border: "1px solid rgba(196,150,60,0.4)" }}>
+              <div className="inline-block px-5 py-2 rounded-full mb-6 text-base font-bold" style={{ background: "rgba(196,150,60,0.15)", color: "#e8b84b", border: "1px solid rgba(196,150,60,0.4)" }}>
                 ✨ Ahorras $50 USD — solo por 24 horas
               </div>
               <p className="text-sm mb-6" style={{ color: "#c8a8d8" }}>Precio especial durante las 24 horas posteriores a la Masterclass</p>
@@ -474,37 +474,13 @@ export default function Home() {
                 Quiero unirme por $100 USD →
               </button>
 
-              <p className="text-xs mt-4" style={{ color: "rgba(200,168,216,0.6)" }}>Después de las 24 hrs el precio regresa a $150 USD</p>
+              <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.75)" }}>Después de las 24 hrs el precio regresa a $150 USD</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-background to-card">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground" style={{ fontFamily: "'Playfair Display', serif" }}>
-              ¿Estás lista para integrar tu poder?
-            </h2>
 
-            <p className="text-lg text-foreground/70 mb-12" style={{ fontFamily: "'Lora', serif" }}>
-              Únete al programa de 4 semanas.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="text-base h-12 px-8 font-semibold shadow-lg"
-                style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
-                onClick={() => handleOpenModal("course")}
-              >
-                Unirme al Programa
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer — idéntico al del sitio principal */}
       <footer className="bg-[#2D2D2D] text-white/70">
