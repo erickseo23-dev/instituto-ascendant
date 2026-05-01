@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* Page Title Banner */}
       <div className="w-full text-center py-5" style={{ background: "linear-gradient(135deg, #2d1b4e 0%, #4a1a3a 100%)", marginTop: "0" }}>
-        <h1 className="text-3xl md:text-4xl font-bold tracking-wide" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C", letterSpacing: "0.05em" }}>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-wide" style={{ fontFamily: "'Playfair Display', serif", color: "#1a0a2e", letterSpacing: "0.05em" }}>
           Mujer Superpoderosa
         </h1>
       </div>
@@ -56,7 +56,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-start mb-12">
               <div className="flex flex-col gap-2">
-                <p className="text-sm italic text-foreground/60" style={{ fontFamily: "'Lora', serif" }}>Toma tu luz, tu fuerza y tu poder</p>
+                <p className="text-sm font-bold text-foreground" style={{ fontFamily: "'Lora', serif" }}>Toma tu luz, tu fuerza y tu poder</p>
                 <Button 
                   size="lg" 
                   className="text-base h-12 px-8 font-semibold shadow-lg"
@@ -306,7 +306,7 @@ export default function Home() {
             {/* Claribel image */}
             <div className="flex justify-center">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/woman_claribel_880147bb.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/DYUZdiLucISZSSYB.png"
                 alt="Claribel Puga"
                 className="w-full max-w-xs rounded-3xl shadow-2xl object-cover"
                 style={{ maxHeight: "460px" }}
