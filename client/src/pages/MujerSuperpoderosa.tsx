@@ -35,6 +35,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left: Text */}
               <div className="text-left">
+            <p className="text-sm font-semibold tracking-widest uppercase text-accent mb-3">Mujer Superpoderosa</p>
             <h1 
               className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -43,25 +44,20 @@ export default function Home() {
             </h1>
             
             <p className="text-lg md:text-xl text-foreground/70 mb-8 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
-              Un programa de 8 semanas que une el poder de la neurociencia con la profundidad de la consciencia espiritual. Transforma tu intensidad emocional en tu mayor ventaja.
+              Un programa de 4 semanas que une el poder de la neurociencia con la profundidad de la consciencia espiritual. Transforma tu intensidad emocional en tu mayor ventaja.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white text-base h-12 px-8"
-                onClick={() => handleOpenModal("masterclass")}
-              >
-                Masterclass Gratuita <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-base h-12 px-8 border-primary text-primary hover:bg-primary/5"
-                onClick={() => handleOpenModal("course")}
-              >
-                Inscribirse al Curso
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-start mb-12">
+              <div className="flex flex-col gap-2">
+                <p className="text-sm italic text-foreground/60" style={{ fontFamily: "'Lora', serif" }}>Toma tu luz, tu fuerza y tu poder</p>
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-white text-base h-12 px-8"
+                  onClick={() => handleOpenModal("course")}
+                >
+                  Unirme al Programa <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </div>
             </div>
 
             <p className="text-sm text-foreground/60">
@@ -132,7 +128,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-              La Solución: Mujer Superpoderosa
+              Despierta la Mujer Superpoderosa en ti
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -218,7 +214,7 @@ export default function Home() {
       <section id="modulos" className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            8 Módulos + 4 Masterclasses en Vivo
+            4 Semanas con: 8 Módulos + Meditaciones Especiales + Poderosos Audios de Hipnosis + 4 Masterclasses en Vivo con Claribel Puga
           </h2>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
@@ -229,7 +225,7 @@ export default function Home() {
               { num: "7-8", title: "Liderazgo y Relaciones", desc: "Influencia positiva y coherencia en tus vínculos" },
             ].map((module, i) => (
               <div key={i} className="p-6 border border-border/50 rounded-lg hover:border-accent/50 transition">
-                <div className="text-sm font-semibold text-accent mb-2">Módulos {module.num}</div>
+                <div className="text-sm font-semibold text-[#7a4a8a] mb-2">Módulos {module.num}</div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{module.title}</h3>
                 <p className="text-foreground/70 text-sm">{module.desc}</p>
               </div>
@@ -239,22 +235,21 @@ export default function Home() {
           <div className="mt-12 p-8 bg-background rounded-lg border border-accent/20">
             <h3 className="text-xl font-semibold text-foreground mb-4">Incluye:</h3>
             <ul className="grid md:grid-cols-2 gap-3 text-foreground/80">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                Diario de Metaconsciencia (30 días)
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                Meditaciones Ascendentes
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                Auditoría de Abundancia Integral
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                Acceso de por vida
-              </li>
+              {[
+                "Manuales PDF del curso",
+                "Lecciones grabadas por módulos",
+                "Meditaciones Isiacas",
+                "Audios de Hipnosis para cada nivel",
+                "4 Masterclasses en vivo con Claribel Puga vía zoom",
+                "Acceso de por vida",
+                "Acceso Preferencial a otras actividades con Claribel",
+                "Acceso a la Comunidad exclusiva de Mujeres Superpoderosas",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-[#7a4a8a] flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -278,8 +273,8 @@ export default function Home() {
               "Construir relaciones de calidad basadas en la reciprocidad consciente",
             ].map((benefit, i) => (
               <div key={i} className="flex gap-4 items-start p-4 rounded-lg hover:bg-card transition">
-                <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
-                  <CheckCircle2 className="w-4 h-4 text-accent" />
+                <div className="w-6 h-6 rounded-full bg-[#7a4a8a]/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <CheckCircle2 className="w-4 h-4 text-[#7a4a8a]" />
                 </div>
                 <p className="text-foreground/80">{benefit}</p>
               </div>
@@ -324,7 +319,7 @@ export default function Home() {
 
             <div className="inline-block px-6 py-3 bg-background rounded-lg border border-border">
               <p className="text-sm text-foreground/60">
-                Creadora del Método Ascendant y la Meditación Ascendente
+                Creadora del Método Ascendant, Meditación Isiaca y Meditación Ascendente
               </p>
             </div>
             </div>
@@ -341,23 +336,16 @@ export default function Home() {
             </h2>
 
             <p className="text-lg text-foreground/70 mb-12" style={{ fontFamily: "'Lora', serif" }}>
-              Comienza con la Masterclass gratuita y descubre la neurobiología de tu intuición. Luego, únete al programa completo de 8 semanas.
+              Únete al programa de 4 semanas.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white text-base h-12 px-8"
-                onClick={() => handleOpenModal("masterclass")}
-              >
-                Acceder a Masterclass Gratuita
-              </Button>
-              <Button 
-                size="lg" 
                 className="bg-accent hover:bg-accent/90 text-white text-base h-12 px-8"
                 onClick={() => handleOpenModal("course")}
               >
-                Inscribirse al Curso Completo
+                Unirme al Programa
               </Button>
             </div>
           </div>
