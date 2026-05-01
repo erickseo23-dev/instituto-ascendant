@@ -303,7 +303,7 @@ export default function Home() {
       <section id="modulos" className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            4 Semanas con: 8 Módulos + Meditaciones Especiales + Poderosos Audios de Hipnosis + 4 Masterclasses en Vivo con Claribel Puga
+            4 Semanas con: 4 Módulos + Meditaciones Especiales + Poderosos Audios de Hipnosis + 4 Masterclasses en Vivo con Claribel Puga
           </h2>
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
@@ -452,7 +452,7 @@ export default function Home() {
               {/* Lo que incluye */}
               <div className="text-left space-y-2 mb-8 px-2">
                 {[
-                  "8 Módulos en video + Manuales PDF",
+                  "4 Módulos en video + Manuales PDF",
                   "Meditaciones Isiacas y Audios de Hipnosis",
                   "4 Masterclasses en vivo por Zoom",
                   "Acceso a la Comunidad exclusiva",

@@ -315,7 +315,7 @@ export default function Masterclass() {
               },
               {
                 q: "¿Cuál es el costo?",
-                a: "La Masterclass es completamente gratuita. Después, tendrás la opción de acceder al curso completo de 8 semanas.",
+                a: "La Masterclass es completamente gratuita. Después, tendrás la opción de acceder al curso completo de 4 semanas.",
               },
               {
                 q: "¿Necesito experiencia previa?",
@@ -351,7 +351,7 @@ export default function Masterclass() {
             ¿Lista para el Programa Completo?
           </h2>
           <p className="mb-8 text-lg" style={{ color: "#7a6a8a" }}>
-            8 semanas de transformación profunda con neurociencia, espiritualidad y prácticas concretas.
+            4 semanas de transformación profunda con neurociencia, espiritualidad y prácticas concretas.
           </p>
 
           <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
@@ -360,7 +360,7 @@ export default function Masterclass() {
             
             <ul className="text-left space-y-3 mb-8">
               {[
-                "8 módulos de contenido pregrabado",
+                "4 módulos de contenido pregrabado",
                 "4 Masterclasses en vivo con Claribel Puga",
                 "Diario de Metaconsciencia (30 días)",
                 "Meditaciones y audios de hipnosis",
