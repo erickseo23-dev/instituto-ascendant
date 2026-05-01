@@ -77,10 +77,6 @@ export default function Fundadores() {
               <div className="mt-8 space-y-3">
                 <div className="flex items-start gap-3">
                   <Award className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Médico Cirujano</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Award className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">Maestra en Neurociencias aplicadas a la Espiritualidad</span>
                 </div>
                 <div className="flex items-start gap-3">
@@ -122,7 +118,7 @@ export default function Fundadores() {
 
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p>
-                  YOHEV, cuyo nombre espiritual representa la integración de la consciencia divina en la forma humana, es el creador del sistema KS Healing Systems® y maestro de consciencia crística. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
+                  YOHEV (Erick Gurrola), médico cirujano y maestro de consciencia crística, es el creador del sistema KS Healing Systems®. Su formación médica le otorga una base sólida para su trabajo en sanación, integrando la comprensión del cuerpo humano con la dimensión espiritual y energética de la transformación. Su trabajo se enfoca en la dimensión simbólica, arquetípica y espiritual de la transformación humana. Donde Claribel proporciona la estructura pedagógica y la claridad conceptual, YOHEV aporta la profundidad simbólica y la expansión de consciencia hacia dimensiones de integración holística.
                 </p>
 
                 <p>
@@ -144,6 +140,10 @@ export default function Fundadores() {
 
               {/* Credenciales */}
               <div className="mt-8 space-y-3">
+                <div className="flex items-start gap-3">
+                  <Award className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Médico Cirujano</span>
+                </div>
                 <div className="flex items-start gap-3">
                   <Award className="w-5 h-5 text-amber-700 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">Creador de KS Healing Systems®</span>
