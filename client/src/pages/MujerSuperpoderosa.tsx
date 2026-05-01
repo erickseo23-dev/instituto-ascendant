@@ -308,10 +308,10 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
             {[
-              { num: "1-2", title: "La Biología de tu Poder", desc: "Diferencias neurobiológicas y el súper olfato femenino" },
-              { num: "3-4", title: "Regulación y Metaconsciencia", desc: "Gestiona la alta sensibilidad sin agotamiento" },
-              { num: "5-6", title: "Arquitectura de la Abundancia", desc: "Redefinición del éxito desde la perspectiva femenina" },
-              { num: "7-8", title: "Liderazgo y Relaciones", desc: "Influencia positiva y coherencia en tus vínculos" },
+              { num: "1", title: "Los Poderes del Cerebro Femenino", desc: "Descubre las capacidades neurobiológicas únicas del cerebro femenino y cómo activarlas conscientemente" },
+              { num: "2", title: "Las Múltiples Abundancias de la Mujer", desc: "Explora las diferentes dimensiones de la abundancia femenina y cómo crearla desde tu autenticidad" },
+              { num: "3", title: "El Poder De Mi Belleza", desc: "Reconecta con tu poder a través de la belleza como expresión de tu esencia y presencia" },
+              { num: "4", title: "La Persuasión de la Mujer", desc: "Desarrolla tu capacidad de influir y persuadir desde la coherencia, la integridad y la consciencia" },
             ].map((module, i) => (
               <div key={i} className="p-6 border border-border/50 rounded-lg hover:border-accent/50 transition">
                 <div className="text-sm font-semibold text-[#7a4a8a] mb-2">Módulos {module.num}</div>
