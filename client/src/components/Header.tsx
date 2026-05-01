@@ -122,10 +122,12 @@ export default function Header() {
             </div>
 
             <a
-              href="#eventos"
+              href="https://cursos.institutoascendant.com/library"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-4 px-5 py-2.5 bg-[#C4963C] text-white text-[13px] font-semibold rounded-md hover:bg-[#B08530] transition-all duration-300 shadow-sm hover:shadow-md"
             >
-              Inscribirme
+              Acceso Campus
             </a>
           </nav>
 
@@ -200,11 +202,13 @@ export default function Header() {
             )}
 
             <a
-              href="#eventos"
+              href="https://cursos.institutoascendant.com/library"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="block mt-2 px-4 py-3 bg-[#C4963C] text-white text-center font-semibold rounded-md"
             >
-              Inscribirme
+              Acceso Campus
             </a>
           </nav>
         </div>
