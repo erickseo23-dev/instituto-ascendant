@@ -442,7 +442,7 @@ export default function Home() {
               <button
                 className="w-full py-4 rounded-xl text-base font-bold shadow-lg transition-all hover:scale-[1.02]"
                 style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
-                onClick={() => window.open('https://cursos.institutoascendant.com/offers/Ff9QtXhb', '_blank')}
+                onClick={() => window.open('https://cursos.institutoascendant.com/offers/kzw2EXnF/checkout', '_blank')}
               >
                 Quiero unirme por $150 USD →
               </button>
