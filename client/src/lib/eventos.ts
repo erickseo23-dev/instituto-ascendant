@@ -74,7 +74,7 @@ export const eventos: Event[] = [
     link: "https://www.kshealing.com/club-retiro-sagrado",
     tags: ["retiro-sagrado", "ks-healing", "online"],
     accent: "#7B6B8A",
-    imagen: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/Capturadepantalla2026-05-12ala(s)7.15.13p.m._c425e050.webp",
+    imagen: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/aEmOStczwGCLviCw_d31e8717.webp",
   },
   {
     id: "evento-005",
@@ -95,14 +95,15 @@ export const eventos: Event[] = [
     link: "https://www.kshealing.com/el-libro",
     tags: ["libro", "activacion", "ks-healing"],
     accent: "#C4963C",
+    imagen: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/pQGhYhNxjQqqiwIQ_d8183232.png",
   },
   {
     id: "evento-006",
     title: "Taller de Genética Sagrada",
     description: "Explora la Genética Sagrada y su impacto en tu transformación. Taller especializado en la comprensión profunda de tu código genético energético.",
     date: "2026-05-30",
-    startTime: "09:00",
-    endTime: "17:00",
+    startTime: "",
+    endTime: "",
     timezone: "America/Mexico_City",
     type: "taller",
     format: "online",
@@ -115,6 +116,7 @@ export const eventos: Event[] = [
     link: "https://www.kshealing.com/genetica-sagrada",
     tags: ["taller", "genetica-sagrada", "ks-healing"],
     accent: "#5A7A5A",
+    imagen: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/aa1v2zWj3WLVAQOIDAVvSD-img-1_1770104531000_na1fn_dGFsbGVyLWdlbmV0aWNhLXNhZ3JhZGEtbmV3.png_cdcb018e.webp",
   },
 ];
 
