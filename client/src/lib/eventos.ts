@@ -21,12 +21,13 @@ export interface Event {
   instructor: "yohev" | "claribel" | "otro";
   source: ("kshealing" | "instituto")[];
   location: string;
-  capacity: number | null;
+  capacity: number | string | null;
   price: number | null;
   currency: string;
   link: string;
   tags: string[];
   accent: string;
+  imagen?: string;
 }
 
 // Datos de eventos - Se sincroniza con eventos.json
@@ -37,15 +38,15 @@ export const eventos: Event[] = [
     description: "Únete a una comunidad global de profesionales transformando vidas a través de la Energía KS. Certificación Internacional en 3 módulos intensivos.",
     date: "2026-05-24",
     endDate: "2026-06-07",
-    startTime: "09:00",
-    endTime: "17:00",
+    startTime: "08:00",
+    endTime: "10:00",
     timezone: "America/Mexico_City",
     type: "certificacion",
     format: "online",
     instructor: "yohev",
     source: ["kshealing", "instituto"],
     location: "Online en vivo",
-    capacity: 50,
+    capacity: "cupo limitado",
     price: null,
     currency: "MXN",
     link: "https://kshealing.com",
@@ -58,20 +59,21 @@ export const eventos: Event[] = [
     description: "La primera relación que modeló tu forma de amar y recibir. Sanar el vínculo sin rechazarlo ni idealizarlo. Una experiencia inmersiva de transformación profunda donde experimentarás transmisiones intensivas de Energía KS en comunidad.",
     date: "2026-05-17",
     endDate: "2026-05-17",
-    startTime: "09:00",
-    endTime: "18:00",
+    startTime: "07:00",
+    endTime: "11:00",
     timezone: "America/Mexico_City",
     type: "retiro",
-    format: "presencial",
+    format: "online",
     instructor: "yohev",
     source: ["kshealing", "instituto"],
-    location: "Presencial",
-    capacity: 30,
+    location: "Online en vivo",
+    capacity: "Ilimitada",
     price: null,
     currency: "MXN",
     link: "https://kshealing.com",
-    tags: ["retiro-sagrado", "ks-healing", "presencial"],
+    tags: ["retiro-sagrado", "ks-healing", "online"],
     accent: "#7B6B8A",
+    imagen: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/Capturadepantalla2026-05-12ala(s)7.15.13p.m._c425e050.webp",
   },
 ];
 
