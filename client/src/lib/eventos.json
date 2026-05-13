@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-04-30",
+  "description": "Eventos centralizados para Instituto Ascendant y KS Healing. Fuente única de verdad para todos los eventos.",
+  "events": [
+    {
+      "id": "evento-003",
+      "title": "Certificación Internacional en KS Healing Nivel Básico",
+      "description": "Únete a una comunidad global de profesionales transformando vidas a través de la Energía KS. Certificación Internacional en 3 módulos intensivos.",
+      "date": "2026-04-26",
+      "endDate": "2026-05-10",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "timezone": "America/Mexico_City",
+      "type": "certificacion",
+      "format": "online",
+      "instructor": "yohev",
+      "source": ["kshealing", "instituto"],
+      "location": "Online en vivo",
+      "capacity": 50,
+      "price": null,
+      "currency": "MXN",
+      "link": "https://kshealing.com",
+      "tags": ["certificacion", "ks-healing", "formacion"],
+      "accent": "#5A7A5A"
+    },
+    {
+      "id": "evento-004",
+      "title": "Retiro Sagrado: El Vínculo Materno",
+      "description": "La primera relación que modeló tu forma de amar y recibir. Sanar el vínculo sin rechazarlo ni idealizarlo. Una experiencia inmersiva de transformación profunda donde experimentarás transmisiones intensivas de Energía KS en comunidad.",
+      "date": "2026-05-17",
+      "endDate": "2026-05-17",
+      "startTime": "09:00",
+      "endTime": "18:00",
+      "timezone": "America/Mexico_City",
+      "type": "retiro",
+      "format": "presencial",
+      "instructor": "yohev",
+      "source": ["kshealing", "instituto"],
+      "location": "Presencial",
+      "capacity": 30,
+      "price": null,
+      "currency": "MXN",
+      "link": "https://kshealing.com",
+      "tags": ["retiro-sagrado", "ks-healing", "presencial"],
+      "accent": "#7B6B8A"
+    }
+  ],
+  "instructions": {
+    "es": "Para agregar un evento: 1) Copia la estructura de un evento existente. 2) Actualiza los campos. 3) Asegúrate de incluir 'source' con los sitios donde debe aparecer ('kshealing' y/o 'instituto'). 4) Commit y push a GitHub.",
+    "en": "To add an event: 1) Copy the structure of an existing event. 2) Update the fields. 3) Make sure to include 'source' with the sites where it should appear ('kshealing' and/or 'instituto'). 4) Commit and push to GitHub."
+  }
+}
