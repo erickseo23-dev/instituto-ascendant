@@ -83,7 +83,7 @@ export const AppDownloadSection = () => {
           {/* Right: App Mockup Image */}
           <div className="flex justify-center">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/ascendente-app-mockup-5w7MCmnP29B4H4iwW9mufX.webp" 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/app-mockup-real_07718cf4.png" 
               alt="Ascendente App Mockup" 
               className="w-full max-w-sm lg:max-w-md shadow-2xl rounded-3xl"
             />
