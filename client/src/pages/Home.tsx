@@ -326,10 +326,10 @@ function HeroSection() {
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#C4963C] text-white font-semibold rounded-md hover:bg-[#B08530] transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
               Explorar Programas <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="/recursos-gratuitos"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/15 backdrop-blur-sm text-white font-medium rounded-md border border-white/30 hover:bg-white/25 transition-all duration-300 text-sm sm:text-base">
+            <button disabled
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/15 backdrop-blur-sm text-white font-medium rounded-md border border-white/30 opacity-50 cursor-not-allowed text-sm sm:text-base">
               Recursos Gratuitos
-            </a>
+            </button>
           </div>
         </motion.div>
       </motion.div>
@@ -483,7 +483,7 @@ function FeaturedPrograms() {
                     <p className="text-white/70 text-xs mb-3 line-clamp-2">{course.subtitle}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-white/50 text-xs flex items-center gap-1"><Calendar className="w-3 h-3" /> {course.date}</span>
-                      <a href={course.title === "Taller KS Healing y La Consciencia Crística" ? "https://kshealing.com/taller-ks-healing" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : "#"} className={`inline-flex items-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
+                      <a href={course.title === "KS Healing Systems®" ? "https://www.kshealing.com/ks-healing" : course.title === "DART — Renovación Arquetípica" ? "https://www.kshealing.com/dart" : course.title === "Desarrollo de la Consciencia" ? "https://www.institutoascendant.com/programas" : course.title === "Retiro Sagrado con YOHEV" ? "https://www.kshealing.com/club-retiro-sagrado" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : "#"} className={`inline-flex items-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
                         {course.cta}
                       </a>
                     </div>
@@ -511,7 +511,7 @@ function FeaturedPrograms() {
                     <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {course.date}</span>
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {course.format}</span>
                   </div>
-                  <a href={course.title === "Taller KS Healing y La Consciencia Crística" ? "https://kshealing.com/taller-ks-healing" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : "#"} className={`inline-flex items-center justify-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
+                  <a href={course.title === "KS Healing Systems®" ? "https://www.kshealing.com/ks-healing" : course.title === "DART — Renovación Arquetípica" ? "https://www.kshealing.com/dart" : course.title === "Desarrollo de la Consciencia" ? "https://www.institutoascendant.com/programas" : course.title === "Retiro Sagrado con YOHEV" ? "https://www.kshealing.com/club-retiro-sagrado" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : "#"} className={`inline-flex items-center justify-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
                     {course.cta} <ArrowRight className="w-3 h-3" />
                   </a>
                 </div>
@@ -1100,7 +1100,6 @@ export default function Home() {
       <TestimonialsSection />
       <EventsSection />
       <AppDownloadSection />
-      <ContactForm />
       <Footer />
     </div>
   );

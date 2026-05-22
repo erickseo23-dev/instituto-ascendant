@@ -96,7 +96,7 @@ export const AppDownloadSection = () => {
               <div className="space-y-3 mb-8">
                 {/* App Store */}
                 <a
-                  href="https://apps.apple.com/app/ascendente"
+                  href="https://apps.apple.com/mx/app/ascendente/id6499282237"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-4 bg-[#2D2D2D] text-white rounded-lg hover:bg-[#1A1A1A] transition-all duration-300 shadow-sm hover:shadow-md"
@@ -112,7 +112,7 @@ export const AppDownloadSection = () => {
 
                 {/* Google Play */}
                 <a
-                  href="https://play.google.com/store/apps/details?id=com.institutoascendant.app"
+                  href="https://play.google.com/store/apps/details?id=com.kj101947.app2&pcampaignid=web_share"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-4 bg-[#2D2D2D] text-white rounded-lg hover:bg-[#1A1A1A] transition-all duration-300 shadow-sm hover:shadow-md"
@@ -127,14 +127,7 @@ export const AppDownloadSection = () => {
                 </a>
               </div>
 
-              {/* Free Trial Banner */}
-              <div className="bg-white/50 rounded-lg p-4 text-center">
-                <p className="text-[#2D2D2D]/70 text-sm">
-                  <strong>Primeros 7 días gratis</strong>
-                  <br />
-                  Acceso completo a todo el contenido
-                </p>
-              </div>
+
             </div>
           </div>
         </div>
