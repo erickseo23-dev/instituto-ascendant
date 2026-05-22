@@ -2,7 +2,16 @@ import { useEffect } from 'react';
 import { setSEOMetadata } from '@/config/seo';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Zap, Heart, Lightbulb, Sparkles, ArrowRight } from 'lucide-react';
+
+// CDN Image URLs
+const PROGRAM_IMAGES = {
+  meditacion: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/meditacion-ascendente-hero-SLtjVxBMPoHCU4iNPCCdua.webp',
+  ksHealing: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/ks-healing-energy-aLKeZnSiVzcyLZLvG7gqRf.webp',
+  dart: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/dart-transformation-JcdfABfeFri9HWnKw2zu63.webp',
+  genetica: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/genetica-sagrada-JXbCSt9Stw6qvpv8b8YHNN.webp',
+};
 
 export default function Programas() {
   useEffect(() => {
@@ -121,7 +130,7 @@ export default function Programas() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {programs.map((program) => {
+            {programs.map((program, idx) => {
               const Icon = program.icon;
               const bgClass = {
                 amber: 'from-amber-50 to-white border-amber-100',
@@ -144,18 +153,26 @@ export default function Programas() {
                 indigo: 'bg-indigo-700 hover:bg-indigo-800',
               }[program.color];
 
+              const programImages = [PROGRAM_IMAGES.meditacion, PROGRAM_IMAGES.ksHealing, PROGRAM_IMAGES.dart, PROGRAM_IMAGES.genetica];
+              const programImage = programImages[idx] || '';
+
               return (
                 <a
                   key={program.id}
                   href={program.link}
                   target={program.internal ? '_self' : '_blank'}
                   rel={program.internal ? '' : 'noopener noreferrer'}
-                  className="bg-gradient-to-br rounded-lg p-8 border shadow-sm hover:shadow-md transition-shadow"
-                  style={{
-                    backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
-                  }}
+                  className="group rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                 >
-                  <div className={`bg-gradient-to-br ${bgClass} rounded-lg p-8 h-full border`}>
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={programImage}
+                      alt={program.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+                  <div className={`bg-gradient-to-br ${bgClass} rounded-b-lg p-8 border-x border-b`}>
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <Icon className={`w-10 h-10 ${iconColorClass} mb-4`} />
@@ -175,8 +192,8 @@ export default function Programas() {
                     <div className="mb-8">
                       <p className="text-sm font-semibold text-gray-600 mb-3">Beneficios:</p>
                       <ul className="space-y-2">
-                        {program.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
+                        {program.benefits.map((benefit, bidx) => (
+                          <li key={bidx} className="flex items-start gap-2">
                             <span className={`w-2 h-2 rounded-full ${iconColorClass} mt-2 flex-shrink-0`}></span>
                             <span className="text-gray-700 text-sm">{benefit}</span>
                           </li>
@@ -314,6 +331,8 @@ export default function Programas() {
           </a>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
-}
