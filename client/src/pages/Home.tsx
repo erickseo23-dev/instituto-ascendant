@@ -598,7 +598,7 @@ function CategoriesSection() {
                     <h3 className="font-serif text-2xl lg:text-3xl font-semibold text-[#2D2D2D] mb-3 leading-tight">{cat.title}</h3>
                     <p className="text-[#2D2D2D]/70 text-sm lg:text-base leading-relaxed mb-5 max-w-lg">{cat.description}</p>
                     <div className="flex flex-wrap items-center gap-4">
-                      <a href={cat.title === "Meditación Ascendente®" ? "/meditacion-ascendente" : "/programas"} className="inline-flex items-center gap-2 px-5 py-2.5 text-white font-semibold rounded-md text-sm transition-all duration-300 shadow-sm hover:shadow-md"
+                      <a href={cat.title === "Meditación Ascendente®" ? "/meditacion-ascendente" : cat.title === "KS Healing Systems®" ? "https://www.kshealing.com/" : "/programas"} className="inline-flex items-center gap-2 px-5 py-2.5 text-white font-semibold rounded-md text-sm transition-all duration-300 shadow-sm hover:shadow-md"
                         style={{ backgroundColor: cat.accent }}>
                         Explorar programas <ArrowRight className="w-3.5 h-3.5" />
                       </a>

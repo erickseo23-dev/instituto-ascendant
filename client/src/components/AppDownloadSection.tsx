@@ -80,7 +80,16 @@ export const AppDownloadSection = () => {
             </div>
           </div>
 
-          {/* Right: App Download Card */}
+          {/* Right: App Mockup Image */}
+          <div className="flex justify-center">
+            <img 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/ascendente-app-mockup-5w7MCmnP29B4H4iwW9mufX.webp" 
+              alt="Ascendente App Mockup" 
+              className="w-full max-w-sm lg:max-w-md shadow-2xl rounded-3xl"
+            />
+          </div>
+
+          {/* Left: App Download Card */}
           <div>
             <div className="bg-gradient-to-br from-[#C4963C]/5 to-[#C4963C]/10 rounded-2xl p-8 lg:p-10 border border-[#C4963C]/20">
               {/* App Icon */}
