@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { setSEOMetadata, generateStructuredData } from '@/config/seo';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Zap, Heart, Lightbulb, Users, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function MeditacionAscendente() {
@@ -50,13 +51,13 @@ export default function MeditacionAscendente() {
             <p className="text-gray-600 mb-8">
               Creado por Claribel Puga, la Meditación Ascendente integra neurociencia, claridad pedagógica y profundidad espiritual en un camino de transformación sostenida y aplicable a la vida cotidiana.
             </p>
-            <a
-              href="https://kajabi.com"
-              className="inline-flex items-center gap-2 bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+            <button
+              disabled
+              className="inline-flex items-center gap-2 bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold opacity-50 cursor-not-allowed"
             >
               Comenzar Ahora
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </button>
           </div>
 
           <div className="h-96 bg-gradient-to-br from-amber-200 to-amber-100 rounded-lg flex items-center justify-center">
@@ -356,12 +357,12 @@ export default function MeditacionAscendente() {
                   <span className="text-gray-700">Materiales educativos</span>
                 </li>
               </ul>
-              <a
-                href="https://kajabi.com"
-                className="block text-center bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+              <button
+                disabled
+                className="block w-full text-center bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold opacity-50 cursor-not-allowed"
               >
                 Explorar
-              </a>
+              </button>
             </div>
 
             <div className="bg-gradient-to-br from-amber-50 to-white rounded-lg p-8 border border-amber-100">
@@ -385,12 +386,12 @@ export default function MeditacionAscendente() {
                   <span className="text-gray-700">Círculos de práctica</span>
                 </li>
               </ul>
-              <a
-                href="https://kajabi.com"
-                className="block text-center bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+              <button
+                disabled
+                className="block w-full text-center bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold opacity-50 cursor-not-allowed"
               >
                 Explorar
-              </a>
+              </button>
             </div>
 
             <div className="bg-gradient-to-br from-amber-50 to-white rounded-lg p-8 border border-amber-100">
@@ -414,12 +415,12 @@ export default function MeditacionAscendente() {
                   <span className="text-gray-700">Certificación disponible</span>
                 </li>
               </ul>
-              <a
-                href="https://kajabi.com"
-                className="block text-center bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+              <button
+                disabled
+                className="block w-full text-center bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold opacity-50 cursor-not-allowed"
               >
                 Explorar
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -434,15 +435,18 @@ export default function MeditacionAscendente() {
           <p className="text-amber-100 mb-8 text-lg max-w-2xl mx-auto">
             La Meditación Ascendente es un viaje de transformación progresiva. Cada paso te acerca a mayor claridad, presencia y consciencia.
           </p>
-          <a
-            href="https://kajabi.com"
-            className="inline-flex items-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors"
+          <button
+            disabled
+            className="inline-flex items-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-semibold opacity-50 cursor-not-allowed"
           >
             Explorar Programas
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </button>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
