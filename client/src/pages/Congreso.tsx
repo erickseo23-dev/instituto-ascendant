@@ -16,7 +16,7 @@ const HOTEL_IMGS = [
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-infinity-pool_6643dba7.jpg", alt: "Alberca infinity con vista al mar Caribe" },
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-main-pool_f0d01e0d.jpg",     alt: "Alberca principal con gazebo" },
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-pool-palapas_a825e8e5.jpg", alt: "Alberca con palapas tropicales" },
-  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-aerial-ocean.jpg",           alt: "Vista aérea del resort frente al océano" },
+  { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-aerial-ocean_2b56e43a.jpg",           alt: "Vista aérea del resort frente al océano" },
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-aerial-full_12417a7f.jpg",  alt: "Vista panorámica completa del resort" },
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-waterslides_86603f0a.jpg",  alt: "Toboganes acuáticos del parque acuático" },
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-slides-pool_e79fce76.jpg",  alt: "Área de toboganes y alberca" },
