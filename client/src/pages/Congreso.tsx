@@ -10,6 +10,12 @@ const IMG_PORTADA    = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151
 const IMG_ACTIVIDADES = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/congreso-actividades_63de6650.jpg";
 const IMG_CONVIVENCIA = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/congreso-convivencia_a7cfa9ed.jpg";
 
+// CDN URLs — Cirque du Soleil JOYÀ
+const JOYA_LOGO    = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/joya-logo_47674760.jpg";
+const JOYA_VENUE   = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/joya-venue_bde65075.jpg";
+const JOYA_DINNER  = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/joya-dinner_2b503dbf.jpg";
+const JOYA_VIDEO   = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/WhatsAppVideo2026-06-04at06.11.14_b1b3e14a.mp4";
+
 // CDN URLs — imágenes reales del hotel Dreams Sapphire
 const HOTEL_IMGS = [
   { src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/hotel-aerial-view_616c529c.jpg",   alt: "Vista aérea del resort y la playa" },
@@ -425,7 +431,7 @@ export default function Congreso() {
               {[
                 { num: "1", fecha: "28 de Noviembre — Sábado", titulo: "Cóctel de Bienvenida", desc: "Recepción exclusiva frente al mar. El primer encuentro de la comunidad en un ambiente íntimo y festivo." },
                 { num: "2", fecha: "29 y 30 de Noviembre — Domingo y Lunes", titulo: "Conferencias de Alto Nivel", desc: "Dos días intensivos con la Dra. Claribel Puga y el Dr. Erick Gurrola (YOHEV). Aprendizaje profundo, integración de herramientas y expansión de consciencia." },
-                { num: "3", fecha: "1 de Diciembre — Martes", titulo: "Evento Sorpresa Exclusivo", desc: "Una experiencia única e inolvidable diseñada especialmente para los asistentes. Los detalles se revelarán próximamente." },
+                { num: "3", fecha: "1 de Diciembre — Martes", titulo: "Noche Cirque du Soleil JOYÀ", desc: "Una noche de magia, acrobacia y gastronomía de autor. Viviremos juntos la experiencia Show & Dinner del Cirque du Soleil JOYÀ en VidantaWorld Riviera Maya: pre-show musical en vivo, cena gourmet de tres tiempos con champagne, y la función completa desde butacas exclusivas." },
                 { num: "4", fecha: "2 de Diciembre — Miércoles", titulo: "Desayuno Grupal de Clausura", desc: "Convivencia de agradecimiento y cierre del congreso. Un espacio para integrar lo vivido y celebrar el camino recorrido." },
               ].map(item => (
                 <div key={item.num} className="flex gap-4 sm:gap-8 items-start">
@@ -440,6 +446,108 @@ export default function Congreso() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN JOYÀ */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-[#0f0f1a] overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-10 sm:mb-16">
+            <p className="text-[#c9a84c] text-[10px] sm:text-xs uppercase tracking-[0.4em] mb-4 font-['Montserrat',sans-serif]">
+              Experiencia Exclusiva · 1 de Diciembre
+            </p>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+              Noche Cirque du Soleil
+            </h2>
+            {/* JOYÀ logo image */}
+            <div className="flex justify-center my-6 sm:my-8">
+              <img
+                src={JOYA_LOGO}
+                alt="Cirque du Soleil JOYÀ — Show · Dinner · Experience"
+                className="w-56 sm:w-72 md:w-80 object-contain"
+              />
+            </div>
+            <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Una noche que va más allá del espectáculo. Arte, acrobacia, gastronomía y magia reunidos en un solo lugar, solo en VidantaWorld Riviera Maya.
+            </p>
+          </div>
+
+          {/* Video + descripción */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
+            {/* Video */}
+            <div className="relative aspect-video bg-black rounded-none overflow-hidden border border-white/10">
+              <video
+                src={JOYA_VIDEO}
+                controls
+                playsInline
+                poster={JOYA_VENUE}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Descripción */}
+            <div className="space-y-5 sm:space-y-6">
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                JOYÀ es la única experiencia permanente del Cirque du Soleil en México. Combina acrobacias de clase mundial, una puesta en escena íntima y una cena gourmet de autor en un teatro diseñado especialmente para esta producción.
+              </p>
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                Como parte del 5to Congreso Ascendant, viviremos esta noche juntos: desde el pre-show musical en vivo hasta el último acto, rodeados de la comunidad que hemos construido a lo largo de cinco años.
+              </p>
+              {/* Qué incluye */}
+              <div className="space-y-3 pt-2">
+                {[
+                  { icon: "🎭", text: "Acceso prioritario al teatro" },
+                  { icon: "🎶", text: "Pre-show musical en vivo" },
+                  { icon: "🥂", text: "Media botella de champagne por persona" },
+                  { icon: "🍽️", text: "Cena gourmet de tres tiempos" },
+                  { icon: "🎪", text: "Función completa desde butacas exclusivas" },
+                ].map(item => (
+                  <div key={item.text} className="flex items-center gap-3">
+                    <span className="text-lg flex-shrink-0">{item.icon}</span>
+                    <span className="text-white/80 text-sm sm:text-base">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Imágenes venue + dinner */}
+          <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="relative overflow-hidden group">
+              <img
+                src={JOYA_VENUE}
+                alt="Teatro JOYÀ — VidantaWorld Riviera Maya"
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ height: "280px" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <p className="text-white font-bold text-sm sm:text-base font-['Montserrat',sans-serif]">El Teatro</p>
+                <p className="text-[#c9a84c] text-xs uppercase tracking-widest font-['Montserrat',sans-serif]">VidantaWorld · Riviera Maya</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden group">
+              <img
+                src={JOYA_DINNER}
+                alt="Experiencia Show & Cena JOYÀ"
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ height: "280px" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <p className="text-white font-bold text-sm sm:text-base font-['Montserrat',sans-serif]">Experiencia Show & Cena</p>
+                <p className="text-[#c9a84c] text-xs uppercase tracking-widest font-['Montserrat',sans-serif]">Gastronomía de autor</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quote */}
+          <div className="mt-10 sm:mt-14 border border-[#c9a84c]/30 p-6 sm:p-10 text-center">
+            <p className="text-white/80 text-base sm:text-xl md:text-2xl italic leading-relaxed font-['Cormorant_Garamond',serif] max-w-3xl mx-auto">
+              "Una noche donde el arte y la consciencia se encuentran. Porque celebrar el camino recorrido también es parte de la transformación."
+            </p>
+            <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mt-4 font-['Montserrat',sans-serif]">— 5to Congreso Internacional Ascendant</p>
           </div>
         </div>
       </section>
