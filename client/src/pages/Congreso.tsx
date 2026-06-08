@@ -187,7 +187,7 @@ export default function Congreso() {
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${IMG_PORTADA})` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a12]/70 via-[#0a0a12]/50 to-[#0a0a12]" />
 
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto w-full overflow-hidden">
           <div className="inline-flex items-center gap-2 border border-[#c9a84c]/60 px-4 sm:px-5 py-2 mb-6 sm:mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
             <span className="text-[#c9a84c] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] font-['Montserrat',sans-serif]">
@@ -196,34 +196,33 @@ export default function Congreso() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
           </div>
 
-          <p className="text-[#c9a84c] text-sm sm:text-lg md:text-xl uppercase tracking-[0.3em] sm:tracking-[0.4em] mb-3 sm:mb-4 font-['Montserrat',sans-serif] font-light">
+          <p className="text-[#c9a84c] text-xs sm:text-lg md:text-xl uppercase tracking-[0.15em] sm:tracking-[0.4em] mb-3 sm:mb-4 font-['Montserrat',sans-serif] font-light">
             5to Congreso Internacional
           </p>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none mb-3 sm:mb-4 tracking-tight">
+          <h1 className="text-[clamp(2.5rem,12vw,9rem)] font-bold leading-none mb-3 sm:mb-4 tracking-tight">
             TIEMPO
           </h1>
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none mb-6 sm:mb-8 tracking-tight text-[#c9a84c]">
+          <h1 className="text-[clamp(2.5rem,12vw,9rem)] font-bold leading-none mb-6 sm:mb-8 tracking-tight text-[#c9a84c]">
             DE FE
           </h1>
-          <p className="text-white/70 text-xs sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-8 sm:mb-12 font-['Montserrat',sans-serif]">
+          <p className="text-white/70 text-[10px] sm:text-base md:text-lg uppercase tracking-[0.08em] sm:tracking-[0.3em] mb-8 sm:mb-12 font-['Montserrat',sans-serif] px-2">
             Para el Crecimiento de la Consciencia Creadora
           </p>
 
           {/* Fecha y lugar */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
             <div className="text-center">
-              <p className="text-[#c9a84c] text-[10px] sm:text-xs uppercase tracking-[0.3em] mb-1 font-['Montserrat',sans-serif]">Fecha</p>
-              <p className="text-white text-base sm:text-lg font-semibold font-['Montserrat',sans-serif]">28 Nov – 2 Dic, 2026</p>
+              <p className="text-[#c9a84c] text-[9px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.3em] mb-1 font-['Montserrat',sans-serif]">Fecha</p>
+              <p className="text-white text-sm sm:text-lg font-semibold font-['Montserrat',sans-serif]">28 Nov – 2 Dic, 2026</p>
             </div>
             <div className="hidden sm:block w-px h-10 bg-white/20" />
             <div className="text-center">
-              <p className="text-[#c9a84c] text-[10px] sm:text-xs uppercase tracking-[0.3em] mb-1 font-['Montserrat',sans-serif]">Sede</p>
-              <p className="text-white text-base sm:text-lg font-semibold font-['Montserrat',sans-serif]">Dreams Sapphire Resort & Spa</p>
-            </div>
+              <p className="text-[#c9a84c] text-[9px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.3em] mb-1 font-['Montserrat',sans-serif]">Sede</p>
+              <p className="text-white text-sm sm:text-lg font-semibold font-['Montserrat',sans-serif]">Dreams Sapphire Resort &amp; Spa</p>         </div>
             <div className="hidden sm:block w-px h-10 bg-white/20" />
             <div className="text-center">
-              <p className="text-[#c9a84c] text-[10px] sm:text-xs uppercase tracking-[0.3em] mb-1 font-['Montserrat',sans-serif]">Destino</p>
-              <p className="text-white text-base sm:text-lg font-semibold font-['Montserrat',sans-serif]">Cancún, México</p>
+              <p className="text-[#c9a84c] text-[9px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.3em] mb-1 font-['Montserrat',sans-serif]">Destino</p>
+              <p className="text-white text-sm sm:text-lg font-semibold font-['Montserrat',sans-serif]">Cancún, México</p>
             </div>
           </div>
 
