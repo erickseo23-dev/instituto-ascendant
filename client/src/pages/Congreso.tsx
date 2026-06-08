@@ -183,11 +183,11 @@ export default function Congreso() {
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16" style={{maxWidth:'100vw'}}>
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${IMG_PORTADA})` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a12]/70 via-[#0a0a12]/50 to-[#0a0a12]" />
 
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto w-full overflow-hidden">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto w-full" style={{maxWidth:'min(80rem,100vw)',overflowX:'hidden'}}>
           <div className="inline-flex items-center gap-2 border border-[#c9a84c]/60 px-4 sm:px-5 py-2 mb-6 sm:mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
             <span className="text-[#c9a84c] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] font-['Montserrat',sans-serif]">
@@ -196,7 +196,7 @@ export default function Congreso() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
           </div>
 
-          <p className="text-[#c9a84c] text-xs sm:text-lg md:text-xl uppercase tracking-[0.15em] sm:tracking-[0.4em] mb-3 sm:mb-4 font-['Montserrat',sans-serif] font-light">
+          <p className="text-[#c9a84c] text-[10px] sm:text-lg md:text-xl uppercase tracking-[0.05em] sm:tracking-[0.4em] mb-3 sm:mb-4 font-['Montserrat',sans-serif] font-light break-words">
             5to Congreso Internacional
           </p>
           <h1 className="text-[clamp(2.5rem,12vw,9rem)] font-bold leading-none mb-3 sm:mb-4 tracking-tight">
@@ -205,7 +205,7 @@ export default function Congreso() {
           <h1 className="text-[clamp(2.5rem,12vw,9rem)] font-bold leading-none mb-6 sm:mb-8 tracking-tight text-[#c9a84c]">
             DE FE
           </h1>
-          <p className="text-white/70 text-[10px] sm:text-base md:text-lg uppercase tracking-[0.08em] sm:tracking-[0.3em] mb-8 sm:mb-12 font-['Montserrat',sans-serif] px-2">
+          <p className="text-white/70 text-[9px] sm:text-base md:text-lg uppercase tracking-[0.03em] sm:tracking-[0.3em] mb-8 sm:mb-12 font-['Montserrat',sans-serif] px-2 break-words">
             Para el Crecimiento de la Consciencia Creadora
           </p>
 
@@ -230,7 +230,7 @@ export default function Congreso() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#c9a84c] text-[#0a0a12] px-8 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] font-['Montserrat',sans-serif] hover:bg-[#e0bf6a] transition-colors"
+            className="inline-flex items-center gap-3 bg-[#c9a84c] text-[#0a0a12] px-6 sm:px-10 py-3 sm:py-4 text-[10px] sm:text-sm font-bold uppercase tracking-[0.1em] sm:tracking-[0.3em] font-['Montserrat',sans-serif] hover:bg-[#e0bf6a] transition-colors"
           >
             <WaIcon size={18} />
             Quiero Información
