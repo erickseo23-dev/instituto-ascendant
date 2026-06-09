@@ -174,7 +174,7 @@ export default function SolicitudBeca() {
           >
             Solicita tu Apoyo Educativo
           </h1>
-          <p className="text-base md:text-lg leading-relaxed" style={{ color: "rgba(26,26,46,0.65)" }}>
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: "#4b5563" }}>
             Completa el formulario con honestidad y precisión. Nuestro equipo
             revisará tu solicitud y te contactará en un plazo de{" "}
             <strong style={{ color: "#b8860b" }}>3 a 5 días hábiles</strong>.
@@ -210,7 +210,7 @@ export default function SolicitudBeca() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-center mt-6" style={{ color: "rgba(26,26,46,0.35)" }}>
+          <p className="text-xs text-center mt-6" style={{ color: "#9ca3af" }}>
             La disponibilidad es limitada. Las solicitudes se evalúan en orden de recepción.
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function SolicitudBeca() {
             style={{ borderColor: "#b8860b", background: "#fffbf0" }}
           >
             <span className="text-lg mt-0.5" style={{ color: "#b8860b" }}>🔒</span>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(26,26,46,0.7)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
               <strong style={{ color: "#1a1a2e" }}>Confidencialidad:</strong> La información que
               compartes en este formulario es estrictamente confidencial y se utiliza únicamente
               para evaluar la elegibilidad del apoyo educativo. No afecta tu calificación
@@ -236,7 +236,7 @@ export default function SolicitudBeca() {
             style={{ borderColor: "#d1c4a0", background: "#fafaf8" }}
           >
             <span className="text-lg mt-0.5" style={{ color: "#b8860b" }}>✦</span>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(26,26,46,0.7)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
               <strong style={{ color: "#1a1a2e" }}>Sobre las preguntas de motivación:</strong> Las
               becas están destinadas a personas con genuino interés en completar su formación.
               Tómate el tiempo necesario para responder con profundidad y honestidad — tus
@@ -262,7 +262,7 @@ export default function SolicitudBeca() {
               <h2 className="font-serif text-2xl md:text-3xl mb-4" style={{ color: "#1a1a2e" }}>
                 Tu solicitud fue enviada
               </h2>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "rgba(26,26,46,0.65)" }}>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "#4b5563" }}>
                 Gracias por tomarte el tiempo de compartir tu historia con nosotros.
                 Nuestro equipo revisará tu solicitud y te contactará en un plazo de{" "}
                 <strong style={{ color: "#b8860b" }}>3 a 5 días hábiles</strong>.
@@ -428,7 +428,7 @@ export default function SolicitudBeca() {
 
                 <div>
                   <label style={labelStyle}>¿Por qué deseas tomar este programa en este momento de tu vida? {requiredMark}</label>
-                  <p className="text-xs mb-2" style={{ color: "rgba(26,26,46,0.4)" }}>
+                  <p className="text-xs mb-2" style={{ color: "#9ca3af" }}>
                     Esta es la parte más importante de tu solicitud. Tómate el tiempo necesario.
                   </p>
                   <textarea
@@ -451,7 +451,7 @@ export default function SolicitudBeca() {
                 <p className="text-xs tracking-[0.2em] uppercase" style={{ color: "#b8860b" }}>
                   04 — Compromisos
                 </p>
-                <p className="text-sm" style={{ color: "rgba(26,26,46,0.5)" }}>
+                <p className="text-sm" style={{ color: "#6b7280" }}>
                   Todos los campos son obligatorios.
                 </p>
 
@@ -533,7 +533,7 @@ export default function SolicitudBeca() {
                 >
                   {status === "submitting" ? "Enviando..." : "Enviar mi Solicitud de Beca"}
                 </button>
-                <p className="text-xs mt-4" style={{ color: "rgba(26,26,46,0.3)" }}>
+                <p className="text-xs mt-4" style={{ color: "#9ca3af" }}>
                   Debes aceptar todos los compromisos para enviar tu solicitud.
                 </p>
               </div>
