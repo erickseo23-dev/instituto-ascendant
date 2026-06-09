@@ -2,9 +2,31 @@
 // Estilo: mismo lenguaje visual que Becas.tsx — fondo oscuro #0f1520, dorado ámbar, serif elegante
 // Estructura: Hero compacto → resumen del programa → embed de Kajabi → footer de compromiso
 
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
+
+// Kajabi form embed — injects the external script once on mount
+function KajabiForm() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://cursos.institutoascendant.com/forms/2149608136/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div
+      id="kajabi-form-container"
+      className="py-6 px-4"
+      style={{ minHeight: "400px" }}
+    />
+  );
+}
 
 const PROGRAMS = [
   { name: "KS Healing Básico",   beca: "$2,000 MXN", student: "$1,999 MXN" },
@@ -144,51 +166,7 @@ export default function SolicitudBeca() {
             className="border p-2"
             style={{ borderColor: "rgba(201,162,39,0.25)" }}
           >
-            {/* ── REEMPLAZA ESTE BLOQUE CON EL CÓDIGO EMBED DE KAJABI ──────
-                Ejemplo:
-                <div dangerouslySetInnerHTML={{ __html: `<script src="..."></script><div id="kajabi-form-..."></div>` }} />
-                ─────────────────────────────────────────────────────────── */}
-            <div
-              className="flex flex-col items-center justify-center py-24 text-center"
-              style={{
-                background: "rgba(255,255,255,0.02)",
-                minHeight: "480px",
-              }}
-            >
-              <div
-                className="w-12 h-px mb-8"
-                style={{ background: "#c9a227" }}
-              />
-              <p
-                className="font-serif text-2xl mb-3"
-                style={{ color: "#f5f0e8" }}
-              >
-                Formulario en preparación
-              </p>
-              <p
-                className="text-sm max-w-sm leading-relaxed"
-                style={{ color: "rgba(245,240,232,0.5)" }}
-              >
-                El formulario de solicitud estará disponible muy pronto.
-                Mientras tanto, puedes escribirnos directamente por WhatsApp.
-              </p>
-              <a
-                href="https://wa.me/525512345678"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-block px-8 py-3 text-sm font-semibold tracking-wider uppercase transition-all duration-300 hover:opacity-80"
-                style={{
-                  background: "#c9a227",
-                  color: "#0f1520",
-                }}
-              >
-                Contactar por WhatsApp
-              </a>
-              <div
-                className="w-12 h-px mt-8"
-                style={{ background: "#c9a227" }}
-              />
-            </div>
+            <KajabiForm />
           </div>
         </div>
       </section>
