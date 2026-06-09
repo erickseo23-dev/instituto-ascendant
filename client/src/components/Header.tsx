@@ -29,15 +29,18 @@ const navLinks = [
 
 interface HeaderProps {
   hideNav?: boolean;
+  forceLight?: boolean;
 }
 
-export default function Header({ hideNav = false }: HeaderProps) {
-  const [scrolled, setScrolled] = useState(false);
+export default function Header({ hideNav = false, forceLight = false }: HeaderProps) {
+  const [scrolledState, setScrolledState] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
+  const scrolled = forceLight || scrolledState;
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolledState(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

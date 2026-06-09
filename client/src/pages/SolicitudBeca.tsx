@@ -153,7 +153,7 @@ export default function SolicitudBeca() {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "#f8f7f4", color: "#1a1a2e" }}>
-      <Header />
+      <Header forceLight />
 
       {/* ── HERO COMPACTO ─────────────────────────────────────────────────── */}
       <section className="pt-32 pb-12 px-6 text-center" style={{ borderBottom: "1px solid #e5e0d8", background: "#ffffff" }}>
@@ -183,7 +183,7 @@ export default function SolicitudBeca() {
       </section>
 
       {/* ── RESUMEN DE APOYOS ─────────────────────────────────────────────── */}
-      <section className="pb-16 px-6">
+      <section className="py-12 px-6" style={{ background: "#fdf8f0" }}>
         <div className="max-w-3xl mx-auto">
           <p
             className="text-xs tracking-[0.2em] uppercase text-center mb-8"
@@ -196,7 +196,7 @@ export default function SolicitudBeca() {
               <div
                 key={p.name}
                 className="border p-6"
-                style={{ borderColor: "#e5e0d8", background: "#ffffff" }}
+                style={{ borderColor: "#d4b896", background: "#fffdf7", boxShadow: "0 1px 4px rgba(180,130,50,0.08)" }}
               >
                 <p className="font-serif text-base font-semibold mb-3" style={{ color: "#1a1a2e" }}>{p.name}</p>
                 <div className="flex justify-between text-sm">
