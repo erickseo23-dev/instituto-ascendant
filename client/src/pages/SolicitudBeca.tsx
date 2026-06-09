@@ -8,6 +8,62 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 
+const COUNTRIES: [string, string][] = [
+  ["US", "Estados Unidos"], ["CA", "Canadá"], ["GB", "Reino Unido"], ["AU", "Australia"],
+  ["DE", "Alemania"], ["AF", "Afganistán"], ["AL", "Albania"], ["DZ", "Algeria"],
+  ["AD", "Andorra"], ["AO", "Angola"], ["AI", "Anguila"], ["AQ", "Antártida"],
+  ["AG", "Antigua y Barbuda"], ["SA", "Arabia Saudí"], ["AR", "Argentina"],
+  ["AM", "Armenia"], ["AW", "Aruba"], ["AT", "Austria"], ["AZ", "Azerbaiyán"],
+  ["BS", "Bahamas"], ["BD", "Bangladés"], ["BB", "Barbados"], ["BH", "Baréin"],
+  ["BY", "Bielorrusia"], ["BZ", "Belice"], ["BE", "Bélgica"], ["BJ", "Benín"],
+  ["BT", "Bután"], ["BO", "Bolivia"], ["BA", "Bosnia y Herzegovina"],
+  ["BW", "Botsuana"], ["BR", "Brasil"], ["BN", "Brunéi"], ["BG", "Bulgaria"],
+  ["BF", "Burkina Faso"], ["BI", "Burundi"], ["CV", "Cabo Verde"],
+  ["KH", "Camboya"], ["CM", "Camerún"], ["QA", "Catar"], ["TD", "Chad"],
+  ["CL", "Chile"], ["CN", "China"], ["CY", "Chipre"], ["CO", "Colombia"],
+  ["KM", "Comores, Islas"], ["CG", "Congo"], ["CD", "Congo, República Democrática del"],
+  ["CR", "Costa Rica"], ["CI", "Costa de Marfíl"], ["HR", "Croacia"], ["CU", "Cuba"],
+  ["CW", "Curazao"], ["DK", "Dinamarca"], ["DM", "Dominica"], ["EC", "Ecuador"],
+  ["EG", "Egipto"], ["SV", "El Salvador"], ["AE", "Emiratos Árabes Unidos"],
+  ["ER", "Eritrea"], ["SK", "Eslovaquia"], ["SI", "Eslovenia"], ["ES", "España"],
+  ["EE", "Estonia"], ["SZ", "Esuatini"], ["ET", "Etiopía"], ["RU", "Federación Rusa"],
+  ["PH", "Filipinas"], ["FI", "Finlandia"], ["FJ", "Fiyi"], ["FR", "Francia"],
+  ["GA", "Gabón"], ["GM", "Gambia"], ["GE", "Georgia"], ["GH", "Ghana"],
+  ["GI", "Gibraltar"], ["GD", "Granada"], ["GR", "Grecia"], ["GL", "Groenlandia"],
+  ["GT", "Guatemala"], ["GN", "Guinea"], ["GQ", "Guinea Ecuatorial"],
+  ["GW", "Guinea-Bisáu"], ["GY", "Guyana"], ["HT", "Haití"], ["HN", "Honduras"],
+  ["HK", "Hong Kong"], ["HU", "Hungría"], ["IN", "India"], ["ID", "Indonesia"],
+  ["IQ", "Irak"], ["IR", "Irán"], ["IE", "Irlanda"], ["IS", "Islandia"],
+  ["IL", "Israel"], ["IT", "Italia"], ["JM", "Jamaica"], ["JP", "Japón"],
+  ["JO", "Jordania"], ["KZ", "Kazajistán"], ["KE", "Kenia"], ["KG", "Kirguistán"],
+  ["KI", "Kiribati"], ["KW", "Kuwait"], ["LS", "Lesoto"], ["LV", "Letonia"],
+  ["LB", "Líbano"], ["LR", "Liberia"], ["LY", "Libia"], ["LI", "Liechtenstein"],
+  ["LT", "Lituania"], ["LU", "Luxemburgo"], ["MK", "Macedonia del Norte"],
+  ["MG", "Madagascar"], ["MY", "Malasia"], ["MW", "Malaui"], ["ML", "Malí"],
+  ["MT", "Malta"], ["MA", "Marruecos"], ["MU", "Mauricio"], ["MR", "Mauritania"],
+  ["MX", "México"], ["FM", "Micronesia"], ["MD", "Moldavia"], ["MC", "Mónaco"],
+  ["MN", "Mongolia"], ["ME", "Montenegro"], ["MZ", "Mozambique"], ["NA", "Namibia"],
+  ["NR", "Nauru"], ["NP", "Nepal"], ["NI", "Nicaragua"], ["NE", "Níger"],
+  ["NG", "Nigeria"], ["NO", "Noruega"], ["NZ", "Nueva Zelanda"], ["OM", "Omán"],
+  ["NL", "Países Bajos"], ["PK", "Pakistán"], ["PA", "Panamá"],
+  ["PG", "Papúa Nueva Guinea"], ["PY", "Paraguay"], ["PE", "Perú"],
+  ["PL", "Polonia"], ["PT", "Portugal"], ["PR", "Puerto Rico"],
+  ["CF", "República Centroafricana"], ["DO", "República Dominicana"],
+  ["RW", "Ruanda"], ["RO", "Rumanía"], ["WS", "Samoa"], ["SM", "San Marino"],
+  ["VC", "San Vicente y las Granadinas"], ["LC", "Santa Lucía"],
+  ["ST", "Santo Tomé y Príncipe"], ["SN", "Senegal"], ["RS", "Serbia"],
+  ["SC", "Seychelles"], ["SL", "Sierra Leona"], ["SG", "Singapur"],
+  ["SO", "Somalia"], ["LK", "Sri Lanka"], ["ZA", "Sudáfrica"], ["SD", "Sudán"],
+  ["SS", "Sudán del Sur"], ["SE", "Suecia"], ["CH", "Suiza"], ["SR", "Surinam"],
+  ["TH", "Tailandia"], ["TW", "Taiwán"], ["TZ", "Tanzania"], ["TJ", "Tayikistán"],
+  ["TL", "Timor Oriental"], ["TG", "Togo"], ["TO", "Tonga"],
+  ["TT", "Trinidad y Tobago"], ["TN", "Túnez"], ["TM", "Turkmenistán"],
+  ["TR", "Turquía"], ["TV", "Tuvalu"], ["UA", "Ucrania"], ["UG", "Uganda"],
+  ["UY", "Uruguay"], ["UZ", "Uzbekistán"], ["VU", "Vanuatu"],
+  ["VE", "Venezuela"], ["VN", "Vietnam"], ["YE", "Yemen"], ["ZM", "Zambia"],
+  ["ZW", "Zimbabue"],
+];
+
 const PROGRAMS = [
   { name: "KS Healing Básico",   beca: "$2,000 MXN", student: "$1,999 MXN" },
   { name: "KS Healing Avanzado", beca: "$2,500 MXN", student: "$5,000 MXN" },
@@ -262,21 +318,24 @@ export default function SolicitudBeca() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label style={labelStyle}>País de residencia</label>
-                    <input
-                      type="text"
+                    <select
                       name="form_submission[custom_102]"
-                      placeholder="México"
-                      style={inputStyle}
+                      style={{ ...inputStyle, cursor: "pointer" }}
                       onFocus={(e) => (e.target.style.borderColor = "#c9a227")}
                       onBlur={(e) => (e.target.style.borderColor = "rgba(201,162,39,0.25)")}
-                    />
+                    >
+                      <option value="" style={{ background: "#0f1520" }}>Selecciona tu país</option>
+                      {COUNTRIES.map(([code, name]) => (
+                        <option key={code} value={name} style={{ background: "#0f1520" }}>{name}</option>
+                      ))}
+                    </select>
                   </div>
                   <div>
                     <label style={labelStyle}>Ciudad</label>
                     <input
                       type="text"
                       name="form_submission[address_city]"
-                      placeholder="Ciudad de México"
+                      placeholder="Tu ciudad"
                       style={inputStyle}
                       onFocus={(e) => (e.target.style.borderColor = "#c9a227")}
                       onBlur={(e) => (e.target.style.borderColor = "rgba(201,162,39,0.25)")}
