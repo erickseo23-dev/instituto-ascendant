@@ -184,7 +184,16 @@ export default function Congreso() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16" style={{maxWidth:'100vw'}}>
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${IMG_PORTADA})` }} />
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: `url(${IMG_PORTADA})`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+          }}
+        />
+        {/* Overlay extra en móvil para ocultar el texto de la imagen que se desborda */}
+        <div className="absolute top-0 left-0 right-0 h-[160px] sm:hidden bg-gradient-to-b from-[#0a0a12] via-[#0a0a12]/95 to-transparent z-[1]" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a12]/70 via-[#0a0a12]/50 to-[#0a0a12]" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto w-full" style={{maxWidth:'min(80rem,100vw)',overflowX:'hidden'}}>
