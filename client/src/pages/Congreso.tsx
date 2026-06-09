@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 const WHATSAPP_URL = "https://wa.me/5215515944964?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%205to%20congreso%20Ascendant";
 
 // CDN URLs — imágenes reales del PDF (congresos anteriores)
-const IMG_PORTADA    = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/congreso-portada_0c278206.jpg";
+const IMG_PORTADA    = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/oPtIqxqcVusIlELE.jpg";
 const IMG_ACTIVIDADES = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/congreso-actividades_63de6650.jpg";
 const IMG_CONVIVENCIA = "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/congreso-convivencia_a7cfa9ed.jpg";
 
@@ -192,8 +192,6 @@ export default function Congreso() {
             backgroundSize: 'cover',
           }}
         />
-        {/* Overlay extra en móvil para ocultar el texto de la imagen que se desborda */}
-        <div className="absolute top-0 left-0 right-0 h-[160px] sm:hidden bg-gradient-to-b from-[#0a0a12] via-[#0a0a12]/95 to-transparent z-[1]" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a12]/70 via-[#0a0a12]/50 to-[#0a0a12]" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto w-full" style={{maxWidth:'min(80rem,100vw)',overflowX:'hidden'}}>
@@ -205,9 +203,15 @@ export default function Congreso() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
           </div>
 
-          <p className="text-[#c9a84c] text-[10px] sm:text-lg md:text-xl uppercase tracking-[0.05em] sm:tracking-[0.4em] mb-3 sm:mb-4 font-['Montserrat',sans-serif] font-light break-words">
-            5to Congreso Internacional
-          </p>
+          {/* Título grande de la imagen — ahora como HTML responsivo */}
+          <div className="mb-4 sm:mb-6">
+            <p className="text-white text-[clamp(1rem,5vw,2.8rem)] font-bold leading-tight font-['Montserrat',sans-serif] break-words px-2">
+              5to Congreso Internacional Ascendant
+            </p>
+            <p className="text-[#4dd9c0] text-[clamp(0.65rem,3vw,1.4rem)] font-medium font-['Montserrat',sans-serif] mt-1 break-words px-2">
+              Dreams Sapphire Resort, Cancún | 28 de noviembre – 2 de diciembre, 2026
+            </p>
+          </div>
           <h1 className="text-[clamp(2.5rem,12vw,9rem)] font-bold leading-none mb-3 sm:mb-4 tracking-tight">
             TIEMPO
           </h1>
