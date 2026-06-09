@@ -107,6 +107,36 @@ export default function SolicitudBeca() {
         </div>
       </section>
 
+      {/* ── LEYENDAS CONTEXTUALES ─────────────────────────────────────────── */}
+      <section className="pb-10 px-6">
+        <div className="max-w-3xl mx-auto space-y-4">
+          <div
+            className="flex gap-4 p-5 border-l-2"
+            style={{ borderColor: "#c9a227", background: "rgba(201,162,39,0.06)" }}
+          >
+            <span className="text-lg mt-0.5" style={{ color: "#c9a227" }}>🔒</span>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.7)" }}>
+              <strong style={{ color: "#f5f0e8" }}>Confidencialidad:</strong> La información que
+              compartes en este formulario es estrictamente confidencial y se utiliza únicamente
+              para evaluar la elegibilidad del apoyo educativo. No afecta tu calificación
+              académica ni tu acceso al programa.
+            </p>
+          </div>
+          <div
+            className="flex gap-4 p-5 border-l-2"
+            style={{ borderColor: "rgba(201,162,39,0.4)", background: "rgba(255,255,255,0.02)" }}
+          >
+            <span className="text-lg mt-0.5" style={{ color: "#c9a227" }}>✦</span>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(245,240,232,0.7)" }}>
+              <strong style={{ color: "#f5f0e8" }}>Sobre las preguntas de motivación:</strong> Las
+              becas están destinadas a personas con genuino interés en completar su formación.
+              Tómate el tiempo necesario para responder con profundidad y honestidad — tus
+              respuestas son la parte más importante de la solicitud.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── FORMULARIO KAJABI EMBED ───────────────────────────────────────── */}
       <section className="pb-24 px-6">
         <div className="max-w-3xl mx-auto">
