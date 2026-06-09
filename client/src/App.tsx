@@ -22,6 +22,7 @@ import Contacto from "./pages/Contacto";
 import Eventos from "./pages/Eventos";
 import Congreso from "./pages/Congreso";
 import Becas from "./pages/Becas";
+import SolicitudBeca from "./pages/SolicitudBeca";
 
 
 function Router() {
@@ -45,6 +46,7 @@ function Router() {
       <Route path={"/eventos"} component={Eventos} />
       <Route path={"/congreso"} component={Congreso} />
       <Route path={"/becas"} component={Becas} />
+      <Route path={"/becas/solicitud"} component={SolicitudBeca} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
