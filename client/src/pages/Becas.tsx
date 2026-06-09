@@ -195,7 +195,7 @@ export default function Becas() {
           <p className="text-white/60 text-base md:text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
             Instituto Ascendant ha destinado más de
           </p>
-          <div className="text-white mb-4" style={{ fontSize: "clamp(3rem, 10vw, 7rem)", lineHeight: 1, fontFamily: "system-ui, -apple-system, 'Helvetica Neue', sans-serif", fontWeight: 700 }}>
+          <div className="text-white mb-4" style={{ fontSize: "clamp(3rem, 10vw, 7rem)", lineHeight: 1, fontFamily: "'EB Garamond', Georgia, serif", fontWeight: 700 }}>
             <span className="text-amber-400">$1,000,000</span>
           </div>
           <p className="text-white/50 text-sm md:text-base mb-2">USD en valor educativo potencial</p>
@@ -212,7 +212,7 @@ export default function Becas() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-amber-400 font-bold mb-1" style={{ fontSize: "clamp(1.8rem, 5vw, 3rem)", fontFamily: "system-ui, -apple-system, 'Helvetica Neue', sans-serif" }}>
+                <div className="text-amber-400 font-bold mb-1" style={{ fontSize: "clamp(1.8rem, 5vw, 3rem)", fontFamily: "'EB Garamond', Georgia, serif" }}>
                   {stat.prefix || ""}
                   <AnimatedNumber target={stat.value} />
                   {stat.suffix}
