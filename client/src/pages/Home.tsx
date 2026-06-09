@@ -1014,6 +1014,35 @@ function CTASection() {
   );
 }
 
+/* ─── BECAS BANNER ─── */
+function BecasBanner() {
+  return (
+    <section className="bg-gradient-to-r from-[#0f1520] to-[#1a2035] py-16 px-6">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="text-center md:text-left">
+          <p className="text-amber-400/70 text-xs tracking-[0.2em] uppercase mb-2">Nuevo Programa</p>
+          <h2 className="font-serif text-white text-2xl md:text-3xl mb-3">
+            Programa Becas Ascendant®
+          </h2>
+          <p className="text-white/60 text-base max-w-xl leading-relaxed">
+            ¿Sabías que puedes acceder a nuestros programas con un apoyo educativo de hasta{" "}
+            <span className="text-amber-400 font-semibold">$19,000 MXN</span>? Facilitamos el acceso
+            a la formación para quienes están listos para crecer.
+          </p>
+        </div>
+        <div className="flex-shrink-0">
+          <a
+            href="/becas"
+            className="inline-block bg-amber-500 hover:bg-amber-400 text-white font-semibold tracking-wider uppercase text-sm px-10 py-4 transition-all duration-300 whitespace-nowrap"
+          >
+            Conocer el Programa
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── FOOTER ─── */
 function Footer() {
   return (
@@ -1100,6 +1129,7 @@ export default function Home() {
       <TestimonialsSection />
       <EventsSection />
       <AppDownloadSection />
+      <BecasBanner />
       <Footer />
     </div>
   );
