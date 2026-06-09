@@ -74,24 +74,24 @@ const PROGRAMS = [
 // Shared input/select/textarea styles
 const inputStyle: React.CSSProperties = {
   background: "#ffffff",
-  border: "1px solid #d1d5db",
+  border: "1.5px solid #c4c9d4",
   color: "#1a1a2e",
   borderRadius: "4px",
-  padding: "0.75rem 1rem",
+  padding: "0.85rem 1rem",
   width: "100%",
-  fontSize: "0.9rem",
+  fontSize: "1rem",
   outline: "none",
   transition: "border-color 0.2s, box-shadow 0.2s",
 };
 
 const labelStyle: React.CSSProperties = {
   display: "block",
-  fontSize: "0.75rem",
-  letterSpacing: "0.1em",
+  fontSize: "0.8rem",
+  letterSpacing: "0.08em",
   textTransform: "uppercase",
-  color: "#6b7280",
-  marginBottom: "0.4rem",
-  fontWeight: 600,
+  color: "#1a1a2e",
+  marginBottom: "0.5rem",
+  fontWeight: 700,
 };
 
 const requiredMark = <span style={{ color: "#b8860b" }}>*</span>;
@@ -174,7 +174,7 @@ export default function SolicitudBeca() {
           >
             Solicita tu Apoyo Educativo
           </h1>
-          <p className="text-base md:text-lg leading-relaxed" style={{ color: "#4b5563" }}>
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: "#1f2937" }}>
             Completa el formulario con honestidad y precisión. Nuestro equipo
             revisará tu solicitud y te contactará en un plazo de{" "}
             <strong style={{ color: "#b8860b" }}>3 a 5 días hábiles</strong>.
@@ -198,19 +198,19 @@ export default function SolicitudBeca() {
                 className="border p-6"
                 style={{ borderColor: "#e5e0d8", background: "#ffffff" }}
               >
-                <p className="font-serif text-base mb-3" style={{ color: "#1a1a2e" }}>{p.name}</p>
+                <p className="font-serif text-base font-semibold mb-3" style={{ color: "#1a1a2e" }}>{p.name}</p>
                 <div className="flex justify-between text-sm">
-                  <span style={{ color: "#6b7280" }}>Apoyo del Instituto</span>
+                  <span style={{ color: "#374151", fontWeight: 600 }}>Apoyo del Instituto</span>
                   <span style={{ color: "#b8860b" }} className="font-semibold">{p.beca}</span>
                 </div>
                 <div className="flex justify-between text-sm mt-1">
-                  <span style={{ color: "#6b7280" }}>Tu inversión</span>
+                  <span style={{ color: "#374151", fontWeight: 600 }}>Tu inversión</span>
                   <span style={{ color: "#1a1a2e" }}>{p.student}</span>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-center mt-6" style={{ color: "#9ca3af" }}>
+          <p className="text-xs md:text-sm text-center mt-6" style={{ color: "#374151" }}>
             La disponibilidad es limitada. Las solicitudes se evalúan en orden de recepción.
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function SolicitudBeca() {
             style={{ borderColor: "#b8860b", background: "#fffbf0" }}
           >
             <span className="text-lg mt-0.5" style={{ color: "#b8860b" }}>🔒</span>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+            <p className="text-sm md:text-base leading-relaxed" style={{ color: "#111827" }}>
               <strong style={{ color: "#1a1a2e" }}>Confidencialidad:</strong> La información que
               compartes en este formulario es estrictamente confidencial y se utiliza únicamente
               para evaluar la elegibilidad del apoyo educativo. No afecta tu calificación
@@ -236,7 +236,7 @@ export default function SolicitudBeca() {
             style={{ borderColor: "#d1c4a0", background: "#fafaf8" }}
           >
             <span className="text-lg mt-0.5" style={{ color: "#b8860b" }}>✦</span>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
+            <p className="text-sm md:text-base leading-relaxed" style={{ color: "#111827" }}>
               <strong style={{ color: "#1a1a2e" }}>Sobre las preguntas de motivación:</strong> Las
               becas están destinadas a personas con genuino interés en completar su formación.
               Tómate el tiempo necesario para responder con profundidad y honestidad — tus
@@ -262,7 +262,7 @@ export default function SolicitudBeca() {
               <h2 className="font-serif text-2xl md:text-3xl mb-4" style={{ color: "#1a1a2e" }}>
                 Tu solicitud fue enviada
               </h2>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "#4b5563" }}>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "#1a1a2e" }}>
                 Gracias por tomarte el tiempo de compartir tu historia con nosotros.
                 Nuestro equipo revisará tu solicitud y te contactará en un plazo de{" "}
                 <strong style={{ color: "#b8860b" }}>3 a 5 días hábiles</strong>.
@@ -270,7 +270,7 @@ export default function SolicitudBeca() {
               <Link
                 href="/becas"
                 className="inline-block text-xs tracking-widest uppercase underline underline-offset-4 transition-opacity hover:opacity-60"
-                style={{ color: "#6b7280" }}
+                style={{ color: "#1f2937" }}
               >
                 ← Volver a la página de Becas
               </Link>
@@ -286,7 +286,7 @@ export default function SolicitudBeca() {
                 className="border p-8 space-y-6"
                 style={{ borderColor: "#e5e0d8", background: "#ffffff" }}
               >
-                <p className="text-xs tracking-[0.2em] uppercase" style={{ color: "#b8860b" }}>
+                <p className="text-xs md:text-sm tracking-[0.15em] uppercase font-bold" style={{ color: "#b8860b" }}>
                   01 — Datos personales
                 </p>
 
@@ -350,7 +350,7 @@ export default function SolicitudBeca() {
                 className="border p-8 space-y-6"
                 style={{ borderColor: "#e5e0d8", background: "#ffffff" }}
               >
-                <p className="text-xs tracking-[0.2em] uppercase" style={{ color: "#b8860b" }}>
+                <p className="text-xs md:text-sm tracking-[0.15em] uppercase font-bold" style={{ color: "#b8860b" }}>
                   02 — Programa de interés
                 </p>
 
@@ -405,7 +405,7 @@ export default function SolicitudBeca() {
                 className="border p-8 space-y-6"
                 style={{ borderColor: "#e5e0d8", background: "#ffffff" }}
               >
-                <p className="text-xs tracking-[0.2em] uppercase" style={{ color: "#b8860b" }}>
+                <p className="text-xs md:text-sm tracking-[0.15em] uppercase font-bold" style={{ color: "#b8860b" }}>
                   03 — Contexto y motivación
                 </p>
 
@@ -428,7 +428,7 @@ export default function SolicitudBeca() {
 
                 <div>
                   <label style={labelStyle}>¿Por qué deseas tomar este programa en este momento de tu vida? {requiredMark}</label>
-                  <p className="text-xs mb-2" style={{ color: "#9ca3af" }}>
+                  <p className="text-xs mb-2" style={{ color: "#6b7280" }}>
                     Esta es la parte más importante de tu solicitud. Tómate el tiempo necesario.
                   </p>
                   <textarea
@@ -448,10 +448,10 @@ export default function SolicitudBeca() {
                 className="border p-8 space-y-5"
                 style={{ borderColor: "#e5e0d8", background: "#ffffff" }}
               >
-                <p className="text-xs tracking-[0.2em] uppercase" style={{ color: "#b8860b" }}>
+                <p className="text-xs md:text-sm tracking-[0.15em] uppercase font-bold" style={{ color: "#b8860b" }}>
                   04 — Compromisos
                 </p>
-                <p className="text-sm" style={{ color: "#6b7280" }}>
+                <p className="text-sm" style={{ color: "#1f2937" }}>
                   Todos los campos son obligatorios.
                 </p>
 
@@ -498,8 +498,8 @@ export default function SolicitudBeca() {
                       )}
                     </div>
                     <span
-                      className="text-sm leading-relaxed"
-                      style={{ color: checks[key] ? "#1a1a2e" : "#6b7280" }}
+                      className="text-sm md:text-base leading-relaxed"
+                      style={{ color: "#111827" }}
                       onClick={() => toggleCheck(key)}
                     >
                       {text}
@@ -526,14 +526,14 @@ export default function SolicitudBeca() {
                   className="inline-block px-14 py-5 text-sm font-semibold tracking-widest uppercase transition-all duration-300"
                   style={{
                     background: Object.values(checks).every(Boolean) ? "#b8860b" : "#e5e0d8",
-                    color: Object.values(checks).every(Boolean) ? "#ffffff" : "#9ca3af",
+                    color: Object.values(checks).every(Boolean) ? "#ffffff" : "#6b7280",
                     cursor: Object.values(checks).every(Boolean) ? "pointer" : "not-allowed",
                     border: "none",
                   }}
                 >
                   {status === "submitting" ? "Enviando..." : "Enviar mi Solicitud de Beca"}
                 </button>
-                <p className="text-xs mt-4" style={{ color: "#9ca3af" }}>
+                <p className="text-xs md:text-sm mt-4" style={{ color: "#374151" }}>
                   Debes aceptar todos los compromisos para enviar tu solicitud.
                 </p>
               </div>
@@ -550,7 +550,7 @@ export default function SolicitudBeca() {
         <div className="max-w-2xl mx-auto text-center">
           <p
             className="font-serif italic text-base md:text-lg leading-relaxed mb-6"
-            style={{ color: "#4b5563" }}
+            style={{ color: "#1a1a2e" }}
           >
             "El Programa Becas Ascendant® representa nuestro compromiso con una
             visión de abundancia, servicio y expansión de la consciencia."
@@ -562,7 +562,7 @@ export default function SolicitudBeca() {
             <Link
               href="/becas"
               className="text-xs tracking-widest uppercase underline underline-offset-4 transition-opacity hover:opacity-60"
-              style={{ color: "#6b7280" }}
+              style={{ color: "#1f2937" }}
             >
               ← Volver a la página de Becas
             </Link>
