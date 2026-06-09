@@ -21,38 +21,42 @@ const STATS = [
 const PROGRAMS = [
   {
     name: "KS Healing Básico",
+    subtitle: "Certificación de Practicante",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-ks-healing-basico-bw5oeZRvsYvnu7mt4KpB8g.webp",
+    href: "https://kshealing.com/ks-healing",
     official: "$3,999 MXN",
     beca: "$2,000 MXN",
     student: "$1,999 MXN",
-    color: "from-amber-50 to-orange-50",
-    border: "border-amber-200",
     badge: "Nivel Básico",
   },
   {
     name: "KS Healing Avanzado",
+    subtitle: "Certificación Nivel Avanzado",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-ks-healing-avanzado-EJgXNndMpAT5ADmLS4pF6R.webp",
+    href: "https://kshealing.com/ks-healing",
     official: "$7,500 MXN",
     beca: "$2,500 MXN",
     student: "$5,000 MXN",
-    color: "from-sky-50 to-blue-50",
-    border: "border-sky-200",
     badge: "Nivel Avanzado",
   },
   {
     name: "DART",
+    subtitle: "Deep Archetypal Renewal Therapy",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-dart-nSTMov3xWYLSPKe9J7q3xy.webp",
+    href: "https://kshealing.com/dart",
     official: "$7,500 MXN",
     beca: "$2,500 MXN",
     student: "$5,000 MXN",
-    color: "from-violet-50 to-purple-50",
-    border: "border-violet-200",
     badge: "Especialización",
   },
   {
     name: "Master KS Healing",
-    official: "Consultar",
+    subtitle: "Formación de Maestros Facilitadores",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-master-ks-healing-9pTdYKR6MFZ6YrPMGTn9kB.webp",
+    href: "https://kshealing.com/ks-healing",
+    official: "$24,000 MXN",
     beca: "$12,000 MXN",
-    student: "Distribuido en 12 meses",
-    color: "from-emerald-50 to-teal-50",
-    border: "border-emerald-200",
+    student: "$12,000 MXN (en 12 meses)",
     badge: "Programa Master",
     isSpecial: true,
   },
@@ -267,33 +271,58 @@ export default function Becas() {
             {PROGRAMS.map((prog) => (
               <div
                 key={prog.name}
-                className={`relative bg-gradient-to-br ${prog.color} border ${prog.border} p-8 transition-all duration-300 hover:shadow-lg`}
+                className="overflow-hidden border border-stone-200 bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.07)" }}
               >
-                <span className="inline-block text-xs tracking-widest uppercase text-stone-500 border border-stone-300 px-3 py-1 mb-4">
-                  {prog.badge}
-                </span>
-                <h3 className="font-serif text-[#1a1a2e] text-xl md:text-2xl mb-6">{prog.name}</h3>
-
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-stone-200/60">
-                    <span className="text-stone-500 text-sm">Valor oficial</span>
-                    <span className="text-stone-600 font-medium line-through">{prog.official}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-stone-200/60">
-                    <span className="text-stone-500 text-sm">Apoyo educativo</span>
-                    <span className="text-amber-600 font-semibold text-lg">−{prog.beca}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-stone-700 font-medium text-sm">Tu inversión</span>
-                    <span className="text-[#1a1a2e] font-bold text-xl">{prog.student}</span>
-                  </div>
+                {/* Image */}
+                <div className="relative overflow-hidden" style={{ height: "200px" }}>
+                  <img
+                    src={prog.image}
+                    alt={prog.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,26,46,0.6) 0%, transparent 55%)" }} />
+                  <span className="absolute top-4 left-4 text-[10px] tracking-[0.18em] uppercase bg-white/90 text-stone-700 px-3 py-1 font-semibold">
+                    {prog.badge}
+                  </span>
                 </div>
 
-                {prog.isSpecial && (
-                  <p className="mt-4 text-xs text-stone-500 italic">
-                    * El apoyo de $12,000 MXN se distribuye progresivamente durante los 12 meses del programa.
-                  </p>
-                )}
+                {/* Content */}
+                <div className="p-6">
+                  <p className="text-[10px] tracking-[0.18em] uppercase text-amber-600 mb-1">{prog.subtitle}</p>
+                  <h3 className="font-serif text-[#1a1a2e] text-xl md:text-2xl mb-5">{prog.name}</h3>
+
+                  <div className="space-y-2 mb-5">
+                    <div className="flex justify-between items-center py-2 border-b border-stone-100">
+                      <span className="text-stone-400 text-sm">Precio regular</span>
+                      <span className="text-stone-400 text-sm line-through">{prog.official}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 border-b border-stone-100">
+                      <span className="text-stone-600 text-sm font-medium">Apoyo del Instituto</span>
+                      <span className="text-amber-600 font-semibold">−{prog.beca}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3">
+                      <span className="text-[#1a1a2e] font-bold">Tu inversión</span>
+                      <span className="text-[#1a1a2e] font-extrabold text-xl">{prog.student}</span>
+                    </div>
+                  </div>
+
+                  {prog.isSpecial && (
+                    <p className="text-xs text-stone-400 italic mb-4">
+                      * El apoyo de $12,000 MXN se distribuye progresivamente durante los 12 meses del programa.
+                    </p>
+                  )}
+
+                  <a
+                    href="/becas/solicitud"
+                    className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
+                    style={{ background: "#b8860b", color: "#ffffff" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#9a7009"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#b8860b"; }}
+                  >
+                    Solicitar Beca →
+                  </a>
+                </div>
               </div>
             ))}
           </div>

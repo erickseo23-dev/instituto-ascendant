@@ -64,44 +64,6 @@ const COUNTRIES: [string, string][] = [
   ["ZW", "Zimbabue"],
 ];
 
-const PROGRAMS = [
-  {
-    name: "KS Healing Básico",
-    subtitle: "Certificación de Practicante",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-ks-healing-basico-bw5oeZRvsYvnu7mt4KpB8g.webp",
-    href: "https://kshealing.com/ks-healing",
-    original: "$3,999 MXN",
-    beca: "$2,000 MXN",
-    student: "$1,999 MXN",
-  },
-  {
-    name: "KS Healing Avanzado",
-    subtitle: "Certificación Nivel Avanzado",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-ks-healing-avanzado-EJgXNndMpAT5ADmLS4pF6R.webp",
-    href: "https://kshealing.com/ks-healing",
-    original: "$7,500 MXN",
-    beca: "$2,500 MXN",
-    student: "$5,000 MXN",
-  },
-  {
-    name: "DART",
-    subtitle: "Deep Archetypal Renewal Therapy",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-dart-nSTMov3xWYLSPKe9J7q3xy.webp",
-    href: "https://kshealing.com/dart",
-    original: "$7,500 MXN",
-    beca: "$2,500 MXN",
-    student: "$5,000 MXN",
-  },
-  {
-    name: "Master KS Healing",
-    subtitle: "Formación de Maestros Facilitadores",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-master-ks-healing-9pTdYKR6MFZ6YrPMGTn9kB.webp",
-    href: "https://kshealing.com/ks-healing",
-    original: "$24,000 MXN",
-    beca: "$12,000 MXN",
-    student: "$12,000 MXN (en 12 meses)",
-  },
-];
 
 // Shared input/select/textarea styles
 const inputStyle: React.CSSProperties = {
@@ -210,74 +172,6 @@ export default function SolicitudBeca() {
             Completa el formulario con honestidad y precisión. Nuestro equipo
             revisará tu solicitud y te contactará en un plazo de{" "}
             <strong style={{ color: "#b8860b" }}>3 a 5 días hábiles</strong>.
-          </p>
-        </div>
-      </section>
-
-      {/* ── RESUMEN DE APOYOS ─────────────────────────────────────────────── */}
-      <section className="py-12 px-6" style={{ background: "#fdf8f0" }}>
-        <div className="max-w-3xl mx-auto">
-          <p
-            className="text-xs tracking-[0.2em] uppercase text-center mb-8"
-            style={{ color: "#b8860b" }}
-          >
-            Apoyos disponibles por programa
-          </p>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {PROGRAMS.map((p) => (
-              <a
-                key={p.name}
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block overflow-hidden rounded-lg border no-underline"
-                style={{ borderColor: "#d4b896", background: "#ffffff", boxShadow: "0 2px 8px rgba(180,130,50,0.10)", textDecoration: "none" }}
-              >
-                {/* Program image */}
-                <div className="relative overflow-hidden" style={{ height: "160px" }}>
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="w-full h-full object-cover"
-                    style={{ transition: "transform 0.4s ease" }}
-                    onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
-                    onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
-                  />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(to top, rgba(26,26,46,0.55) 0%, transparent 60%)" }}
-                  />
-                </div>
-
-                {/* Program info */}
-                <div className="p-5">
-                  <p className="text-[10px] tracking-[0.18em] uppercase mb-1" style={{ color: "#b8860b" }}>{p.subtitle}</p>
-                  <p className="font-serif text-lg font-semibold mb-4" style={{ color: "#1a1a2e" }}>{p.name}</p>
-
-                  {/* Price breakdown */}
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center text-sm">
-                      <span style={{ color: "#6b7280" }}>Precio regular</span>
-                      <span style={{ color: "#9ca3af", textDecoration: "line-through" }}>{p.original}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span style={{ color: "#374151", fontWeight: 600 }}>Apoyo del Instituto</span>
-                      <span style={{ color: "#b8860b", fontWeight: 700 }}>- {p.beca}</span>
-                    </div>
-                    <div
-                      className="flex justify-between items-center pt-2 mt-1"
-                      style={{ borderTop: "1px solid #e5e0d8" }}
-                    >
-                      <span style={{ color: "#1a1a2e", fontWeight: 700, fontSize: "0.95rem" }}>Tu inversión</span>
-                      <span style={{ color: "#1a1a2e", fontWeight: 800, fontSize: "1.05rem" }}>{p.student}</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-          <p className="text-xs md:text-sm text-center mt-6" style={{ color: "#374151" }}>
-            La disponibilidad es limitada. Las solicitudes se evalúan en orden de recepción.
           </p>
         </div>
       </section>
