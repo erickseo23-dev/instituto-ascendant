@@ -2,28 +2,21 @@
 // Estilo: mismo lenguaje visual que Becas.tsx — fondo oscuro #0f1520, dorado ámbar, serif elegante
 // Estructura: Hero compacto → resumen del programa → embed de Kajabi → footer de compromiso
 
-import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 
-// Kajabi form embed — injects the external script once on mount
+// Kajabi form embed — iframe is the only reliable method since
+// Kajabi's embed.js uses document.write() which breaks in React SPA context
 function KajabiForm() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://cursos.institutoascendant.com/forms/2149608136/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
-    <div
-      id="kajabi-form-container"
-      className="py-6 px-4"
-      style={{ minHeight: "400px" }}
+    <iframe
+      src="https://cursos.institutoascendant.com/forms/2149608136"
+      title="Formulario de Solicitud de Beca Ascendant®"
+      width="100%"
+      style={{ border: "none", minHeight: "1200px", display: "block" }}
+      loading="lazy"
+      allow="clipboard-write"
     />
   );
 }
