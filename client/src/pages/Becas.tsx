@@ -22,41 +22,44 @@ const PROGRAMS = [
   {
     name: "KS Healing Básico",
     subtitle: "Certificación de Practicante",
+    duration: "3 semanas",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-ks-healing-basico-bw5oeZRvsYvnu7mt4KpB8g.webp",
-    href: "https://kshealing.com/ks-healing",
     official: "$3,999 MXN",
     beca: "$2,000 MXN",
     student: "$1,999 MXN",
     badge: "Nivel Básico",
+    isSpecial: false,
   },
   {
     name: "KS Healing Avanzado",
     subtitle: "Certificación Nivel Avanzado",
+    duration: "8 semanas",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-ks-healing-avanzado-EJgXNndMpAT5ADmLS4pF6R.webp",
-    href: "https://kshealing.com/ks-healing",
     official: "$7,500 MXN",
     beca: "$2,500 MXN",
     student: "$5,000 MXN",
     badge: "Nivel Avanzado",
+    isSpecial: false,
   },
   {
     name: "DART",
     subtitle: "Deep Archetypal Renewal Therapy",
+    duration: "8 semanas",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-dart-nSTMov3xWYLSPKe9J7q3xy.webp",
-    href: "https://kshealing.com/dart",
     official: "$7,500 MXN",
     beca: "$2,500 MXN",
     student: "$5,000 MXN",
     badge: "Especialización",
+    isSpecial: false,
   },
   {
-    name: "Master KS Healing",
-    subtitle: "Formación de Maestros Facilitadores",
+    name: "Master en KS Healing Systems",
+    subtitle: "Programa de Maestría Avanzada",
+    duration: "12 meses",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/grqzaM5C3pRuoX7dnGFBAz/beca-master-ks-healing-9pTdYKR6MFZ6YrPMGTn9kB.webp",
-    href: "https://kshealing.com/ks-healing",
-    official: "$24,000 MXN",
+    official: null,
     beca: "$12,000 MXN",
-    student: "$12,000 MXN (en 12 meses)",
+    student: null,
     badge: "Programa Master",
     isSpecial: true,
   },
@@ -290,38 +293,69 @@ export default function Becas() {
                 {/* Content */}
                 <div className="p-6">
                   <p className="text-[10px] tracking-[0.18em] uppercase text-amber-600 mb-1">{prog.subtitle}</p>
-                  <h3 className="font-serif text-[#1a1a2e] text-xl md:text-2xl mb-5">{prog.name}</h3>
+                  <h3 className="font-serif text-[#1a1a2e] text-xl md:text-2xl mb-1">{prog.name}</h3>
+                  <p className="text-xs text-stone-400 mb-5">⏱ Duración: <span className="font-medium text-stone-500">{prog.duration}</span></p>
 
-                  <div className="space-y-2 mb-5">
-                    <div className="flex justify-between items-center py-2 border-b border-stone-100">
-                      <span className="text-stone-400 text-sm">Precio regular</span>
-                      <span className="text-stone-400 text-sm line-through">{prog.official}</span>
+                  {prog.isSpecial ? (
+                    /* Master: no price shown, contact CTA */
+                    <div className="space-y-2 mb-5">
+                      <div className="flex justify-between items-center py-2 border-b border-stone-100">
+                        <span className="text-stone-600 text-sm font-medium">Apoyo del Instituto</span>
+                        <span className="text-amber-600 font-semibold">{prog.beca}</span>
+                      </div>
+                      <div className="py-3">
+                        <p className="text-xs text-stone-400 italic">
+                          El apoyo se distribuye progresivamente durante los 12 meses del programa.
+                        </p>
+                      </div>
+                      <div
+                        className="mt-2 p-3 text-center text-xs leading-relaxed"
+                        style={{ background: "#fdf8f0", border: "1px solid #e5d8c0", color: "#6b5a3e" }}
+                      >
+                        Exclusivo para alumnos de nivel Avanzado.
+                        <br />
+                        <strong>Contáctanos para más información.</strong>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-stone-100">
-                      <span className="text-stone-600 text-sm font-medium">Apoyo del Instituto</span>
-                      <span className="text-amber-600 font-semibold">−{prog.beca}</span>
+                  ) : (
+                    /* Regular programs: full price breakdown */
+                    <div className="space-y-2 mb-5">
+                      <div className="flex justify-between items-center py-2 border-b border-stone-100">
+                        <span className="text-stone-400 text-sm">Precio regular</span>
+                        <span className="text-stone-400 text-sm line-through">{prog.official}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2 border-b border-stone-100">
+                        <span className="text-stone-600 text-sm font-medium">Apoyo del Instituto</span>
+                        <span className="text-amber-600 font-semibold">−{prog.beca}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-3">
+                        <span className="text-[#1a1a2e] font-bold">Tu inversión</span>
+                        <span className="text-[#1a1a2e] font-extrabold text-xl">{prog.student}</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center py-3">
-                      <span className="text-[#1a1a2e] font-bold">Tu inversión</span>
-                      <span className="text-[#1a1a2e] font-extrabold text-xl">{prog.student}</span>
-                    </div>
-                  </div>
-
-                  {prog.isSpecial && (
-                    <p className="text-xs text-stone-400 italic mb-4">
-                      * El apoyo de $12,000 MXN se distribuye progresivamente durante los 12 meses del programa.
-                    </p>
                   )}
 
-                  <a
-                    href="/becas/solicitud"
-                    className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
-                    style={{ background: "#b8860b", color: "#ffffff" }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#9a7009"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#b8860b"; }}
-                  >
-                    Solicitar Beca →
-                  </a>
+                  {prog.isSpecial ? (
+                    <a
+                      href="/contacto"
+                      className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
+                      style={{ background: "#1a1a2e", color: "#f5e6c8" }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#2d2d4e"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#1a1a2e"; }}
+                    >
+                      Contactar al Equipo →
+                    </a>
+                  ) : (
+                    <a
+                      href="/becas/solicitud"
+                      className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
+                      style={{ background: "#b8860b", color: "#ffffff" }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#9a7009"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#b8860b"; }}
+                    >
+                      Solicitar Beca →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
