@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Zap, Heart, Brain, Users, Sparkles, Youtube, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
+import { useCurrency } from "@/hooks/useCurrency";
 import RegistrationModal from "@/components/RegistrationModal";
 import Header from "@/components/Header";
 import StickyBanner from "@/components/StickyBanner";
@@ -11,6 +12,8 @@ export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
 
+  const { prices: { currency } } = useCurrency();
+  const msPrice = currency === 'MXN' ? '$2,600 MXN' : currency === 'EUR' ? '€150 EUR' : '$150 USD';
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState<"masterclass" | "course">("masterclass");
 
@@ -417,8 +420,7 @@ export default function Home() {
             <div className="rounded-3xl p-8 md:p-10 relative overflow-hidden" style={{ background: "rgba(240,216,255,0.05)", border: "1px solid rgba(196,150,60,0.4)" }}>
               {/* Precio */}
               <div className="flex items-end justify-center gap-2 mb-1 mt-4">
-                <span className="text-7xl md:text-8xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C" }}>$150</span>
-                <span className="text-2xl mb-4 font-semibold" style={{ color: "#f0d8ff" }}>USD</span>
+                <span className="text-7xl md:text-8xl font-bold" style={{ fontFamily: "'Playfair Display', serif", color: "#C4963C" }}>{msPrice}</span>
               </div>
               <p className="text-sm mb-6" style={{ color: "#c8a8d8" }}>Pago único · Acceso por 6 meses</p>
 
@@ -444,7 +446,7 @@ export default function Home() {
                 style={{ background: "linear-gradient(135deg, #C4963C 0%, #e8b84b 50%, #C4963C 100%)", color: "#1a0a2e" }}
                 onClick={() => window.open('https://cursos.institutoascendant.com/offers/kzw2EXnF/checkout', '_blank')}
               >
-                Quiero unirme por $150 USD →
+                Quiero unirme por {msPrice} →
               </button>
             </div>
           </div>
@@ -452,6 +454,31 @@ export default function Home() {
       </section>
 
 
+
+      {/* Becas Ascendant Block */}
+      <section className="bg-gradient-to-r from-[#0f1520] to-[#1a2035] py-16 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-center md:text-left">
+            <p className="text-amber-400/70 text-xs tracking-[0.2em] uppercase mb-2">Programa Becas Ascendant®</p>
+            <h2 className="font-serif text-white text-2xl md:text-3xl mb-3">
+              Accede con apoyo educativo
+            </h2>
+            <p className="text-white/60 text-base max-w-xl leading-relaxed">
+              Este programa es elegible para el Programa Becas Ascendant®. Puedes recibir un{" "}
+              <span className="text-amber-400 font-semibold">apoyo educativo significativo</span>{" "}
+              sobre tu inversión. La disponibilidad es limitada.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <a
+              href="/becas"
+              className="inline-block bg-amber-500 hover:bg-amber-400 text-white font-semibold tracking-wider uppercase text-sm px-10 py-4 transition-all duration-300 whitespace-nowrap"
+            >
+              Ver Becas Disponibles
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Footer — idéntico al del sitio principal */}
       <footer className="bg-[#2D2D2D] text-white/70">

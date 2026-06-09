@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useCurrency } from "@/hooks/useCurrency";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
@@ -8,6 +9,8 @@ import TransformationChart from "@/components/TransformationChart";
 import BuyButton from "@/components/BuyButton";
 
 export default function Masterclass() {
+  const { prices: { currency } } = useCurrency();
+  const mcPrice = currency === 'MXN' ? '$5,200 MXN' : currency === 'EUR' ? '€297 EUR' : '$297 USD';
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -355,7 +358,7 @@ export default function Masterclass() {
           </p>
 
           <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-            <div className="text-5xl font-bold mb-2" style={{ color: "#5a4a6a" }}>$297 <span className="text-2xl font-normal" style={{ color: "#a89ab8" }}>USD</span></div>
+            <div className="text-5xl font-bold mb-2" style={{ color: "#5a4a6a" }}>{mcPrice}</div>
             <p className="text-sm mb-6" style={{ color: "#a89ab8" }}>Pago único · Acceso por 6 meses</p>
             
             <ul className="text-left space-y-3 mb-8">
