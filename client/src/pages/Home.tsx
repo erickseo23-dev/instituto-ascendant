@@ -124,7 +124,7 @@ function Header() {
 
   const navLinks = [
     { label: "Blog", href: "/blog", disabled: false },
-    { label: "Becas", href: "/becas", disabled: false },
+    { label: "Obtén una Beca", href: "/becas", disabled: false },
     { label: "Recursos Gratuitos", href: "/recursos-gratuitos", disabled: true },
     { label: "Videos", href: "/videos", disabled: true },
     { label: "Sobre Nosotros", href: "/sobre", disabled: false },
