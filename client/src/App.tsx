@@ -57,7 +57,7 @@ function Router() {
       <Route path={"/eventos"} component={Eventos} />
       <Route path={"/congreso"} component={Congreso} />
       <Route path={"/becas"} component={Becas} />
-      <Route path={"/becas/solicitud"} component={SolicitudBeca} />
+      <Route path={"https://cursos.institutoascendant.com/formulario-becas-ascendant"} component={SolicitudBeca} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

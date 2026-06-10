@@ -358,7 +358,7 @@ export default function Becas() {
                     </a>
                   ) : (
                     <a
-                      href="/becas/solicitud"
+                      href="https://cursos.institutoascendant.com/formulario-becas-ascendant"
                       className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
                       style={{ background: "#b8860b", color: "#ffffff" }}
                       onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#9a7009"; }}
@@ -463,7 +463,7 @@ export default function Becas() {
             Completa el formulario de solicitud. Nuestro equipo revisará tu caso y te contactará para guiarte en los siguientes pasos de tu ruta formativa.
           </p>
           <Link
-            href="/becas/solicitud"
+            href="https://cursos.institutoascendant.com/formulario-becas-ascendant"
             className="inline-block bg-amber-500 hover:bg-amber-400 text-white font-semibold tracking-wider uppercase text-sm px-12 py-5 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20"
           >
             Solicitar Beca Ahora
