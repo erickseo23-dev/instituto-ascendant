@@ -270,6 +270,17 @@ export default function Becas() {
             </p>
           </div>
 
+          {/* Disclaimer note */}
+          <div
+            className="max-w-2xl mx-auto mb-8 flex gap-3 items-start px-5 py-4"
+            style={{ background: "#fdf8f0", border: "1px solid #e5d8c0", borderLeft: "3px solid #b8860b" }}
+          >
+            <span className="text-amber-700 mt-0.5 flex-shrink-0" style={{ fontSize: "1rem" }}>ℹ</span>
+            <p className="text-sm leading-relaxed" style={{ color: "#5a4a2e" }}>
+              <strong>Importante:</strong> El apoyo educativo Ascendant® se aplica directamente al costo de inscripción del programa seleccionado. No representa una transferencia económica ni pago en efectivo al alumno.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             {PROGRAMS.map((prog) => (
               <div
