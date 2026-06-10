@@ -339,9 +339,9 @@ export default function Becas() {
                     <a
                       href="/contacto"
                       className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
-                      style={{ background: "#1a1a2e", color: "#f5e6c8" }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#2d2d4e"; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#1a1a2e"; }}
+                      style={{ background: "transparent", color: "#b8860b", border: "1.5px solid #b8860b" }}
+                      onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = "#b8860b"; el.style.color = "#ffffff"; }}
+                      onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = "transparent"; el.style.color = "#b8860b"; }}
                     >
                       Contactar al Equipo →
                     </a>
