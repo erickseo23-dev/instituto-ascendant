@@ -462,12 +462,14 @@ export default function Becas() {
           <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
             Completa el formulario de solicitud. Nuestro equipo revisará tu caso y te contactará para guiarte en los siguientes pasos de tu ruta formativa.
           </p>
-          <Link
+          <a
             href="https://cursos.institutoascendant.com/formulario-becas-ascendant"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-amber-500 hover:bg-amber-400 text-white font-semibold tracking-wider uppercase text-sm px-12 py-5 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20"
           >
             Solicitar Beca Ahora
-          </Link>
+          </a>
           <p className="mt-6 text-white/40 text-xs">
             La disponibilidad es limitada. Las solicitudes se evalúan en orden de recepción.
           </p>
