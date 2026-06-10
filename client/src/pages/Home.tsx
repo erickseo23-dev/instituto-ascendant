@@ -124,6 +124,7 @@ function Header() {
 
   const navLinks = [
     { label: "Blog", href: "/blog", disabled: false },
+    { label: "Becas", href: "/becas", disabled: false },
     { label: "Recursos Gratuitos", href: "/recursos-gratuitos", disabled: true },
     { label: "Videos", href: "/videos", disabled: true },
     { label: "Sobre Nosotros", href: "/sobre", disabled: false },
@@ -1016,28 +1017,61 @@ function CTASection() {
 
 /* ─── BECAS BANNER ─── */
 function BecasBanner() {
+  const programs = [
+    { name: "KS Healing Básico", apoyo: "$2,000 MXN", duracion: "3 semanas" },
+    { name: "KS Healing Avanzado", apoyo: "$2,500 MXN", duracion: "8 semanas" },
+    { name: "DART", apoyo: "$2,500 MXN", duracion: "8 semanas" },
+    { name: "Master KS Healing", apoyo: "$12,000 MXN", duracion: "12 meses" },
+  ];
   return (
-    <section className="bg-gradient-to-r from-[#0f1520] to-[#1a2035] py-16 px-6">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="text-center md:text-left">
-          <p className="text-amber-400/70 text-xs tracking-[0.2em] uppercase mb-2">Nuevo Programa</p>
-          <h2 className="font-serif text-white text-2xl md:text-3xl mb-3">
-            Programa Becas Ascendant®
+    <section className="relative overflow-hidden bg-[#0f1520] py-20 px-6">
+      {/* Subtle radial glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(ellipse at 15% 60%, rgba(196,150,60,0.12) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(184,134,11,0.10) 0%, transparent 45%)" }} />
+      <div className="relative max-w-6xl mx-auto">
+        {/* Header */}
+        <AnimatedSection className="text-center mb-12">
+          <p className="text-amber-400/80 text-xs tracking-[0.25em] uppercase font-medium mb-3">Programa Becas Ascendant®</p>
+          <h2 className="font-serif text-white text-3xl md:text-4xl lg:text-5xl mb-5 leading-tight">
+            El acceso a la formación<br className="hidden md:block" /> no debería ser una barrera
           </h2>
-          <p className="text-white/60 text-base max-w-xl leading-relaxed">
-            ¿Sabías que puedes acceder a nuestros programas con un apoyo educativo de hasta{" "}
-            <span className="text-amber-400 font-semibold">$19,000 MXN</span>? Facilitamos el acceso
-            a la formación para quienes están listos para crecer.
+          <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            El Instituto Ascendant ofrece apoyos educativos directos al costo de inscripción
+            para personas con genuino interés en completar su formación.
           </p>
-        </div>
-        <div className="flex-shrink-0">
-          <a
-            href="/becas"
-            className="inline-block bg-amber-500 hover:bg-amber-400 text-white font-semibold tracking-wider uppercase text-sm px-10 py-4 transition-all duration-300 whitespace-nowrap"
-          >
-            Conocer el Programa
-          </a>
-        </div>
+        </AnimatedSection>
+        {/* Program mini-cards */}
+        <AnimatedSection className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10" delay={0.1}>
+          {programs.map((p) => (
+            <div key={p.name} className="bg-white/5 border border-white/10 rounded-lg p-5 text-center hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+              <p className="text-white/40 text-xs mb-2">{p.duracion}</p>
+              <p className="text-white font-serif text-sm md:text-base font-medium mb-3 leading-snug">{p.name}</p>
+              <p className="text-amber-400 font-bold text-lg md:text-xl">{p.apoyo}</p>
+              <p className="text-white/30 text-xs mt-1">de apoyo</p>
+            </div>
+          ))}
+        </AnimatedSection>
+        {/* Disclaimer + CTAs */}
+        <AnimatedSection className="text-center" delay={0.2}>
+          <p className="text-white/35 text-sm mb-7">
+            El apoyo se aplica directamente al costo de inscripción. No es una transferencia económica.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/becas"
+              className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold tracking-wider uppercase text-sm px-10 py-4 transition-all duration-300"
+            >
+              Ver Programas Elegibles
+            </a>
+            <a
+              href="https://cursos.institutoascendant.com/formulario-becas-ascendant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-amber-500/50 hover:border-amber-400 text-amber-400 hover:text-amber-300 font-semibold tracking-wider uppercase text-sm px-10 py-4 transition-all duration-300"
+            >
+              Solicitar Beca
+            </a>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
