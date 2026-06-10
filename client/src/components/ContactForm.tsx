@@ -86,7 +86,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="font-semibold text-[#2D2D2D] mb-1">Email</h3>
-                <p className="text-[#2D2D2D]/70 text-sm">info@institutoascendant.com</p>
+                <p className="text-[#2D2D2D]/70 text-sm">contacto@kshealing.com</p>
               </div>
             </div>
 
@@ -112,7 +112,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <h3 className="font-semibold text-[#2D2D2D] mb-1">Ubicación</h3>
-                <p className="text-[#2D2D2D]/70 text-sm">Ciudad de México, México</p>
+                <p className="text-[#2D2D2D]/70 text-sm">Tepic, México</p>
               </div>
             </div>
           </div>
