@@ -29,6 +29,7 @@ const PROGRAMS = [
     student: "$1,999 MXN",
     badge: "Nivel Básico",
     isSpecial: false,
+    becaUrl: "https://cursos.institutoascendant.com/formulario-becas-ascendant-KSHB-8c1bd084-460a-4695-8909-602232c934e7",
   },
   {
     name: "KS Healing Avanzado",
@@ -40,6 +41,7 @@ const PROGRAMS = [
     student: "$5,000 MXN",
     badge: "Nivel Avanzado",
     isSpecial: false,
+    becaUrl: "https://cursos.institutoascendant.com/formulario-becas-ascendant-ksha-123122521tfrafg45242342",
   },
   {
     name: "DART",
@@ -51,6 +53,7 @@ const PROGRAMS = [
     student: "$5,000 MXN",
     badge: "Especialización",
     isSpecial: false,
+    becaUrl: "https://cursos.institutoascendant.com/formulario-becas-ascendant",
   },
   {
     name: "Master en KS Healing Systems",
@@ -358,7 +361,9 @@ export default function Becas() {
                     </a>
                   ) : (
                     <a
-                      href="https://cursos.institutoascendant.com/formulario-becas-ascendant"
+                      href={prog.becaUrl || "https://cursos.institutoascendant.com/formulario-becas-ascendant"}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block text-center text-sm font-semibold tracking-widest uppercase py-3 px-6 transition-all duration-200"
                       style={{ background: "#b8860b", color: "#ffffff" }}
                       onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#9a7009"; }}
