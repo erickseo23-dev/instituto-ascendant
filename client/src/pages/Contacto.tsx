@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 // Ícono de WhatsApp (SVG inline ya que lucide no lo incluye)
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -25,7 +25,7 @@ export default function Contacto() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid sm:grid-cols-3 gap-6 mb-16">
 
           {/* Email */}
           <a
@@ -74,15 +74,7 @@ export default function Contacto() {
             <p className="text-[#999] text-xs mt-2">Haz clic para chatear</p>
           </a>
 
-          {/* Ubicación */}
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#E8E4DF] flex flex-col items-center text-center">
-            <div className="w-14 h-14 bg-[#C4963C]/10 rounded-xl flex items-center justify-center mb-4">
-              <MapPin className="w-7 h-7 text-[#C4963C]" />
-            </div>
-            <h3 className="font-semibold text-[#2D2D2D] mb-2">Ubicación</h3>
-            <p className="text-[#666666] text-sm">Tepic, México</p>
-            <p className="text-[#999] text-xs mt-2">Clases 100% online</p>
-          </div>
+
         </div>
 
         {/* CTA adicional por WhatsApp o email */}
