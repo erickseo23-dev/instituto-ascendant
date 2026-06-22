@@ -464,21 +464,21 @@ export default function TodoLoBueno() {
         <div className="absolute inset-0" style={{ background: "rgba(254,243,236,0.82)" }} />
         <div className="relative z-10 container mx-auto px-6 max-w-5xl">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Foto placeholder */}
+            {/* Foto Claribel Puga */}
             <div className="flex-shrink-0">
               <div
-                className="w-56 h-56 rounded-full overflow-hidden flex items-center justify-center"
+                className="w-64 h-64 rounded-full overflow-hidden"
                 style={{
-                  background: "linear-gradient(135deg, #f8dcc8, #f0c4a0)",
                   border: "4px solid rgba(201,155,100,0.4)",
                   boxShadow: "0 8px 40px rgba(160,98,42,0.2)",
                 }}
               >
-                <span style={{ fontSize: "5rem" }}>👩‍🏫</span>
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/vFIHYKmzGDItaaRy.png"
+                  alt="Claribel Puga"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-              <p className="text-center mt-3 text-xs" style={{ color: "#a0622a", fontStyle: "italic" }}>
-                Fotografía profesional de Claribel
-              </p>
             </div>
 
             {/* Texto */}
