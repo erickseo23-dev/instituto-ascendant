@@ -578,68 +578,139 @@ export default function TodoLoBueno() {
             </h2>
           </div>
 
-          <div
-            className="p-10 rounded-3xl text-center"
-            style={{
-              background: "linear-gradient(135deg, #fff, #fef3ec)",
-              border: "2px solid rgba(201,155,100,0.3)",
-              boxShadow: "0 8px 40px rgba(160,98,42,0.1)",
-            }}
-          >
-            <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#a0622a" }}>
-              Inversión Total
-            </p>
-            <p
-              className="mb-2"
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Tarjeta 1 — Pago único */}
+            <div
+              className="p-10 rounded-3xl text-center flex flex-col"
               style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: "4rem",
-                fontWeight: 700,
-                color: "#2d2420",
-                lineHeight: 1,
+                background: "linear-gradient(135deg, #fff, #fef3ec)",
+                border: "2px solid rgba(201,155,100,0.3)",
+                boxShadow: "0 8px 40px rgba(160,98,42,0.1)",
               }}
             >
-              $3,999 <span style={{ fontSize: "1.5rem", color: "#7a5a4e" }}>MXN</span>
-            </p>
-            <p className="mb-8" style={{ color: "#a0622a", fontWeight: 600 }}>
-              o 2 pagos de $2,000 MXN
-            </p>
+              <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#a0622a" }}>
+                Pago Único
+              </p>
+              <p
+                className="mb-2"
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "4rem",
+                  fontWeight: 700,
+                  color: "#2d2420",
+                  lineHeight: 1,
+                }}
+              >
+                $3,999 <span style={{ fontSize: "1.5rem", color: "#7a5a4e" }}>MXN</span>
+              </p>
+              <p className="mb-8 text-sm" style={{ color: "#7a5a4e" }}>
+                Acceso completo al programa
+              </p>
 
-            <div className="text-left space-y-3 mb-8">
-              {[
-                "Programa completo de 9 semanas",
-                "Lecciones grabadas",
-                "Manuales descargables",
-                "Ejercicios KS",
-                "Material imprimible",
-                "10 sesiones en vivo",
-                "Acceso al grupo privado",
-                "Acompañamiento durante todo el proceso",
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <span
-                    className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0"
-                    style={{ background: "#c9874a" }}
-                  >
-                    ✓
-                  </span>
-                  <span style={{ color: "#3d2820" }}>{item}</span>
-                </div>
-              ))}
+              <div className="text-left space-y-3 mb-8 flex-1">
+                {[
+                  "Programa completo de 9 semanas",
+                  "Lecciones grabadas",
+                  "Manuales descargables",
+                  "Ejercicios KS",
+                  "Material imprimible",
+                  "10 sesiones en vivo",
+                  "Acceso al grupo privado",
+                  "Acompañamiento durante todo el proceso",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span
+                      className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0"
+                      style={{ background: "#c9874a" }}
+                    >
+                      ✓
+                    </span>
+                    <span style={{ color: "#3d2820" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={INSCRIPCION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                style={{
+                  background: "linear-gradient(135deg, #c9874a, #a0622a)",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                QUIERO INSCRIBIRME
+              </a>
             </div>
 
-            <a
-              href={INSCRIPCION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            {/* Tarjeta 2 — 2 pagos */}
+            <div
+              className="p-10 rounded-3xl text-center flex flex-col"
               style={{
-                background: "linear-gradient(135deg, #c9874a, #a0622a)",
-                letterSpacing: "0.05em",
+                background: "linear-gradient(135deg, #fff8f3, #fdeee0)",
+                border: "2px solid rgba(201,135,74,0.5)",
+                boxShadow: "0 8px 40px rgba(160,98,42,0.15)",
               }}
             >
-              QUIERO INSCRIBIRME
-            </a>
+              <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#a0622a" }}>
+                2 Pagos
+              </p>
+              <p
+                className="mb-1"
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "4rem",
+                  fontWeight: 700,
+                  color: "#2d2420",
+                  lineHeight: 1,
+                }}
+              >
+                $2,000 <span style={{ fontSize: "1.5rem", color: "#7a5a4e" }}>MXN</span>
+              </p>
+              <p className="mb-2 text-sm font-semibold" style={{ color: "#a0622a" }}>
+                × 2 pagos = $4,000 MXN total
+              </p>
+              <p className="mb-8 text-sm" style={{ color: "#7a5a4e" }}>
+                Primer pago al inscribirte, segundo pago a las 4 semanas
+              </p>
+
+              <div className="text-left space-y-3 mb-8 flex-1">
+                {[
+                  "Programa completo de 9 semanas",
+                  "Lecciones grabadas",
+                  "Manuales descargables",
+                  "Ejercicios KS",
+                  "Material imprimible",
+                  "10 sesiones en vivo",
+                  "Acceso al grupo privado",
+                  "Acompañamiento durante todo el proceso",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span
+                      className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0"
+                      style={{ background: "#c9874a" }}
+                    >
+                      ✓
+                    </span>
+                    <span style={{ color: "#3d2820" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={INSCRIPCION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                style={{
+                  background: "linear-gradient(135deg, #c9874a, #a0622a)",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                QUIERO INSCRIBIRME
+              </a>
+            </div>
           </div>
         </div>
       </section>
