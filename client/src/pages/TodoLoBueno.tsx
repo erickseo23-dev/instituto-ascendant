@@ -10,7 +10,8 @@ const CLARIBEL_BG = "https://files.manuscdn.com/user_upload_by_module/session_fi
 const MODULES_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/rZknqTvciqGNrHGk.png";
 
 // Link de inscripción — actualizar cuando esté disponible en Kajabi
-const INSCRIPCION_URL = "https://cursos.institutoascendant.com/todo-lo-bueno-me-sucede";
+const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/rEFLokCs/checkout";
+const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/Md6Ck2VK/checkout";
 
 const logros = [
   "Mayor claridad mental",
@@ -165,7 +166,7 @@ export default function TodoLoBueno() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <a
-                href={INSCRIPCION_URL}
+                href={INSCRIPCION_URL_UNICO}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
@@ -631,7 +632,7 @@ export default function TodoLoBueno() {
               </div>
 
               <a
-                href={INSCRIPCION_URL}
+                href={INSCRIPCION_URL_UNICO}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
@@ -699,7 +700,7 @@ export default function TodoLoBueno() {
               </div>
 
               <a
-                href={INSCRIPCION_URL}
+                href={INSCRIPCION_URL_2PAGOS}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
@@ -780,7 +781,7 @@ export default function TodoLoBueno() {
             Únete a esta experiencia de 9 semanas y comienza a construir una nueva relación contigo mismo, con tu energía y con tu vida.
           </p>
           <a
-            href={INSCRIPCION_URL}
+            href={INSCRIPCION_URL_UNICO}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-12 py-5 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
