@@ -166,9 +166,7 @@ export default function TodoLoBueno() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <a
-                href={INSCRIPCION_URL_UNICO}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#inversion"
                 className="px-8 py-4 rounded-full font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 style={{
                   background: "linear-gradient(135deg, #c9874a, #a0622a)",
@@ -558,7 +556,7 @@ export default function TodoLoBueno() {
       </section>
 
       {/* ── INVERSIÓN ────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: "#fff9f5" }}>
+      <section id="inversion" className="py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto px-6 max-w-2xl">
           <div className="text-center mb-10">
             <div
