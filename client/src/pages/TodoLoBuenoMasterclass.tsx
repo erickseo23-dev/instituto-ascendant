@@ -222,11 +222,11 @@ export default function TodoLoBuenoMasterclass() {
           Todo Lo Bueno Me Sucede
         </h1>
         <p className="text-[#8B6A50] text-base sm:text-lg leading-relaxed mb-2">
-          Mira la masterclass completa con Claribel Puga y descubre cómo el Método Ascendant® puede transformar los patrones que bloquean lo bueno en tu vida.
+          Mira la masterclass completa con Claribel Puga y YOHEV, y descubre cómo el Método Ascendant® puede transformar los patrones que bloquean lo bueno en tu vida.
         </p>
-        <p className="text-[#C4963C] text-sm font-medium">
-          Con Claribel Puga · Instituto Ascendant
-        </p>
+          <p className="text-[#C4963C] text-sm font-medium">
+            Con Claribel Puga y YOHEV · Instituto Ascendant
+          </p>
       </section>
 
       {/* ── VIDEO ── */}
@@ -316,30 +316,69 @@ export default function TodoLoBuenoMasterclass() {
         className="px-4 py-12 max-w-3xl mx-auto"
         style={{ borderTop: "1px solid #e8d5c4" }}
       >
-        <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-          <div
-            className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 shadow-md"
-            style={{ border: "3px solid #e8d5c4" }}
-          >
-            <img
-              src={CLARIBEL_IMG}
-              alt="Claribel Puga"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-          <div>
-            <p
-              className="text-lg font-semibold text-[#3D2B1F] mb-1"
-              style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+        <p
+          className="text-center text-[#C4963C] text-xs font-semibold tracking-[0.2em] uppercase mb-8"
+        >
+          Tus facilitadores
+        </p>
+        <div className="flex flex-col sm:flex-row items-start gap-8">
+          {/* Claribel */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left flex-1">
+            <div
+              className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 shadow-md mx-auto sm:mx-0"
+              style={{ border: "3px solid #e8d5c4" }}
             >
-              Claribel Puga
-            </p>
-            <p className="text-[#C4963C] text-xs font-semibold tracking-wider uppercase mb-2">
-              Co-fundadora · Instituto Ascendant
-            </p>
-            <p className="text-[#8B6A50] text-sm leading-relaxed">
-              Facilitadora del Método Ascendant® y co-creadora del ecosistema de transformación del Instituto Ascendant. Acompaña a personas en procesos de sanación, expansión de consciencia y reprogramación de patrones internos.
-            </p>
+              <img
+                src={CLARIBEL_IMG}
+                alt="Claribel Puga"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div>
+              <p
+                className="text-lg font-semibold text-[#3D2B1F] mb-1"
+                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+              >
+                Claribel Puga
+              </p>
+              <p className="text-[#C4963C] text-xs font-semibold tracking-wider uppercase mb-2">
+                Co-fundadora · Instituto Ascendant
+              </p>
+              <p className="text-[#8B6A50] text-sm leading-relaxed">
+                Facilitadora del Método Ascendant® y co-creadora del ecosistema de transformación del Instituto Ascendant. Acompaña a personas en procesos de sanación, expansión de consciencia y reprogramación de patrones internos.
+              </p>
+            </div>
+          </div>
+
+          {/* Divisor vertical en desktop */}
+          <div className="hidden sm:block w-px self-stretch" style={{ background: "#e8d5c4" }} />
+
+          {/* YOHEV */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left flex-1">
+            <div
+              className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 shadow-md mx-auto sm:mx-0"
+              style={{ border: "3px solid #e8d5c4" }}
+            >
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/TbnksHm6DJKE8fEG5mQxeC/yohev_v3_74292756.png"
+                alt="YOHEV"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div>
+              <p
+                className="text-lg font-semibold text-[#3D2B1F] mb-1"
+                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+              >
+                YOHEV
+              </p>
+              <p className="text-[#C4963C] text-xs font-semibold tracking-wider uppercase mb-2">
+                Co-fundador · Instituto Ascendant
+              </p>
+              <p className="text-[#8B6A50] text-sm leading-relaxed">
+                Creador de la Energía KS® y co-fundador del Instituto Ascendant. Acompaña procesos de transformación profunda integrando consciencia, energía y herramientas del Método Ascendant.
+              </p>
+            </div>
           </div>
         </div>
       </section>
