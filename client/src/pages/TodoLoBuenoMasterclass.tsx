@@ -299,7 +299,34 @@ export default function TodoLoBuenoMasterclass() {
             Quiero inscribirme <ArrowRight className="w-5 h-5" />
           </button>
 
-          <p className="mt-4 text-[#8B6A50] text-xs">
+          {/* Fecha de inicio */}
+          <div
+            className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
+            style={{ background: "#C4963C18", color: "#C4963C", border: "1px solid #C4963C40" }}
+          >
+            <span>📅</span>
+            Inicia Sábado 27 de Junio · 12:00 pm CDMX
+          </div>
+
+          {/* Resumen del programa */}
+          <ul className="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-2 text-left">
+            {[
+              "9 semanas de transformación con el Método Ascendant®",
+              "Meditaciones guiadas con Energía Isiáca + Energía KS®",
+              "10 Sesiones en vivo",
+              "Ejercicios con Energía KS®",
+              "Lecciones semanales grabadas + material descargable",
+              "Acceso al grupo de WhatsApp exclusivo",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-[#C4963C] mt-0.5 flex-shrink-0" style={{ fontSize: "10px" }}>✦</span>
+                <span className="text-[#5A3E2B] text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-[#8B6A50] text-xs font-medium">Con Claribel Puga y YOHEV</p>
+
+          <p className="mt-6 text-[#8B6A50] text-xs">
             ¿Tienes preguntas?{" "}
             <a
               href="/todo-lo-bueno-me-sucede"
