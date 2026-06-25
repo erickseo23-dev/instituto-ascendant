@@ -8,7 +8,7 @@ import { X, CheckCircle, ArrowRight, Play } from "lucide-react";
 
 // ─── CONSTANTES ────────────────────────────────────────────────────────────────
 // Actualizar con el ID del video de YouTube cuando esté disponible
-const YOUTUBE_VIDEO_ID = ""; // ← pegar aquí el ID del video (ej: "dQw4w9WgXcQ")
+const YOUTUBE_VIDEO_ID = "Dcr-yaEec5E";
 
 const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/rEFLokCs/checkout";
 const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/Md6Ck2VK/checkout";
