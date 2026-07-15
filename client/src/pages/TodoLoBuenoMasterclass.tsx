@@ -10,8 +10,8 @@ import { X, CheckCircle, ArrowRight, Play } from "lucide-react";
 // Actualizar con el ID del video de YouTube cuando esté disponible
 const YOUTUBE_VIDEO_ID = "Dcr-yaEec5E";
 
-const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/rEFLokCs/checkout";
-const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/Md6Ck2VK/checkout";
+const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dN6ivTSJ/checkout";
+const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/oz3LJw7z/checkout";
 
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/CvcmnySNBpqPmrOD.png";
 const CLARIBEL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/vFIHYKmzGDItaaRy.png";
