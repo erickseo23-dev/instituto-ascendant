@@ -10,8 +10,8 @@ const CLARIBEL_BG = "https://files.manuscdn.com/user_upload_by_module/session_fi
 const MODULES_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/rZknqTvciqGNrHGk.png";
 
 // Link de inscripción — actualizar cuando esté disponible en Kajabi
-const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/rEFLokCs/checkout";
-const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/Md6Ck2VK/checkout";
+const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dN6ivTSJ/checkout";
+const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/oz3LJw7z/checkout";
 
 const logros = [
   "Mayor claridad mental",
@@ -70,12 +70,12 @@ const incluye = [
 ];
 
 const calendario = [
-  { fecha: "22 de junio, 2026", evento: "Inscripciones abiertas" },
-  { fecha: "24 de junio, 2026", evento: "Acceso al grupo privado" },
-  { fecha: "26 de junio, 2026", evento: "Liberación del Módulo 1" },
-  { fecha: "27 de junio, 2026 · 12:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga" },
-  { fecha: "Todos los sábados · 12:00 hrs CDMX", evento: "Sesiones de Acompañamiento" },
-  { fecha: "29 de agosto, 2026", evento: "Cierre del Programa" },
+  { fecha: "Ahora", evento: "Inscripciones abiertas" },
+  { fecha: "20 de julio, 2026", evento: "Acceso al grupo privado" },
+  { fecha: "20 de julio, 2026", evento: "Liberación del Contenido Inicial" },
+  { fecha: "25 de julio, 2026 · 13:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga y YOHEV" },
+  { fecha: "Todos los sábados · 13:00 hrs CDMX", evento: "Sesiones de Acompañamiento" },
+  { fecha: "26 de septiembre, 2026", evento: "Cierre del Programa" },
 ];
 
 const sesiones = [
@@ -425,7 +425,7 @@ export default function TodoLoBueno() {
               Las 10 Sesiones en Vivo
             </h2>
             <p className="mt-4" style={{ color: "#7a5a4e" }}>
-              Todos los sábados a las 12:00 hrs CDMX · Guiadas por Claribel Puga
+              Todos los sábados a las 13:00 hrs CDMX · Guiadas por Claribel Puga y YOHEV
             </p>
           </div>
 
