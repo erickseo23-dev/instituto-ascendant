@@ -305,7 +305,7 @@ export default function TodoLoBuenoMasterclass() {
             style={{ background: "#C4963C18", color: "#C4963C", border: "1px solid #C4963C40" }}
           >
             <span>📅</span>
-            Inicia Sábado 27 de Junio · 12:00 pm CDMX
+            Inicia Sábado 25 de Julio · 1:00 pm CDMX
           </div>
 
           {/* Resumen del programa */}
