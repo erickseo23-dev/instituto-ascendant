@@ -10,8 +10,8 @@ const CLARIBEL_BG = "https://files.manuscdn.com/user_upload_by_module/session_fi
 const MODULES_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/rZknqTvciqGNrHGk.png";
 
 // Link de inscripción — actualizar cuando esté disponible en Kajabi
-const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dN6ivTSJ/checkout";
-const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/oz3LJw7z/checkout";
+const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dKUPhVAP";
+const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/dz6rCFv7";
 
 const logros = [
   "Mayor claridad mental",
@@ -71,11 +71,11 @@ const incluye = [
 
 const calendario = [
   { fecha: "Ahora", evento: "Inscripciones abiertas" },
-  { fecha: "20 de julio, 2026", evento: "Acceso al grupo privado" },
-  { fecha: "20 de julio, 2026", evento: "Liberación del Contenido Inicial" },
-  { fecha: "25 de julio, 2026 · 13:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga y YOHEV" },
-  { fecha: "Todos los sábados · 13:00 hrs CDMX", evento: "Sesiones de Acompañamiento" },
-  { fecha: "26 de septiembre, 2026", evento: "Cierre del Programa" },
+  { fecha: "10 de agosto, 2026", evento: "Acceso al grupo privado" },
+  { fecha: "10 de agosto, 2026", evento: "Liberación del Contenido Inicial" },
+  { fecha: "15 de agosto, 2026 · 15:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga y YOHEV" },
+  { fecha: "Todos los sábados · 15:00 hrs CDMX", evento: "Sesiones de Acompañamiento" },
+  { fecha: "17 de octubre, 2026", evento: "Cierre del Programa" },
 ];
 
 const sesiones = [
@@ -425,7 +425,7 @@ export default function TodoLoBueno() {
               Las 10 Sesiones en Vivo
             </h2>
             <p className="mt-4" style={{ color: "#7a5a4e" }}>
-              Todos los sábados a las 13:00 hrs CDMX · Guiadas por Claribel Puga y YOHEV
+              Todos los sábados a las 15:00 hrs CDMX · Guiadas por Claribel Puga y YOHEV
             </p>
           </div>
 
@@ -487,33 +487,67 @@ export default function TodoLoBueno() {
                 className="inline-block mb-4 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
                 style={{ background: "rgba(201,155,100,0.15)", color: "#a0622a" }}
               >
-                Tu Guía
+                Tus Guías
               </div>
-              <h2
-                className="mb-2"
-                style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                  fontWeight: 700,
-                  color: "#2d2420",
-                }}
-              >
-                Claribel Puga
-              </h2>
-              <p
-                className="mb-6 font-semibold"
-                style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1.1rem" }}
-              >
-                Creadora del Método Ascendant® · Maestra en Neurociencias Aplicadas a la Espiritualidad
-              </p>
-              <div className="space-y-4 leading-relaxed" style={{ color: "#5a3e35" }}>
-                <p>
-                  Durante años ha acompañado a miles de personas en procesos de desarrollo humano, expansión de consciencia y transformación personal.
+
+              {/* Claribel Puga */}
+              <div className="mb-10">
+                <h2
+                  className="mb-2"
+                  style={{
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                    fontWeight: 700,
+                    color: "#2d2420",
+                  }}
+                >
+                  Claribel Puga
+                </h2>
+                <p
+                  className="mb-4 font-semibold"
+                  style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1.1rem" }}
+                >
+                  Creadora del Método Ascendant® · Maestra en Neurociencias Aplicadas a la Espiritualidad
                 </p>
-                <p>
-                  Su enfoque integra herramientas de desarrollo interior, neurociencia, meditación y trabajo energético para ayudar a las personas a construir una vida más consciente, equilibrada y alineada con su bienestar.
-                </p>
+                <div className="space-y-3 leading-relaxed" style={{ color: "#5a3e35" }}>
+                  <p>
+                    Durante años ha acompañado a miles de personas en procesos de desarrollo humano, expansión de consciencia y transformación personal.
+                  </p>
+                  <p>
+                    Su enfoque integra herramientas de desarrollo interior, neurociencia, meditación y trabajo energético para ayudar a las personas a construir una vida más consciente, equilibrada y alineada con su bienestar.
+                  </p>
+                </div>
               </div>
+
+              {/* YOHEV */}
+              <div>
+                <h2
+                  className="mb-2"
+                  style={{
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                    fontWeight: 700,
+                    color: "#2d2420",
+                  }}
+                >
+                  YOHEV
+                </h2>
+                <p
+                  className="mb-4 font-semibold"
+                  style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1.1rem" }}
+                >
+                  Co-fundador del Instituto Ascendant · Maestro en Energía KS®
+                </p>
+                <div className="space-y-3 leading-relaxed" style={{ color: "#5a3e35" }}>
+                  <p>
+                    Creador de la Energía KS® Keiouvos Stharef, un sistema de sanación energética que trabaja con la Energía Crística para activar el potencial de transformación profunda en cada persona.
+                  </p>
+                  <p>
+                    Ha acompañado a miles de personas en más de 15 países a través de retiros, certificaciones y programas de formación que integran la energía, la consciencia y el bienestar.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

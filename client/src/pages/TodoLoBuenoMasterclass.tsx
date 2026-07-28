@@ -10,8 +10,8 @@ import { X, CheckCircle, ArrowRight, Play } from "lucide-react";
 // Actualizar con el ID del video de YouTube cuando esté disponible
 const YOUTUBE_VIDEO_ID = "rFHzN-nxF5Y";
 
-const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dN6ivTSJ/checkout";
-const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/oz3LJw7z/checkout";
+const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dKUPhVAP";
+const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/dz6rCFv7";
 
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/CvcmnySNBpqPmrOD.png";
 const CLARIBEL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/vFIHYKmzGDItaaRy.png";
@@ -305,7 +305,7 @@ export default function TodoLoBuenoMasterclass() {
             style={{ background: "#C4963C18", color: "#C4963C", border: "1px solid #C4963C40" }}
           >
             <span>📅</span>
-            Inicia Sábado 25 de Julio · 1:00 pm CDMX
+            Inicia Sábado 15 de Agosto · 3:00 pm CDMX
           </div>
 
           {/* Resumen del programa */}
