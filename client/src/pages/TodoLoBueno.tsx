@@ -463,11 +463,21 @@ export default function TodoLoBueno() {
       >
         <div className="absolute inset-0" style={{ background: "rgba(254,243,236,0.82)" }} />
         <div className="relative z-10 container mx-auto px-6 max-w-5xl">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Foto Claribel Puga */}
-            <div className="flex-shrink-0">
+          {/* Título */}
+          <div className="text-center mb-14">
+            <div
+              className="inline-block mb-4 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
+              style={{ background: "rgba(201,155,100,0.15)", color: "#a0622a" }}
+            >
+              Tus Guías
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* ── Claribel Puga ── */}
+            <div className="flex flex-col items-center text-center lg:text-left lg:items-start">
               <div
-                className="w-64 h-64 rounded-full overflow-hidden"
+                className="w-48 h-48 rounded-full overflow-hidden mb-6 flex-shrink-0"
                 style={{
                   border: "4px solid rgba(201,155,100,0.4)",
                   boxShadow: "0 8px 40px rgba(160,98,42,0.2)",
@@ -479,75 +489,73 @@ export default function TodoLoBueno() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
+              <h2
+                className="mb-2"
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                  fontWeight: 700,
+                  color: "#2d2420",
+                }}
+              >
+                Claribel Puga
+              </h2>
+              <p
+                className="mb-4 font-semibold"
+                style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1rem" }}
+              >
+                Creadora del Método Ascendant® · Maestra en Neurociencias Aplicadas a la Espiritualidad
+              </p>
+              <div className="space-y-3 leading-relaxed text-sm" style={{ color: "#5a3e35" }}>
+                <p>
+                  Durante años ha acompañado a miles de personas en procesos de desarrollo humano, expansión de consciencia y transformación personal.
+                </p>
+                <p>
+                  Su enfoque integra herramientas de desarrollo interior, neurociencia, meditación y trabajo energético para ayudar a las personas a construir una vida más consciente, equilibrada y alineada con su bienestar.
+                </p>
+              </div>
             </div>
 
-            {/* Texto */}
-            <div>
+            {/* ── YOHEV ── */}
+            <div className="flex flex-col items-center text-center lg:text-left lg:items-start">
               <div
-                className="inline-block mb-4 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-                style={{ background: "rgba(201,155,100,0.15)", color: "#a0622a" }}
+                className="w-48 h-48 rounded-full overflow-hidden mb-6 flex-shrink-0"
+                style={{
+                  border: "4px solid rgba(201,155,100,0.4)",
+                  boxShadow: "0 8px 40px rgba(160,98,42,0.2)",
+                }}
               >
-                Tus Guías
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663213129151/TbnksHm6DJKE8fEG5mQxeC/yohev_v3_74292756.png"
+                  alt="YOHEV"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-
-              {/* Claribel Puga */}
-              <div className="mb-10">
-                <h2
-                  className="mb-2"
-                  style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                    fontWeight: 700,
-                    color: "#2d2420",
-                  }}
-                >
-                  Claribel Puga
-                </h2>
-                <p
-                  className="mb-4 font-semibold"
-                  style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1.1rem" }}
-                >
-                  Creadora del Método Ascendant® · Maestra en Neurociencias Aplicadas a la Espiritualidad
+              <h2
+                className="mb-2"
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                  fontWeight: 700,
+                  color: "#2d2420",
+                }}
+              >
+                YOHEV
+              </h2>
+              <p
+                className="mb-4 font-semibold"
+                style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1rem" }}
+              >
+                Co-fundador del Instituto Ascendant · Maestro en Energía KS®
+              </p>
+              <div className="space-y-3 leading-relaxed text-sm" style={{ color: "#5a3e35" }}>
+                <p>
+                  Creador de KS Healing Systems, un sistema de sanación energética que trabaja con la Energía Crística para activar el potencial de transformación profunda en cada persona.
                 </p>
-                <div className="space-y-3 leading-relaxed" style={{ color: "#5a3e35" }}>
-                  <p>
-                    Durante años ha acompañado a miles de personas en procesos de desarrollo humano, expansión de consciencia y transformación personal.
-                  </p>
-                  <p>
-                    Su enfoque integra herramientas de desarrollo interior, neurociencia, meditación y trabajo energético para ayudar a las personas a construir una vida más consciente, equilibrada y alineada con su bienestar.
-                  </p>
-                </div>
-              </div>
-
-              {/* YOHEV */}
-              <div>
-                <h2
-                  className="mb-2"
-                  style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                    fontWeight: 700,
-                    color: "#2d2420",
-                  }}
-                >
-                  YOHEV
-                </h2>
-                <p
-                  className="mb-4 font-semibold"
-                  style={{ color: "#a0622a", fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "1.1rem" }}
-                >
-                  Co-fundador del Instituto Ascendant · Maestro en Energía KS®
+                <p>
+                  Ha acompañado a miles de personas en más de 15 países a través de retiros, certificaciones y programas de formación que integran la energía, la consciencia y el bienestar.
                 </p>
-                <div className="space-y-3 leading-relaxed" style={{ color: "#5a3e35" }}>
-                  <p>
-                    Creador de la Energía KS® Keiouvos Stharef, un sistema de sanación energética que trabaja con la Energía Crística para activar el potencial de transformación profunda en cada persona.
-                  </p>
-                  <p>
-                    Ha acompañado a miles de personas en más de 15 países a través de retiros, certificaciones y programas de formación que integran la energía, la consciencia y el bienestar.
-                  </p>
-                </div>
               </div>
-
             </div>
           </div>
         </div>
