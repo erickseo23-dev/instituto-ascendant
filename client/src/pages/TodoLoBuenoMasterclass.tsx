@@ -305,7 +305,7 @@ export default function TodoLoBuenoMasterclass() {
             style={{ background: "#C4963C18", color: "#C4963C", border: "1px solid #C4963C40" }}
           >
             <span>📅</span>
-            Inicia Sábado 15 de Agosto · 3:00 pm CDMX
+            Inicia Sábado 22 de Agosto · 3:00 pm CDMX
           </div>
 
           {/* Resumen del programa */}
