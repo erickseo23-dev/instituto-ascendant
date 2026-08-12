@@ -71,11 +71,11 @@ const incluye = [
 
 const calendario = [
   { fecha: "Ahora", evento: "Inscripciones abiertas" },
-  { fecha: "10 de agosto, 2026", evento: "Acceso al grupo privado" },
-  { fecha: "10 de agosto, 2026", evento: "Liberación del Contenido Inicial" },
-  { fecha: "15 de agosto, 2026 · 15:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga y YOHEV" },
+  { fecha: "17 de agosto, 2026", evento: "Acceso al grupo privado" },
+  { fecha: "17 de agosto, 2026", evento: "Liberación del Contenido Inicial" },
+  { fecha: "22 de agosto, 2026 · 15:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga y YOHEV" },
   { fecha: "Todos los sábados · 15:00 hrs CDMX", evento: "Sesiones de Acompañamiento" },
-  { fecha: "17 de octubre, 2026", evento: "Cierre del Programa" },
+  { fecha: "24 de octubre, 2026", evento: "Cierre del Programa" },
 ];
 
 const sesiones = [
