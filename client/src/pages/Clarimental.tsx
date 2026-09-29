@@ -76,7 +76,7 @@ export default function Clarimental() {
                 </ol>
               </section>
             ))}
-            <p className="cm-route-note">Las 81 semanas corresponden al recorrido formativo completo. Las aperturas de cada octava se anunciarán por separado; los temarios de las octavas III a IX están en desarrollo.</p>
+            <p className="cm-route-note">Las 81 semanas corresponden al recorrido formativo completo. Las aperturas de cada octava se anunciarán por separado.</p>
           </div>
         </section>
 
