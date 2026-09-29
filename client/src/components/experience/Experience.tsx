@@ -1,10 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
-import { MotionConfig, useReducedMotion } from "framer-motion";
 import { Pause, Play, Volume2, VolumeX, Waves } from "lucide-react";
 import { createAmbient } from "./ambient";
 import "./experience.css";
 
-const ExperienceContext = createContext({ playing: false, volume: 0.3, still: false, error: "", toggleAudio: () => {}, pauseAudio: () => {}, setVolume: (_: number) => {}, toggleMotion: () => {} });
+const ExperienceContext = createContext({ playing: false, volume: 0.3, still: false, reduced: false, error: "", toggleAudio: () => {}, pauseAudio: () => {}, setVolume: (_: number) => {}, toggleMotion: () => {} });
 export const useExperience = () => useContext(ExperienceContext);
 
 export function ExperienceProvider({ children }: { children: ReactNode }) {
@@ -12,10 +11,17 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
   const [volume, setVolume] = useState(0.3);
   const [pausedMotion, setPausedMotion] = useState(false);
   const [error, setError] = useState("");
-  const reduced = useReducedMotion();
+  const [reduced, setReduced] = useState(false);
   const engine = useRef<ReturnType<typeof createAmbient> | null>(null);
   const request = useRef(0);
   const still = pausedMotion || Boolean(reduced);
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(preference.matches);
+    update();
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
+  }, []);
   const pauseAudio = useCallback(() => {
     request.current++;
     engine.current?.pause();
@@ -53,18 +59,15 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
       setError("El sonido no pudo iniciarse. Puedes volver a intentarlo.");
     }
   }
-  return <ExperienceContext.Provider value={{ playing, volume, still, error, toggleAudio, pauseAudio,
+  return <ExperienceContext.Provider value={{ playing, volume, still, reduced, error, toggleAudio, pauseAudio,
     setVolume: value => { setVolume(value); engine.current?.setVolume(value); },
     toggleMotion: () => setPausedMotion(value => !value) }}>
-    <MotionConfig reducedMotion={still ? "always" : "user"}>
-      <div className="asc-experience-root" data-still={still ? "true" : "false"}>{children}</div>
-    </MotionConfig>
+    <div className="asc-experience-root" data-still={still ? "true" : "false"}>{children}</div>
   </ExperienceContext.Provider>;
 }
 
 export function ExperienceControls({ light = false }: { light?: boolean }) {
-  const { playing, volume, still, error, toggleAudio, setVolume, toggleMotion } = useExperience();
-  const reduced = useReducedMotion();
+  const { playing, volume, still, reduced, error, toggleAudio, setVolume, toggleMotion } = useExperience();
   return <div className={`asc-controls${light ? " asc-controls-light" : ""}`} aria-label="Ambiente y movimiento">
     <div className="asc-controls-row">
       <button type="button" className="asc-control" onClick={toggleAudio} aria-pressed={playing}>
