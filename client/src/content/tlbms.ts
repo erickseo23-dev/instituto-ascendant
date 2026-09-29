@@ -6,8 +6,8 @@ export const tlbmsCohort = {
   scheduleLabel: "Viernes · 3:00 p.m. CDMX",
   status: "open" as const,
   paymentOptions: [
-    { label: "Un solo pago", buttonLabel: "Inscribirme con un solo pago", url: "https://cursos.institutoascendant.com/offers/Ky89RQzz/checkout" },
-    { label: "Dos pagos", buttonLabel: "Inscribirme en dos pagos", url: "https://cursos.institutoascendant.com/offers/SzEvGsvH/checkout" },
+    { label: "Un solo pago", amountLabel: "$3,999 MXN", detail: "Un único pago por el programa completo", buttonLabel: "Inscribirme con un solo pago", url: "https://cursos.institutoascendant.com/offers/Ky89RQzz/checkout" },
+    { label: "Dos pagos", amountLabel: "$2,000 MXN", detail: "2 pagos mensuales · $4,000 MXN en total", buttonLabel: "Inscribirme en dos pagos", url: "https://cursos.institutoascendant.com/offers/SzEvGsvH/checkout" },
   ],
   contactUrl: "mailto:info@institutoascendant.com?subject=Informaci%C3%B3n%20sobre%20Todo%20Lo%20Bueno%20Me%20Sucede%20-%202%20de%20octubre",
   title: "Todo Lo Bueno Me Sucede · 2 de octubre | Instituto Ascendant",
