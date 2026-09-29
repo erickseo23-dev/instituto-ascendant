@@ -1,17 +1,19 @@
 // TodoLoBuenoMasterclass.tsx
 // Landing page post-masterclass "Todo Lo Bueno Me Sucede"
 // Estética: pastel cálido, nude, champagne gold, blush rose — magnético y elegante
-// Flujo: Video grabado → CTA → Modal con 2 opciones de pago
+// Flujo: Video grabado → CTA → Información de la próxima generación
 
 import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import TlbmsCohortNotice from "@/components/TlbmsCohortNotice";
+import { tlbmsCohort } from "@/content/tlbms";
+import { setSEOMetadata } from "@/config/seo";
 import { X, CheckCircle, ArrowRight, Play } from "lucide-react";
 
 // ─── CONSTANTES ────────────────────────────────────────────────────────────────
 // Actualizar con el ID del video de YouTube cuando esté disponible
 const YOUTUBE_VIDEO_ID = "rFHzN-nxF5Y";
 
-const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dKUPhVAP";
-const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/dz6rCFv7";
 
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/CvcmnySNBpqPmrOD.png";
 const CLARIBEL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/vFIHYKmzGDItaaRy.png";
@@ -25,155 +27,16 @@ const beneficios = [
   "Acceso de por vida a las grabaciones",
 ];
 
-// ─── MODAL DE PRECIOS ──────────────────────────────────────────────────────────
+// Information dialog while the upcoming generation remains in prepublication.
 function PricingModal({ onClose }: { onClose: () => void }) {
-  // Cerrar con Escape
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [onClose]);
-
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: "rgba(45,30,20,0.55)", backdropFilter: "blur(4px)" }}
-      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
-    >
-      <div
-        className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl"
-        style={{ background: "linear-gradient(145deg, #fff9f4, #fdf0e8)" }}
-      >
-        {/* Cierre */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full transition-colors hover:bg-black/10"
-          aria-label="Cerrar"
-        >
-          <X className="w-5 h-5 text-[#8B6A50]" />
-        </button>
-
-        {/* Encabezado */}
-        <div className="px-8 pt-8 pb-6 text-center border-b border-[#e8d5c4]">
-          <p className="text-[#C4963C] text-xs font-semibold tracking-[0.2em] uppercase mb-2">
-            Elige tu opción
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-semibold text-[#3D2B1F] mb-2"
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-          >
-            Todo Lo Bueno Me Sucede
-          </h2>
-          <p className="text-[#8B6A50] text-sm">
-            Programa de 9 semanas · Método Ascendant® · Con Claribel Puga
-          </p>
-        </div>
-
-        {/* Tarjetas de precio */}
-        <div className="p-6 sm:p-8 grid sm:grid-cols-2 gap-5">
-          {/* Opción 1: Pago único */}
-          <div
-            className="rounded-xl p-6 flex flex-col gap-4 border-2 transition-all duration-300 hover:shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #fffaf5, #fff4ea)",
-              borderColor: "#C4963C",
-            }}
-          >
-            <div>
-              <span
-                className="inline-block px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider mb-3"
-                style={{ background: "#C4963C20", color: "#C4963C" }}
-              >
-                Mejor valor
-              </span>
-              <h3
-                className="text-lg font-semibold text-[#3D2B1F] mb-1"
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
-                Pago Único
-              </h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl font-bold text-[#3D2B1F]">$3,999</span>
-                <span className="text-[#8B6A50] text-sm">MXN</span>
-              </div>
-              <p className="text-[#8B6A50] text-xs">Un solo pago · Acceso inmediato</p>
-            </div>
-            <ul className="space-y-1.5">
-              {beneficios.slice(0, 4).map((b) => (
-                <li key={b} className="flex items-start gap-2 text-xs text-[#5A3E2B]">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#C4963C] flex-shrink-0 mt-0.5" />
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <a
-              href={INSCRIPCION_URL_UNICO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-300 hover:opacity-90 hover:shadow-md"
-              style={{ background: "linear-gradient(135deg, #C4963C, #B08530)" }}
-            >
-              Inscribirme ahora <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Opción 2: 2 pagos */}
-          <div
-            className="rounded-xl p-6 flex flex-col gap-4 border-2 transition-all duration-300 hover:shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #fdf8f5, #f9f0ea)",
-              borderColor: "#d4b896",
-            }}
-          >
-            <div>
-              <span
-                className="inline-block px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider mb-3"
-                style={{ background: "#d4b89620", color: "#8B6A50" }}
-              >
-                Facilidad de pago
-              </span>
-              <h3
-                className="text-lg font-semibold text-[#3D2B1F] mb-1"
-                style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-              >
-                2 Pagos
-              </h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl font-bold text-[#3D2B1F]">$2,000</span>
-                <span className="text-[#8B6A50] text-sm">MXN × 2</span>
-              </div>
-              <p className="text-[#8B6A50] text-xs">Dos pagos mensuales · Acceso inmediato</p>
-            </div>
-            <ul className="space-y-1.5">
-              {beneficios.slice(0, 4).map((b) => (
-                <li key={b} className="flex items-start gap-2 text-xs text-[#5A3E2B]">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#8B6A50] flex-shrink-0 mt-0.5" />
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <a
-              href={INSCRIPCION_URL_2PAGOS}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-md"
-              style={{
-                background: "transparent",
-                border: "2px solid #C4963C",
-                color: "#C4963C",
-              }}
-            >
-              Elegir 2 pagos <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Nota al pie */}
-        <p className="text-center text-[#8B6A50] text-xs pb-6 px-8">
-          Todos los precios en pesos mexicanos (MXN) · Pago seguro a través de Kajabi
-        </p>
-      </div>
-    </div>
+    <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-2xl">
+        <DialogTitle className="font-serif text-2xl">Todo Lo Bueno Me Sucede</DialogTitle>
+        <DialogDescription>Primera Octava de CLARIMENTAL · Próxima generación</DialogDescription>
+        <TlbmsCohortNotice />
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -181,11 +44,7 @@ function PricingModal({ onClose }: { onClose: () => void }) {
 export default function TodoLoBuenoMasterclass() {
   const [showModal, setShowModal] = useState(false);
 
-  // Bloquear scroll cuando el modal está abierto
-  useEffect(() => {
-    document.body.style.overflow = showModal ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [showModal]);
+  useEffect(() => { setSEOMetadata({ title: "Masterclass · Todo Lo Bueno Me Sucede | Instituto Ascendant", description: tlbmsCohort.description, url: "https://www.institutoascendant.com/todo-lo-bueno-masterclass", type: "website", image: HERO_IMG }); }, []);
 
   return (
     <div
@@ -296,7 +155,7 @@ export default function TodoLoBuenoMasterclass() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-base transition-all duration-300 hover:opacity-90 hover:shadow-xl hover:-translate-y-0.5 shadow-lg"
             style={{ background: "linear-gradient(135deg, #C4963C, #B08530)" }}
           >
-            Quiero inscribirme <ArrowRight className="w-5 h-5" />
+            Consultar información <ArrowRight className="w-5 h-5" />
           </button>
 
           {/* Fecha de inicio */}
@@ -305,7 +164,7 @@ export default function TodoLoBuenoMasterclass() {
             style={{ background: "#C4963C18", color: "#C4963C", border: "1px solid #C4963C40" }}
           >
             <span>📅</span>
-            Inicia Sábado 22 de Agosto · 3:00 pm CDMX
+            Inicia {tlbmsCohort.startLabel} · {tlbmsCohort.scheduleLabel}
           </div>
 
           {/* Resumen del programa */}

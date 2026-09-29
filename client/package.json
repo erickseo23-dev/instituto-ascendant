@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build && node scripts/prerender.mjs"
   },
   "dependencies": {
     "react": "^19.0.0-rc-66855b96-20241106",

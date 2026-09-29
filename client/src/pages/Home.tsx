@@ -107,6 +107,7 @@ function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const programas = [
+  { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
     { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
     { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
     { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },
@@ -455,8 +456,8 @@ function FeaturedPrograms() {
       tag: "Transformación Personal",
       tagColor: "bg-[#C4963C]",
       title: "Todo Lo Bueno Me Sucede",
-      subtitle: "Programa de 9 semanas para reprogramar tu mente y atraer abundancia — Método Ascendant",
-      date: "Disponible ahora",
+      subtitle: "Primera Octava de CLARIMENTAL · Confianza, coherencia y gozo consciente",
+      date: "Inicia 2 de octubre · Viernes 3:00 p.m. CDMX",
       format: "Online · 9 semanas",
       image: IMAGES.todoLoBueno,
       cta: "Ver programa",

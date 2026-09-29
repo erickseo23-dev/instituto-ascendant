@@ -4,14 +4,14 @@
 // Fuente: Cormorant Garamond (display) + sistema sans-serif (cuerpo)
 
 import { useEffect, useRef } from "react";
+import TlbmsCohortNotice from "@/components/TlbmsCohortNotice";
+import { tlbmsCohort } from "@/content/tlbms";
+import { setSEOMetadata } from "@/config/seo";
 
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/CvcmnySNBpqPmrOD.png";
 const CLARIBEL_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/pOGKluvZcxoKNLwn.png";
 const MODULES_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/rZknqTvciqGNrHGk.png";
 
-// Link de inscripción — actualizar cuando esté disponible en Kajabi
-const INSCRIPCION_URL_UNICO = "https://cursos.institutoascendant.com/offers/dKUPhVAP";
-const INSCRIPCION_URL_2PAGOS = "https://cursos.institutoascendant.com/offers/dz6rCFv7";
 
 const logros = [
   "Mayor claridad mental",
@@ -59,7 +59,7 @@ const incluye = [
   },
   {
     icon: "🎥",
-    titulo: "10 Clases en Vivo",
+    titulo: "Sesiones en Vivo",
     desc: "Sesiones en vivo para acompañamiento, integración y resolución de dudas.",
   },
   {
@@ -70,12 +70,9 @@ const incluye = [
 ];
 
 const calendario = [
-  { fecha: "Ahora", evento: "Inscripciones abiertas" },
-  { fecha: "17 de agosto, 2026", evento: "Acceso al grupo privado" },
-  { fecha: "17 de agosto, 2026", evento: "Liberación del Contenido Inicial" },
-  { fecha: "22 de agosto, 2026 · 15:00 hrs CDMX", evento: "Sesión de Apertura y Bienvenida con Claribel Puga y YOHEV" },
-  { fecha: "Todos los sábados · 15:00 hrs CDMX", evento: "Sesiones de Acompañamiento" },
-  { fecha: "24 de octubre, 2026", evento: "Cierre del Programa" },
+  { fecha: tlbmsCohort.startLabel, evento: "Inicio del programa con Claribel Puga y YOHEV" },
+  { fecha: tlbmsCohort.scheduleLabel, evento: "Sesiones de acompañamiento en vivo" },
+  { fecha: "9 semanas de formación", evento: "Recorrido progresivo por los nueve niveles de la Primera Octava" },
 ];
 
 const sesiones = [
@@ -96,6 +93,7 @@ export default function TodoLoBueno() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setSEOMetadata({ title: tlbmsCohort.title, description: tlbmsCohort.description, url: tlbmsCohort.url, type: "website", image: HERO_IMG });
   }, []);
 
   return (
@@ -133,7 +131,7 @@ export default function TodoLoBueno() {
                 border: "1px solid rgba(201,155,100,0.35)",
               }}
             >
-              Método Ascendant® · 9 Semanas
+              Primera Octava de CLARIMENTAL · 9 semanas
             </div>
 
             {/* Título */}
@@ -160,8 +158,11 @@ export default function TodoLoBueno() {
               <strong>Transforma tu realidad.</strong>
             </p>
             <p className="mb-10 leading-relaxed" style={{ color: "#7a5a4e", maxWidth: "460px" }}>
-              Un programa de 9 semanas basado en el Método Ascendant® de Claribel Puga, diseñado para ayudarte a cambiar la forma en que interactúas con tu realidad.
+              La Primera Octava de CLARIMENTAL: nueve semanas con el Método Ascendant de Claribel Puga para desarrollar confianza, coherencia y gozo consciente.
             </p>
+
+            <p className="mb-5 text-base font-semibold" style={{ color: "#86572f" }}>{tlbmsCohort.startLabel} · {tlbmsCohort.scheduleLabel}</p>
+            <a href="/clarimental" className="mb-6 inline-flex min-h-11 items-center underline underline-offset-4" style={{ color: "#5a3e35" }}>Conoce las nueve octavas de CLARIMENTAL</a>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
@@ -173,7 +174,7 @@ export default function TodoLoBueno() {
                   letterSpacing: "0.05em",
                 }}
               >
-                QUIERO INSCRIBIRME
+                VER PRÓXIMA GENERACIÓN
               </a>
               <a
                 href="#incluye"
@@ -425,7 +426,7 @@ export default function TodoLoBueno() {
               Las 10 Sesiones en Vivo
             </h2>
             <p className="mt-4" style={{ color: "#7a5a4e" }}>
-              Todos los sábados a las 15:00 hrs CDMX · Guiadas por Claribel Puga y YOHEV
+              Todos los viernes a las 3:00 p.m. CDMX · Guiadas por Claribel Puga y YOHEV
             </p>
           </div>
 
@@ -599,188 +600,9 @@ export default function TodoLoBueno() {
 
       {/* ── INVERSIÓN ────────────────────────────────────────── */}
       <section id="inversion" className="py-24" style={{ background: "#fff9f5" }}>
-        <div className="container mx-auto px-6 max-w-2xl">
-          <div className="text-center mb-10">
-            <div
-              className="inline-block mb-4 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-              style={{ background: "rgba(201,155,100,0.12)", color: "#a0622a" }}
-            >
-              Inversión
-            </div>
-            <h2
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 700,
-                color: "#2d2420",
-              }}
-            >
-              Tu Inversión
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Tarjeta 1 — Pago único */}
-            <div
-              className="p-10 rounded-3xl text-center flex flex-col"
-              style={{
-                background: "linear-gradient(135deg, #fff, #fef3ec)",
-                border: "2px solid rgba(201,155,100,0.3)",
-                boxShadow: "0 8px 40px rgba(160,98,42,0.1)",
-              }}
-            >
-              <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#a0622a" }}>
-                Pago Único
-              </p>
-              <p
-                className="mb-2"
-                style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  fontSize: "4rem",
-                  fontWeight: 700,
-                  color: "#2d2420",
-                  lineHeight: 1,
-                }}
-              >
-                $3,999 <span style={{ fontSize: "1.5rem", color: "#7a5a4e" }}>MXN</span>
-              </p>
-              <p className="mb-8 text-sm" style={{ color: "#7a5a4e" }}>
-                Acceso completo al programa
-              </p>
-
-              <div className="text-left space-y-3 mb-8 flex-1">
-                {[
-                  "Programa completo de 9 semanas",
-                  "Lecciones grabadas",
-                  "Manuales descargables",
-                  "Ejercicios KS",
-                  "Material imprimible",
-                  "10 sesiones en vivo",
-                  "Acceso al grupo privado",
-                  "Acompañamiento durante todo el proceso",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span
-                      className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0"
-                      style={{ background: "#c9874a" }}
-                    >
-                      ✓
-                    </span>
-                    <span style={{ color: "#3d2820" }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={INSCRIPCION_URL_UNICO}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                style={{
-                  background: "linear-gradient(135deg, #c9874a, #a0622a)",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                QUIERO INSCRIBIRME
-              </a>
-            </div>
-
-            {/* Tarjeta 2 — 2 pagos */}
-            <div
-              className="p-10 rounded-3xl text-center flex flex-col"
-              style={{
-                background: "linear-gradient(135deg, #fff8f3, #fdeee0)",
-                border: "2px solid rgba(201,135,74,0.5)",
-                boxShadow: "0 8px 40px rgba(160,98,42,0.15)",
-              }}
-            >
-              <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "#a0622a" }}>
-                2 Pagos
-              </p>
-              <p
-                className="mb-1"
-                style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  fontSize: "4rem",
-                  fontWeight: 700,
-                  color: "#2d2420",
-                  lineHeight: 1,
-                }}
-              >
-                $2,000 <span style={{ fontSize: "1.5rem", color: "#7a5a4e" }}>MXN</span>
-              </p>
-              <p className="mb-2 text-sm font-semibold" style={{ color: "#a0622a" }}>
-                × 2 pagos = $4,000 MXN total
-              </p>
-              <p className="mb-8 text-sm" style={{ color: "#7a5a4e" }}>
-                Primer pago al inscribirte, segundo pago a las 4 semanas
-              </p>
-
-              <div className="text-left space-y-3 mb-8 flex-1">
-                {[
-                  "Programa completo de 9 semanas",
-                  "Lecciones grabadas",
-                  "Manuales descargables",
-                  "Ejercicios KS",
-                  "Material imprimible",
-                  "10 sesiones en vivo",
-                  "Acceso al grupo privado",
-                  "Acompañamiento durante todo el proceso",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span
-                      className="w-5 h-5 rounded-full flex items-center justify-center text-white text-xs flex-shrink-0"
-                      style={{ background: "#c9874a" }}
-                    >
-                      ✓
-                    </span>
-                    <span style={{ color: "#3d2820" }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={INSCRIPCION_URL_2PAGOS}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full py-4 rounded-full font-semibold text-white text-center transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                style={{
-                  background: "linear-gradient(135deg, #c9874a, #a0622a)",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                QUIERO INSCRIBIRME
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── ESCASEZ ──────────────────────────────────────────── */}
-      <section className="py-16" style={{ background: "#fef3ec" }}>
-        <div className="container mx-auto px-6 max-w-3xl text-center">
-          <div
-            className="p-8 rounded-3xl"
-            style={{
-              background: "linear-gradient(135deg, rgba(201,135,74,0.1), rgba(201,135,74,0.05))",
-              border: "1.5px solid rgba(201,155,100,0.35)",
-            }}
-          >
-            <h3
-              className="mb-4"
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: "1.8rem",
-                fontWeight: 700,
-                color: "#2d2420",
-              }}
-            >
-              Cupo Limitado
-            </h3>
-            <p className="leading-relaxed" style={{ color: "#5a3e35" }}>
-              Para garantizar una experiencia de acompañamiento cercana y personalizada, los espacios disponibles son limitados. Las inscripciones permanecerán abiertas únicamente hasta completar el grupo.
-            </p>
-          </div>
+        <div className="container mx-auto max-w-4xl px-6">
+          <h2 className="mb-8 text-center font-serif text-4xl" style={{ color: "#2d2420" }}>Próxima generación</h2>
+          <TlbmsCohortNotice />
         </div>
       </section>
 
@@ -821,7 +643,7 @@ export default function TodoLoBueno() {
             Únete a esta experiencia de 9 semanas y comienza a construir una nueva relación contigo mismo, con tu energía y con tu vida.
           </p>
           <a
-            href={INSCRIPCION_URL_UNICO}
+            href={tlbmsCohort.contactUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-12 py-5 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
@@ -832,7 +654,7 @@ export default function TodoLoBueno() {
               boxShadow: "0 8px 32px rgba(201,135,74,0.4)",
             }}
           >
-            QUIERO INSCRIBIRME AHORA
+            CONSULTAR INFORMACIÓN
           </a>
         </div>
       </section>

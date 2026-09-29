@@ -4,6 +4,7 @@ import { Link } from "wouter";
 
 // disabled: true = visible pero sin link (próximamente)
 const programas = [
+  { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
   { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
   { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
   { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },
@@ -55,7 +56,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/">
+          <Link asChild href="/">
             <a className="flex items-center gap-2.5 group">
               <div className="w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-[#C4963C] flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                 <Sparkles className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
@@ -96,7 +97,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
                           <span className="text-[9px] uppercase tracking-wider text-[#C4963C]/60 ml-2">Pronto</span>
                         </span>
                       ) : (
-                        <Link key={prog.href} href={prog.href}>
+                        <Link asChild key={prog.href} href={prog.href}>
                           <a
                             target={prog.href.startsWith("http") ? "_blank" : undefined}
                             className="block px-4 py-2.5 text-[#2D2D2D] text-sm hover:bg-[#C4963C10] transition-colors"
@@ -120,7 +121,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
                       {link.label}
                     </span>
                   ) : (
-                    <Link key={link.href} href={link.href}>
+                    <Link asChild key={link.href} href={link.href}>
                       <a
                         className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-300 rounded-md hover:bg-[#C4963C10] ${
                           scrolled ? "text-[#2D2D2D]" : "text-white/90 hover:text-white"
@@ -169,6 +170,8 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileOpen}
             className={`lg:hidden p-2 rounded-md transition-colors ${scrolled ? "text-[#2D2D2D]" : "text-white"}`}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -201,7 +204,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
                           <span className="text-[9px] uppercase tracking-wider text-[#C4963C]/60">Pronto</span>
                         </span>
                       ) : (
-                        <Link key={prog.href} href={prog.href}>
+                        <Link asChild key={prog.href} href={prog.href}>
                           <a
                             onClick={() => setMobileOpen(false)}
                             target={prog.href.startsWith("http") ? "_blank" : undefined}
@@ -224,7 +227,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
                       {link.label}
                     </span>
                   ) : (
-                    <Link key={link.href} href={link.href}>
+                    <Link asChild key={link.href} href={link.href}>
                       <a
                         onClick={() => setMobileOpen(false)}
                         className="block px-4 py-3 text-[#2D2D2D] font-medium rounded-md hover:bg-[#C4963C10] transition-colors"

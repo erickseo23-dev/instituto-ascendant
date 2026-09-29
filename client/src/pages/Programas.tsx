@@ -122,6 +122,15 @@ export default function Programas() {
         </div>
       </section>
 
+      <section className="bg-[#263c32] py-14 text-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <p className="mb-3 text-sm uppercase tracking-widest text-[#dbc195]">El sistema de Claribel Puga</p>
+          <h2 className="mb-4 font-serif text-4xl">CLARIMENTAL</h2>
+          <p className="mb-6 max-w-2xl leading-relaxed text-[#e2e9e3]">Nueve octavas de nueve semanas. Un recorrido de Ascensión Intrínseca, Extrínseca y Holística para integrar claridad, presencia y dirección consciente.</p>
+          <a href="/clarimental" className="inline-flex min-h-12 items-center gap-3 rounded bg-[#ecdfc8] px-6 py-3 font-medium text-[#263c32]">Explorar las nueve octavas <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+        </div>
+      </section>
+
       {/* Programs Grid */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
