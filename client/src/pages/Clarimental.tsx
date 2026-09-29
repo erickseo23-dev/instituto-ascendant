@@ -90,7 +90,7 @@ export default function Clarimental() {
                 <p>Un primer recorrido para pasar de la lucha y el control a una relación con la vida basada en confianza, coherencia y gozo consciente.</p>
                 <div className="cm-cohort"><span>Próximo inicio</span><strong>{tlbmsCohort.startLabel}</strong><p>Sesiones en vivo: {tlbmsCohort.scheduleLabel}</p></div>
                 <details className="cm-details"><summary>Los nueve niveles de la Primera Octava <span aria-hidden="true">+</span></summary><div>{firstOctaveStages.map((stage, index) => <section key={stage.name}><h4>{stage.name}</h4><ol start={index * 3 + 1}>{stage.levels.map(level => <li key={level}>{level}</li>)}</ol></section>)}</div></details>
-                <p className="cm-availability">Inscripciones en preparación. Consulta la información de esta generación.</p>
+                <p className="cm-availability">Inscripciones abiertas para el 2 de octubre. Opciones de un solo pago o dos pagos.</p>
                 <a className="cm-button" href="/todo-lo-bueno-me-sucede">Conocer el programa <ArrowRight size={18} aria-hidden="true" /></a>
               </article>
               <article id="segunda-octava" className="cm-program cm-program-second">

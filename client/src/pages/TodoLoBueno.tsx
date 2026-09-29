@@ -174,7 +174,7 @@ export default function TodoLoBueno() {
                   letterSpacing: "0.05em",
                 }}
               >
-                VER PRÓXIMA GENERACIÓN
+                QUIERO INSCRIBIRME
               </a>
               <a
                 href="#incluye"
@@ -601,7 +601,7 @@ export default function TodoLoBueno() {
       {/* ── INVERSIÓN ────────────────────────────────────────── */}
       <section id="inversion" className="py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto max-w-4xl px-6">
-          <h2 className="mb-8 text-center font-serif text-4xl" style={{ color: "#2d2420" }}>Próxima generación</h2>
+          <h2 className="mb-8 text-center font-serif text-4xl" style={{ color: "#2d2420" }}>Elige tu forma de pago</h2>
           <TlbmsCohortNotice />
         </div>
       </section>
@@ -643,9 +643,7 @@ export default function TodoLoBueno() {
             Únete a esta experiencia de 9 semanas y comienza a construir una nueva relación contigo mismo, con tu energía y con tu vida.
           </p>
           <a
-            href={tlbmsCohort.contactUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#inversion"
             className="inline-block px-12 py-5 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             style={{
               background: "linear-gradient(135deg, #c9874a, #a0622a)",
@@ -654,7 +652,7 @@ export default function TodoLoBueno() {
               boxShadow: "0 8px 32px rgba(201,135,74,0.4)",
             }}
           >
-            CONSULTAR INFORMACIÓN
+            QUIERO INSCRIBIRME
           </a>
         </div>
       </section>

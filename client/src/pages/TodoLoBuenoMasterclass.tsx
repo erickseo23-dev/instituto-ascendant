@@ -1,7 +1,7 @@
 // TodoLoBuenoMasterclass.tsx
 // Landing page post-masterclass "Todo Lo Bueno Me Sucede"
 // Estética: pastel cálido, nude, champagne gold, blush rose — magnético y elegante
-// Flujo: Video grabado → CTA → Información de la próxima generación
+// Flujo: Video grabado → CTA → Opciones de inscripción de la próxima generación
 
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -27,13 +27,13 @@ const beneficios = [
   "Acceso de por vida a las grabaciones",
 ];
 
-// Information dialog while the upcoming generation remains in prepublication.
+// Both payment options use the confirmed checkout URLs for this generation.
 function PricingModal({ onClose }: { onClose: () => void }) {
   return (
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-2xl">
         <DialogTitle className="font-serif text-2xl">Todo Lo Bueno Me Sucede</DialogTitle>
-        <DialogDescription>Primera Octava de CLARIMENTAL · Próxima generación</DialogDescription>
+        <DialogDescription>Primera Octava de CLARIMENTAL · Elige tu forma de pago</DialogDescription>
         <TlbmsCohortNotice />
       </DialogContent>
     </Dialog>
@@ -155,7 +155,7 @@ export default function TodoLoBuenoMasterclass() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-base transition-all duration-300 hover:opacity-90 hover:shadow-xl hover:-translate-y-0.5 shadow-lg"
             style={{ background: "linear-gradient(135deg, #C4963C, #B08530)" }}
           >
-            Consultar información <ArrowRight className="w-5 h-5" />
+            Quiero inscribirme <ArrowRight className="w-5 h-5" />
           </button>
 
           {/* Fecha de inicio */}
