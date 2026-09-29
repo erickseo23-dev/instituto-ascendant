@@ -1,3 +1,5 @@
+import { PresencePause, useExperience } from "@/components/experience/Experience";
+import MasterclassVideo from "@/components/experience/MasterclassVideo";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { getUpcomingEvents, getDateParts, isUpcomingDate } from "@/lib/eventos";
 import { tlbmsCohort } from "@/content/tlbms";
@@ -67,13 +69,14 @@ const IMAGES = {
 
 /* ─── ANIMATION HELPERS ─── */
 function AnimatedSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const { still } = useExperience();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      initial={still ? false : "hidden"}
+      animate={still || isInView ? "visible" : "hidden"}
       variants={{
         hidden: { opacity: 0, y: 24 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay } },
@@ -87,11 +90,12 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 
 function ParallaxImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   const ref = useRef(null);
+  const { still } = useExperience();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>
-      <motion.img src={src} alt={alt} style={{ y }} className="w-full h-full object-cover scale-110" />
+      <motion.img src={src} alt={alt} style={{ y: still ? 0 : y }} className="w-full h-full object-cover scale-110" />
     </div>
   );
 }
@@ -921,12 +925,14 @@ export default function Home() {
       <ClarimentalRouteOverview />
       <EventsSection />
       <FeaturedPrograms />
+      <MasterclassVideo />
       <CredibilityBar />
       <CategoriesSection />
       <InstitutoSection />
       <FoundersSection />
       <TestimonialsSection />
       <AppDownloadSection />
+      <PresencePause />
       <BecasBanner />
       <Footer />
     </div>

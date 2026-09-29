@@ -1,3 +1,4 @@
+import { ExperienceProvider, useExperience } from "@/components/experience/Experience";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -32,9 +33,11 @@ import TodoLoBuenoMasterclass from "./pages/TodoLoBuenoMasterclass";
 
 function ScrollToTop() {
   const [location] = useLocation();
+  const { pauseAudio } = useExperience();
   useEffect(() => {
+    pauseAudio();
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [location]);
+  }, [location, pauseAudio]);
   return null;
 }
 
@@ -80,7 +83,7 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <ExperienceProvider><Router /></ExperienceProvider>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

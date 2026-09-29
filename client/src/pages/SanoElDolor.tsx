@@ -1,3 +1,4 @@
+import { AmbientLight, ExperienceControls, PresencePause, usePageReveal } from "@/components/experience/Experience";
 import { useEffect } from "react";
 import { ArrowDown, ArrowRight, BookOpen, Compass, Heart, Mail, Sprout } from "lucide-react";
 import Header from "@/components/Header";
@@ -14,12 +15,13 @@ const shifts = [
 ];
 
 export default function SanoElDolor() {
+  const pageRef = usePageReveal();
   useEffect(() => {
     setSEOMetadata({ ...secondOctave, type: "website", image: clarimentalImages.path });
   }, []);
 
   return (
-    <div className="clarimental-page sd-page">
+    <div ref={pageRef} className="clarimental-page sd-page">
       <a className="cm-skip" href="#contenido-segunda-octava">Saltar al contenido</a>
       <Header forceLight />
       <main id="contenido-segunda-octava">
@@ -31,10 +33,12 @@ export default function SanoElDolor() {
             <p className="sd-lead">Tu historia merece ser comprendida.<br />Tu presente, vivido con mayor libertad.</p>
             <p className="sd-description">Nueve semanas para reconocer el dolor emocional que sigue influyendo en cómo te ves, cómo eliges y cómo te relacionas. Un nuevo paso en la ruta CLARIMENTAL de Claribel Puga.</p>
             <div className="cm-actions"><a className="cm-button" href="#nueve-niveles">Explorar los nueve niveles <ArrowDown size={18} aria-hidden="true" /></a><a className="cm-text-link" href="#participar">Consultar participación <ArrowRight size={18} aria-hidden="true" /></a></div>
+            <ExperienceControls />
             <div className="cm-facts" aria-label="Estructura de la Segunda Octava"><p><strong>II</strong><span>octava de CLARIMENTAL</span></p><p><strong>9</strong><span>semanas de formación</span></p><p><strong>9</strong><span>niveles de trabajo</span></p></div>
           </div>
-          <div className="sd-hero-visual">
-            <img src={clarimentalImages.path} alt="La luz del sol abre un camino entre los árboles" width="1920" height="1288" fetchPriority="high" />
+          <div className="sd-hero-visual asc-visual-host">
+            <AmbientLight subtle />
+            <img className="asc-hero-photo" src={clarimentalImages.path} alt="La luz del sol abre un camino entre los árboles" width="1920" height="1288" fetchPriority="high" />
             <div className="sd-chapter" aria-hidden="true"><span>CLARIMENTAL</span><strong>II</strong><span>El mundo interior</span></div>
             <div className="cm-visual-caption"><span>Confianza · Dignidad · Presencia</span><p>Mirar tu historia.<br />Volver a ti.</p></div>
           </div>
@@ -49,6 +53,8 @@ export default function SanoElDolor() {
           <div className="cm-route-heading"><p className="cm-eyebrow">Nueve semanas · Nueve niveles</p><h2 id="sd-levels-title">Un mapa para comprender.<br /><em>Un recorrido para sanar.</em></h2><p>Desde el reconocimiento de tu dolor emocional hasta las experiencias que dejaron una huella en tu forma de vivir. Cada nivel abre un espacio de observación, práctica e integración.</p></div>
           <ol className="sd-levels">{secondOctaveLevels.map(level => <li key={level.number}><span className="sd-level-number" aria-hidden="true">{String(level.number).padStart(2, "0")}</span><p className="sd-week">Semana {level.number}</p><h3>{level.title}</h3><p>{level.description}</p></li>)}</ol>
         </div></section>
+
+        <PresencePause />
 
         <section className="sd-practice cm-section" aria-labelledby="sd-practice-title"><div className="cm-container cm-section-intro">
           <div><p className="cm-eyebrow">Del reconocimiento a la integración</p><h2 id="sd-practice-title">Lo que comprendes,<br /><em>lo llevas a tu vida.</em></h2><p className="sd-description">El Método Ascendant integra comprensión, experiencia y práctica. La Meditación Ascendente Isíaca y el trabajo con ODEL/KS acompañan la exploración de cada semana.</p></div>

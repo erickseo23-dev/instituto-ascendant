@@ -1,3 +1,6 @@
+import { AmbientLight, ExperienceControls, PresencePause, usePageReveal } from "@/components/experience/Experience";
+import MasterclassVideo from "@/components/experience/MasterclassVideo";
+import OctaveExplorer from "@/components/experience/OctaveExplorer";
 import { useEffect } from "react";
 import { ArrowDown, ArrowRight, BookOpen, Compass, Eye, Heart, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
@@ -14,12 +17,13 @@ const capacities = [
 ];
 
 export default function Clarimental() {
+  const pageRef = usePageReveal();
   useEffect(() => {
     setSEOMetadata({ ...clarimentalMeta, type: "website", image: clarimentalImages.path });
   }, []);
 
   return (
-    <div className="clarimental-page">
+    <div ref={pageRef} className="clarimental-page">
       <a className="cm-skip" href="#contenido-clarimental">Saltar al contenido</a>
       <Header forceLight />
       <main id="contenido-clarimental">
@@ -34,14 +38,16 @@ export default function Clarimental() {
               <a className="cm-button" href="#ruta">Explora las nueve octavas <ArrowDown size={18} aria-hidden="true" /></a>
               <a className="cm-text-link" href="#primera-octava">Conoce el primer paso <ArrowRight size={17} aria-hidden="true" /></a>
             </div>
+            <ExperienceControls />
             <div className="cm-facts" aria-label="Estructura del recorrido">
               <p><strong>3</strong><span>ascensiones</span></p>
               <p><strong>9</strong><span>octavas</span></p>
               <p><strong>81</strong><span>semanas de formación</span></p>
             </div>
           </div>
-          <div className="cm-hero-visual">
-            <img src={clarimentalImages.path} alt="Un sendero entre árboles iluminado por la luz del sol" width="1920" height="1288" fetchPriority="high" />
+          <div className="cm-hero-visual asc-visual-host">
+            <AmbientLight />
+            <img className="asc-hero-photo" src={clarimentalImages.path} alt="Un sendero entre árboles iluminado por la luz del sol" width="1920" height="1288" fetchPriority="high" />
             <div className="cm-visual-caption"><span>La ruta hacia el Estado Clarimental</span><p>Un proceso que se profundiza.<br />Una claridad que se integra.</p></div>
           </div>
         </section>
@@ -59,6 +65,7 @@ export default function Clarimental() {
         <section id="ruta" className="cm-route cm-section" aria-labelledby="ruta-title">
           <div className="cm-container">
             <div className="cm-route-heading"><p className="cm-eyebrow">La ruta CLARIMENTAL</p><h2 id="ruta-title">Nueve octavas.<br /><em>Tres movimientos de transformación.</em></h2><p>Cada octava comprende nueve semanas. Cada ascensión reúne tres octavas y amplía el ámbito en el que integras lo aprendido.</p></div>
+            <OctaveExplorer />
             <nav className="cm-route-nav" aria-label="Ascensiones de CLARIMENTAL">{ascensions.map(stage => <a key={stage.id} href={`#${stage.id}`}><span>{stage.number}</span> {stage.name} <ArrowDown size={15} aria-hidden="true" /></a>)}</nav>
             {ascensions.map(stage => (
               <section id={stage.id} className={`cm-ascension cm-${stage.id}`} key={stage.id} aria-labelledby={`${stage.id}-title`}>
@@ -79,6 +86,8 @@ export default function Clarimental() {
             <p className="cm-route-note">Las 81 semanas corresponden al recorrido formativo completo. Las aperturas de cada octava se anunciarán por separado.</p>
           </div>
         </section>
+
+        <PresencePause />
 
         <section className="cm-first-steps cm-section" aria-labelledby="primeros-pasos-title">
           <div className="cm-container">
@@ -104,6 +113,8 @@ export default function Clarimental() {
             </div>
           </div>
         </section>
+
+        <MasterclassVideo />
 
         <section className="cm-creator cm-section" aria-labelledby="claribel-title">
           <div className="cm-container cm-creator-grid">

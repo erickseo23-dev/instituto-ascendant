@@ -1,3 +1,5 @@
+import { AmbientLight, ExperienceControls, PresencePause, usePageReveal } from "@/components/experience/Experience";
+import MasterclassVideo from "@/components/experience/MasterclassVideo";
 // Landing Page: Todo Lo Bueno Me Sucede
 // Programa de 9 semanas basado en el Método Ascendant® de Claribel Puga
 // Estética: pastel cálido, nude, champagne gold, blush rose — magnético y elegante
@@ -91,6 +93,7 @@ const sesiones = [
 
 export default function TodoLoBueno() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const pageRef = usePageReveal();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -98,7 +101,7 @@ export default function TodoLoBueno() {
   }, []);
 
   return (
-    <div className="font-sans" style={{ background: "#fdfaf7", color: "#2d2420" }}>
+    <div ref={pageRef} className="font-sans" style={{ background: "#fdfaf7", color: "#2d2420" }}>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section
@@ -108,9 +111,10 @@ export default function TodoLoBueno() {
           background: "linear-gradient(135deg, #fef3ec 0%, #fde8e0 40%, #f8e4d8 100%)",
         }}
       >
+        <AmbientLight />
         {/* Imagen hero derecha */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="asc-hero-photo absolute inset-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
         />
         {/* Overlay gradiente para legibilidad */}
@@ -189,6 +193,7 @@ export default function TodoLoBueno() {
                 VER TODO LO QUE INCLUYE
               </a>
             </div>
+            <ExperienceControls />
           </div>
         </div>
 
@@ -203,8 +208,10 @@ export default function TodoLoBueno() {
         </div>
       </section>
 
+      <MasterclassVideo />
+
       {/* ── ¿QUÉ ES? ─────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: "#fff9f5" }}>
+      <section className="asc-reveal py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <div
             className="inline-block mb-4 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
@@ -242,7 +249,7 @@ export default function TodoLoBueno() {
 
       {/* ── LOGROS ───────────────────────────────────────────── */}
       <section
-        className="py-24"
+        className="asc-reveal py-24"
         style={{
           backgroundImage: `url(${MODULES_BG})`,
           backgroundSize: "cover",
@@ -297,7 +304,7 @@ export default function TodoLoBueno() {
       </section>
 
       {/* ── QUÉ INCLUYE ──────────────────────────────────────── */}
-      <section id="incluye" className="py-24" style={{ background: "#fff9f5" }}>
+      <section id="incluye" className="asc-reveal py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-14">
             <div
@@ -350,7 +357,7 @@ export default function TodoLoBueno() {
       </section>
 
       {/* ── CALENDARIO ───────────────────────────────────────── */}
-      <section className="py-24" style={{ background: "#fef3ec" }}>
+      <section className="asc-reveal py-24" style={{ background: "#fef3ec" }}>
         <div className="container mx-auto px-6 max-w-3xl">
           <div className="text-center mb-14">
             <div
@@ -407,7 +414,7 @@ export default function TodoLoBueno() {
       </section>
 
       {/* ── 10 SESIONES EN VIVO ───────────────────────────────── */}
-      <section className="py-24" style={{ background: "#fff9f5" }}>
+      <section className="asc-reveal py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-14">
             <div
@@ -563,44 +570,10 @@ export default function TodoLoBueno() {
         </div>
       </section>
 
-      {/* ── TESTIMONIOS ──────────────────────────────────────── */}
-      <section className="py-24" style={{ background: "#fef3ec" }}>
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <div
-            className="inline-block mb-4 px-4 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-            style={{ background: "rgba(201,155,100,0.15)", color: "#a0622a" }}
-          >
-            Testimonios
-          </div>
-          <h2
-            className="mb-6"
-            style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 700,
-              color: "#2d2420",
-            }}
-          >
-            Miles de personas han transformado su vida con las enseñanzas de Claribel Puga
-          </h2>
-          <div
-            className="p-10 rounded-3xl"
-            style={{
-              background: "#fff",
-              border: "1px solid rgba(201,155,100,0.2)",
-              color: "#a0622a",
-              fontStyle: "italic",
-            }}
-          >
-            <p className="text-lg" style={{ color: "#7a5a4e" }}>
-              Los testimonios en video y escritos se agregarán próximamente.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PresencePause />
 
       {/* ── INVERSIÓN ────────────────────────────────────────── */}
-      <section id="inversion" className="py-24" style={{ background: "#fff9f5" }}>
+      <section id="inversion" className="asc-reveal py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto max-w-4xl px-6">
           <h2 className="mb-8 text-center font-serif text-4xl" style={{ color: "#2d2420" }}>Elige tu forma de pago</h2>
           <TlbmsCohortNotice />

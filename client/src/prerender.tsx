@@ -1,3 +1,4 @@
+import { ExperienceProvider } from "./components/experience/Experience";
 import { renderToString } from "react-dom/server";
 import { Router } from "wouter";
 import Clarimental from "./pages/Clarimental";
@@ -17,7 +18,7 @@ export function renderPages() {
   ];
   return pages.map(({ component: Component, ...page }) => ({
     ...page,
-    html: renderToString(<Router ssrPath={page.path}><Component /></Router>),
+    html: renderToString(<Router ssrPath={page.path}><ExperienceProvider><Component /></ExperienceProvider></Router>),
     structuredData: page.path === "/clarimental" ? {
       "@context": "https://schema.org", "@type": "WebPage", name: page.title, description: page.description, url: page.url,
       about: { "@type": "CreativeWork", name: "CLARIMENTAL", creator: { "@type": "Person", name: "Claribel Puga" } },

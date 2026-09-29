@@ -1,3 +1,4 @@
+import { AmbientLight, ExperienceControls } from "@/components/experience/Experience";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { ascensions } from "@/content/clarimental";
 import { tlbmsCohort } from "@/content/tlbms";
@@ -8,9 +9,10 @@ export function ClarimentalHomeHero({ imageSrc }: { imageSrc: string }) {
 
   return (
     <section id="hero" aria-labelledby="home-title" className="relative overflow-hidden bg-[#263c32] pb-12 pt-28 text-white sm:pt-32 lg:pb-16 lg:pt-36">
-      <img src={imageSrc} alt="" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={imageSrc} alt="" fetchPriority="high" className="asc-hero-photo absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#172a21]/95 via-[#263c32]/85 to-[#263c32]/60" />
-      <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:px-10">
+      <AmbientLight subtle />
+      <div className="relative z-10 mx-auto grid max-w-[1280px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:px-10">
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#e5c98f]">Instituto Ascendant presenta</p>
           <h1 id="home-title" className="mb-5 break-words text-[clamp(1.8rem,5vw,3.6rem)] font-medium tracking-[0.1em]">CLARIMENTAL</h1>
@@ -20,6 +22,7 @@ export function ClarimentalHomeHero({ imageSrc }: { imageSrc: string }) {
             <a href="/clarimental" className="inline-flex min-h-12 items-center justify-center gap-3 rounded bg-[#dec18a] px-6 py-3 text-sm font-semibold text-[#263c32] transition-colors hover:bg-[#eed7ae] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Explorar CLARIMENTAL <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
             <a href="#programas" className="inline-flex min-h-11 items-center text-sm text-white underline underline-offset-4">Ver todos los programas</a>
           </div>
+          <ExperienceControls light />
           <dl className="mt-9 flex gap-6 border-t border-white/20 pt-6 sm:gap-10">
             {[["3", "ascensiones"], ["9", "octavas"], ["81", "semanas de formación"]].map(([value, label]) => <div key={label}><dt className="text-xs text-white/75">{label}</dt><dd className="mt-1 font-serif text-3xl">{value}</dd></div>)}
           </dl>
