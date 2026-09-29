@@ -16,8 +16,8 @@ export const ascensions = [
     theme: "Mi mundo interior", lead: "Confianza, sanación emocional e identidad.",
     description: "Desarrollar el respaldo interior para mirar tu experiencia, trabajar el dolor que te condiciona y reconocer los patrones desde los que respondes a la vida.",
     octaves: [
-      { roman: "I", title: "Todo Lo Bueno Me Sucede", focus: "Confianza y coherencia", description: "Transforma la relación con tu realidad. Cultiva confianza, Respaldo Perpetuo y Gozo Consciente, y aprende a atravesar la vida con mayor coherencia.", status: "Primera octava", href: "#primera-octava" },
-      { roman: "II", title: "Sano El Dolor Que Me Condicionaba", focus: "Dolor emocional y dignidad", description: "Reconoce el dolor emocional que sigue influyendo en tus decisiones, tu autoestima y tus vínculos. Profundiza en una relación más libre y consciente con tu historia.", status: "Segunda octava", href: "#segunda-octava" },
+      { roman: "I", title: "Todo Lo Bueno Me Sucede", focus: "Confianza y coherencia", description: "Transforma la relación con tu realidad. Cultiva confianza, Respaldo Perpetuo y Gozo Consciente, y aprende a atravesar la vida con mayor coherencia.", status: "Primera octava", href: "/todo-lo-bueno-me-sucede" },
+      { roman: "II", title: "Sano El Dolor Que Me Condicionaba", focus: "Dolor emocional y dignidad", description: "Reconoce el dolor emocional que sigue influyendo en tus decisiones, tu autoestima y tus vínculos. Profundiza en una relación más libre y consciente con tu historia.", status: "Segunda octava", href: "/sano-el-dolor-que-me-condicionaba" },
       { roman: "III", title: "Reordeno Mis Arquetipos", focus: "Patrones e identidad", description: "Explora los personajes internos, las defensas y los patrones que organizan tu manera de ser. Amplía tu capacidad de elegir cómo responder.", status: "Tercera octava", href: null },
     ],
   },

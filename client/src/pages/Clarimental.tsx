@@ -99,7 +99,7 @@ export default function Clarimental() {
                 <p>Profundiza en el dolor emocional que sigue influyendo en cómo te ves, cómo eliges y cómo te relacionas. Reconoce tu historia y recupera tu dignidad interior.</p>
                 <h4 className="cm-levels-title">Nueve niveles de trabajo</h4><ol className="cm-pain-levels">{painLevels.map((level, index) => <li key={level}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{level}</li>)}</ol>
                 <p className="cm-availability">Consulta las próximas aperturas y las condiciones de participación con el Instituto.</p>
-                <a className="cm-text-link" href="mailto:info@institutoascendant.com?subject=Informaci%C3%B3n%20sobre%20la%20Segunda%20Octava%20de%20CLARIMENTAL">Consultar disponibilidad <ArrowRight size={18} aria-hidden="true" /></a>
+                <a className="cm-button" href="/sano-el-dolor-que-me-condicionaba">Conocer el programa <ArrowRight size={18} aria-hidden="true" /></a>
               </article>
             </div>
           </div>

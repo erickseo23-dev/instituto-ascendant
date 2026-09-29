@@ -6,6 +6,7 @@ import { Link } from "wouter";
 const programas = [
   { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
   { label: "Todo Lo Bueno Me Sucede", href: "/todo-lo-bueno-me-sucede", disabled: false },
+  { label: "Sano El Dolor Que Me Condicionaba", href: "/sano-el-dolor-que-me-condicionaba", disabled: false },
   { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
   { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
   { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },
@@ -66,7 +67,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
                 <span className={`font-serif text-lg lg:text-xl font-semibold tracking-tight transition-colors duration-500 ${scrolled ? "text-[#2D2D2D]" : "text-white"}`}>
                   Instituto Ascendant
                 </span>
-                <span className={`text-[9px] lg:text-[10px] tracking-[0.18em] uppercase transition-colors duration-500 ${scrolled ? "text-[#C4963C]" : "text-white/70"}`}>
+                <span className={`hidden sm:block text-[9px] lg:text-[10px] tracking-[0.18em] uppercase transition-colors duration-500 ${scrolled ? "text-[#C4963C]" : "text-white/70"}`}>
                   Para el Crecimiento de la Consciencia Creadora
                 </span>
               </div>
@@ -87,7 +88,7 @@ export default function Header({ hideNav = false, forceLight = false }: HeaderPr
                     Programas
                     <ChevronDown className="w-3.5 h-3.5" />
                   </button>
-                  <div className="absolute left-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+                  <div className="absolute left-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 py-2">
                     {programas.map((prog) =>
                       prog.disabled ? (
                         <span

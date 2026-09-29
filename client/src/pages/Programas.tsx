@@ -128,6 +128,10 @@ export default function Programas() {
           <h2 className="mb-4 font-serif text-4xl">CLARIMENTAL</h2>
           <p className="mb-6 max-w-2xl leading-relaxed text-[#e2e9e3]">Nueve octavas de nueve semanas. Un recorrido de Ascensión Intrínseca, Extrínseca y Holística para integrar claridad, presencia y dirección consciente.</p>
           <a href="/clarimental" className="inline-flex min-h-12 items-center gap-3 rounded bg-[#ecdfc8] px-6 py-3 font-medium text-[#263c32]">Explorar las nueve octavas <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <a href="/todo-lo-bueno-me-sucede" className="rounded border border-white/20 p-6 transition-colors hover:bg-white/5"><span className="text-xs uppercase tracking-widest text-[#dbc195]">Primera octava</span><h3 className="mt-3 font-serif text-2xl">Todo Lo Bueno Me Sucede</h3><span className="mt-3 inline-flex items-center gap-2 text-sm">Conocer el programa <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></a>
+            <a href="/sano-el-dolor-que-me-condicionaba" className="rounded border border-white/20 p-6 transition-colors hover:bg-white/5"><span className="text-xs uppercase tracking-widest text-[#dbc195]">Segunda octava</span><h3 className="mt-3 font-serif text-2xl">Sano El Dolor Que Me Condicionaba</h3><span className="mt-3 inline-flex items-center gap-2 text-sm">Conocer el programa <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></a>
+          </div>
         </div>
       </section>
 

@@ -26,6 +26,7 @@ import Becas from "./pages/Becas";
 import SolicitudBeca from "./pages/SolicitudBeca";
 import TodoLoBueno from "./pages/TodoLoBueno";
 import Clarimental from "./pages/Clarimental";
+import SanoElDolor from "./pages/SanoElDolor";
 import TodoLoBuenoMasterclass from "./pages/TodoLoBuenoMasterclass";
 
 
@@ -61,6 +62,7 @@ function Router() {
       <Route path={"/congreso"} component={Congreso} />
       <Route path={"/becas"} component={Becas} />
       <Route path={"/clarimental"} component={Clarimental} />
+      <Route path={"/sano-el-dolor-que-me-condicionaba"} component={SanoElDolor} />
       <Route path={"/todo-lo-bueno-me-sucede"} component={TodoLoBueno} />
       <Route path={"/todo-lo-bueno-masterclass"} component={TodoLoBuenoMasterclass} />
       <Route path={"https://cursos.institutoascendant.com/formulario-becas-ascendant"} component={SolicitudBeca} />

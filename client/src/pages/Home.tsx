@@ -112,6 +112,7 @@ function Header() {
   const programas = [
     { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
     { label: "Todo Lo Bueno Me Sucede", href: "/todo-lo-bueno-me-sucede", disabled: false },
+    { label: "Sano El Dolor Que Me Condicionaba", href: "/sano-el-dolor-que-me-condicionaba", disabled: false },
     { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
     { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
     { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },

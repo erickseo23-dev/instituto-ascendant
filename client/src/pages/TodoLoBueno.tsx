@@ -4,6 +4,7 @@
 // Fuente: Cormorant Garamond (display) + sistema sans-serif (cuerpo)
 
 import { useEffect, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 import TlbmsCohortNotice from "@/components/TlbmsCohortNotice";
 import { tlbmsCohort } from "@/content/tlbms";
 import { setSEOMetadata } from "@/config/seo";
@@ -657,6 +658,14 @@ export default function TodoLoBueno() {
         </div>
       </section>
 
+      <section className="bg-[#f0f1eb] px-6 py-16 text-[#26332e]" aria-labelledby="siguiente-octava-title">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#966927]">Tu siguiente paso en CLARIMENTAL</p>
+          <h2 id="siguiente-octava-title" className="mb-5 font-serif text-3xl sm:text-4xl">Sano El Dolor Que Me Condicionaba</h2>
+          <p className="mb-6 max-w-2xl leading-relaxed text-[#53645c]">La Segunda Octava profundiza en el dolor emocional que sigue influyendo en tu presente. Conoce sus nueve niveles y su lugar en la Ascensión Intrínseca.</p>
+          <a href="/sano-el-dolor-que-me-condicionaba" className="inline-flex min-h-12 items-center gap-3 rounded bg-[#263c32] px-6 py-3 text-sm font-medium text-white hover:bg-[#3c5146]">Explorar la Segunda Octava <ArrowRight size={18} aria-hidden="true" /></a>
+        </div>
+      </section>
     </div>
   );
 }
