@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { getUpcomingEvents, getDateParts } from "@/lib/eventos";
+import { getUpcomingEvents, getDateParts, isUpcomingDate } from "@/lib/eventos";
+import { tlbmsCohort } from "@/content/tlbms";
+import { ClarimentalHomeHero, ClarimentalRouteOverview } from "@/components/home/ClarimentalFeature";
+import { PAGE_SEO, setSEOMetadata } from "@/config/seo";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import StickyBanner from "@/components/StickyBanner";
 import ContactForm from "@/components/ContactForm";
@@ -107,7 +110,8 @@ function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const programas = [
-  { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
+    { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
+    { label: "Todo Lo Bueno Me Sucede", href: "/todo-lo-bueno-me-sucede", disabled: false },
     { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
     { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
     { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },
@@ -125,11 +129,11 @@ function Header() {
   ];
 
   const navLinks = [
+    { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
+    { label: "Agenda", href: "#eventos", disabled: false },
     { label: "Blog", href: "/blog", disabled: false },
     { label: "Obtén una Beca", href: "/becas", disabled: false },
-    { label: "Recursos Gratuitos", href: "/recursos-gratuitos", disabled: true },
-    { label: "Videos", href: "/videos", disabled: true },
-    { label: "Sobre Nosotros", href: "/sobre", disabled: false },
+    { label: "El Instituto", href: "/sobre", disabled: false },
   ];
 
   return (
@@ -150,7 +154,7 @@ function Header() {
               <span className={`font-serif text-lg lg:text-xl font-semibold tracking-tight transition-colors duration-500 ${scrolled ? "text-[#2D2D2D]" : "text-white"}`}>
                 Instituto Ascendant
               </span>
-              <span className={`text-[9px] lg:text-[10px] tracking-[0.18em] uppercase transition-colors duration-500 ${scrolled ? "text-[#C4963C]" : "text-white/70"}`}>
+              <span className={`hidden sm:block text-[9px] lg:text-[10px] tracking-[0.18em] uppercase transition-colors duration-500 ${scrolled ? "text-[#C4963C]" : "text-white/70"}`}>
                 Para el Crecimiento de la Consciencia Creadora
               </span>
             </div>
@@ -167,7 +171,7 @@ function Header() {
                 Programas
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
-              <div className="absolute left-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+              <div className="absolute left-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 py-2">
                 {programas.map((prog) =>
                   prog.disabled ? (
                     <span key={prog.href} className="flex items-center justify-between px-4 py-2.5 text-[#2D2D2D]/40 text-sm cursor-default select-none">
@@ -201,7 +205,7 @@ function Header() {
                 Tienda
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
-              <div className="absolute right-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+              <div className="absolute right-0 mt-0 w-52 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 py-2">
                 {tienda.map((item) => (
                   <span key={item.href} className="flex items-center justify-between px-4 py-2.5 text-[#2D2D2D]/40 text-sm cursor-default select-none">
                     {item.label}
@@ -223,6 +227,8 @@ function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileOpen}
             className={`lg:hidden p-2 rounded-md transition-colors ${scrolled ? "text-[#2D2D2D]" : "text-white"}`}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -294,56 +300,6 @@ function Header() {
   );
 }
 
-/* ─── SECTION 1: HERO — More compact, more impactful ─── */
-function HeroSection() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  return (
-    <section ref={ref} id="hero" className="relative pt-[72px] md:pt-[88px] h-[85vh] min-h-[600px] max-h-[900px] flex items-center justify-center overflow-hidden">
-      <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <img src={IMAGES.hero} alt="Amanecer dorado sobre montañas" className="w-full h-[120%] object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/75" />
-      </motion.div>
-
-      <motion.div style={{ opacity }} className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-        >
-          <p className="text-[#FFD700] text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase mb-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Instituto Ascendant
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.08] mb-5 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">
-            Despierta Tu Consciencia,{" "}
-            <em className="text-[#FFD700] not-italic drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]">Transforma</em> Tu Vida
-          </h1>
-          <p className="text-white text-base sm:text-lg md:text-xl font-light max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Desarrollo espiritual consciente, sanación energética y crecimiento personal con más de una década de experiencia.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="#programas"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#C4963C] text-white font-semibold rounded-md hover:bg-[#B08530] transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
-              Explorar Programas <ArrowRight className="w-4 h-4" />
-            </a>
-            <button disabled
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/15 backdrop-blur-sm text-white font-medium rounded-md border border-white/30 opacity-50 cursor-not-allowed text-sm sm:text-base">
-              Recursos Gratuitos
-            </button>
-          </div>
-        </motion.div>
-      </motion.div>
-
-      <motion.div className="absolute bottom-6 left-1/2 -translate-x-1/2" animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-        <ChevronDown className="w-5 h-5 text-white/50" />
-      </motion.div>
-    </section>
-  );
-}
-
 /* ─── SECTION 2: CREDIBILITY BAR ─── */
 function CredibilityBar() {
   const stats = [
@@ -372,169 +328,39 @@ function CredibilityBar() {
   );
 }
 
-/* ─── SECTION 3: FEATURED PROGRAMS — Immediately actionable ─── */
+/* ─── FEATURED PROGRAMS ─── */
 function FeaturedPrograms() {
+  const upcoming = isUpcomingDate(tlbmsCohort.startDate, tlbmsCohort.timezone);
   const featuredCourses = [
-    {
-      tag: "Empoderamiento Femenino",
-      tagColor: "bg-[#7B6B8A]",
-      title: "Mujer Superpoderosa",
-      subtitle: "Descubre la biología de tu poder — neurociencia + consciencia espiritual",
-      date: "Próximamente",
-      format: "Online · 4 semanas",
-      image: IMAGES.mujerSuperpoderosa,
-      cta: "Más información",
-      ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
-    },
-    {
-      tag: "Taller Gratuito",
-      tagColor: "bg-[#5A7A5A]",
-      title: "Taller KS Healing y La Consciencia Crística",
-      subtitle: "Descubre los fundamentos de la sanación energética KS",
-      date: "15 de marzo, 2026",
-      format: "Online via Zoom",
-      image: IMAGES.tallerGratuito,
-      cta: "Reservar lugar gratuito",
-      ctaStyle: "bg-[#5A7A5A] hover:bg-[#4A6A4A]",
-    },
-    {
-      tag: "Certificación",
-      tagColor: "bg-[#C4963C]",
-      title: "KS Healing Systems®",
-      subtitle: "Formación completa para convertirte en practicante o facilitador certificado",
-      date: "22 de marzo, 2026",
-      format: "Online + Presencial · 12 semanas",
-      image: IMAGES.ksHealing,
-      cta: "Más información",
-      ctaStyle: "bg-[#C4963C] hover:bg-[#B08530]",
-    },
-    {
-      tag: "Curso Insignia",
-      tagColor: "bg-[#7B6B8A]",
-      title: "Meditación Ascendente® Nivel 1",
-      subtitle: "Método progresivo de expansión de consciencia y regulación emocional",
-      date: "Próximamente",
-      format: "Online · 8 semanas",
-      image: IMAGES.meditacion,
-      cta: "Lista de espera",
-      ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
-    },
-    {
-      tag: "Terapia Profunda",
-      tagColor: "bg-[#C4963C]",
-      title: "DART — Renovación Arquetípica",
-      subtitle: "Transformación profunda de patrones internos y heridas emocionales",
-      date: "Próximamente",
-      format: "Online · 6 semanas",
-      image: IMAGES.dart,
-      cta: "Más información",
-      ctaStyle: "bg-[#C4963C] hover:bg-[#B08530]",
-    },
-    {
-      tag: "Desarrollo Personal",
-      tagColor: "bg-[#5A7A5A]",
-      title: "Desarrollo de la Consciencia",
-      subtitle: "Cursos para expandir la percepción y sanar el alma",
-      date: "Próximamente",
-      format: "Online · 4-8 semanas",
-      image: IMAGES.consciencia,
-      cta: "Explorar cursos",
-      ctaStyle: "bg-[#5A7A5A] hover:bg-[#4A6A4A]",
-    },
-    {
-      tag: "Retiro Sagrado",
-      tagColor: "bg-[#7B6B8A]",
-      title: "Retiro Sagrado con YOHEV",
-      subtitle: "Talleres inmersivos online que transforman tu vida — abierto a todas las personas",
-      date: "5 de abril, 2026",
-      format: "Online · 4 horas",
-      image: IMAGES.retreatYohev,
-      cta: "Reservar lugar",
-      ctaStyle: "bg-[#7B6B8A] hover:bg-[#6B5B7A]",
-    },
-    {
-      tag: "Transformación Personal",
-      tagColor: "bg-[#C4963C]",
-      title: "Todo Lo Bueno Me Sucede",
-      subtitle: "Primera Octava de CLARIMENTAL · Confianza, coherencia y gozo consciente",
-      date: "Inicia 2 de octubre · Viernes 3:00 p.m. CDMX",
-      format: "Online · 9 semanas",
-      image: IMAGES.todoLoBueno,
-      cta: "Ver programa",
-      ctaStyle: "bg-[#C4963C] hover:bg-[#B08530]",
-    },
+    { title: "Todo Lo Bueno Me Sucede", tag: "Primera Octava de CLARIMENTAL", subtitle: "Confianza, coherencia y gozo consciente. La puerta de entrada al sistema de Claribel Puga.", date: upcoming ? tlbmsCohort.shortStartLabel : "Consulta la próxima generación", format: "Online · 9 semanas", image: IMAGES.todoLoBueno, href: "/todo-lo-bueno-me-sucede", cta: upcoming ? "Ver programa e inscribirme" : "Conocer el programa", featured: true },
+    { title: "Mujer Superpoderosa", tag: "Empoderamiento Femenino", subtitle: "Descubre la biología de tu poder: neurociencia y consciencia espiritual.", date: "Consulta disponibilidad", format: "Online · 4 semanas", image: IMAGES.mujerSuperpoderosa, href: "/mujer-superpoderosa", cta: "Conocer el programa", featured: false },
+    { title: "KS Healing Systems®", tag: "Formación y certificación", subtitle: "Explora las formaciones de sanación energética con YOHEV y sus próximas convocatorias.", date: "Consulta próximas convocatorias", format: "Formación con YOHEV", image: IMAGES.ksHealing, href: "https://www.kshealing.com/ks-healing", cta: "Explorar la formación", featured: false },
+    { title: "Meditación Ascendente®", tag: "Práctica contemplativa", subtitle: "Conoce el método progresivo de expansión de consciencia de Claribel Puga.", date: "Consulta disponibilidad", format: "Conoce el método", image: IMAGES.meditacion, href: "/meditacion-ascendente", cta: "Explorar el método", featured: false },
+    { title: "DART — Renovación Arquetípica", tag: "Transformación interior", subtitle: "Un recorrido de trabajo con patrones internos y heridas emocionales.", date: "Consulta próximas convocatorias", format: "Formación online", image: IMAGES.dart, href: "https://www.kshealing.com/dart", cta: "Conocer DART", featured: false },
+    { title: "Retiro Sagrado con YOHEV", tag: "Retiro Sagrado", subtitle: "Conoce las experiencias y las próximas fechas del Club Retiro Sagrado.", date: "Consulta próximas fechas", format: "Experiencias con YOHEV", image: IMAGES.retreatYohev, href: "https://www.kshealing.com/club-retiro-sagrado", cta: "Explorar los retiros", featured: false },
   ];
 
   return (
-    <section id="programas" className="py-16 lg:py-20 bg-[#FAF8F5]">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-        {/* Section header — left-aligned, editorial */}
-        <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10 lg:mb-14">
-          <div>
-            <p className="text-[#C4963C] text-xs font-semibold tracking-[0.2em] uppercase mb-3">Comienza Ahora</p>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2D2D2D] leading-tight">
-              Programas Destacados
-            </h2>
-          </div>
-          <a href="#categorias" className="inline-flex items-center gap-1.5 text-[#C4963C] font-medium text-sm hover:underline underline-offset-4 transition-all group">
-            Ver todas las categorías <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </AnimatedSection>
-
-        {/* Mobile: Horizontal carousel with scroll-snap and peek effect */}
-        <div className="lg:hidden overflow-x-auto pb-4 -mx-4 px-4 scroll-smooth" style={{ scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
-          <div className="flex gap-5 w-max">
-            {featuredCourses.map((course, i) => (
-              <div key={course.title} className="flex-shrink-0 w-[75vw] sm:w-[80vw]" style={{ scrollSnapAlign: 'start' }}>
-                <div className="group relative h-full min-h-[300px] rounded-xl overflow-hidden cursor-pointer">
-                  <img src={course.image} alt={course.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-                  <div className="absolute inset-0 flex flex-col justify-end p-5">
-                    <span className={`inline-block w-fit px-2.5 py-0.5 ${course.tagColor} text-white text-[10px] font-semibold rounded-full mb-3 uppercase tracking-wider`}>
-                      {course.tag}
-                    </span>
-                    <h3 className="font-serif text-xl font-semibold text-white mb-1.5 leading-tight">{course.title}</h3>
-                    <p className="text-white/70 text-xs mb-3 line-clamp-2">{course.subtitle}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-white/50 text-xs flex items-center gap-1"><Calendar className="w-3 h-3" /> {course.date}</span>
-                      <a href={course.title === "KS Healing Systems®" ? "https://www.kshealing.com/ks-healing" : course.title === "DART — Renovación Arquetípica" ? "https://www.kshealing.com/dart" : course.title === "Desarrollo de la Consciencia" ? "https://www.institutoascendant.com/programas" : course.title === "Retiro Sagrado con YOHEV" ? "https://www.kshealing.com/club-retiro-sagrado" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : course.title === "Todo Lo Bueno Me Sucede" ? "/todo-lo-bueno-me-sucede" : "#"} className={`inline-flex items-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
-                        {course.cta}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section id="programas" className="scroll-mt-24 bg-[#FAF8F5] py-14 lg:py-20">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
+        <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div><p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#966927]">Formación en el Instituto</p><h2 className="font-serif text-3xl font-semibold leading-tight text-[#2D2D2D] sm:text-4xl">Explora nuestros programas</h2></div>
+          <a href="/programas" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#966927] underline underline-offset-4">Ver todos los programas <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
         </div>
-
-        {/* Desktop: 6-column grid for all courses */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-5 lg:gap-6">
-          {featuredCourses.map((course, i) => (
-            <AnimatedSection key={course.title} delay={i * 0.1} className="flex-1">
-              <div className="group relative h-full min-h-[300px] rounded-xl overflow-hidden cursor-pointer">
-                <img src={course.image} alt={course.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-                <div className="absolute inset-0 flex flex-col justify-end p-5 lg:p-6">
-                  <span className={`inline-block w-fit px-2.5 py-0.5 ${course.tagColor} text-white text-[10px] font-semibold rounded-full mb-3 uppercase tracking-wider`}>
-                    {course.tag}
-                  </span>
-                  <h3 className="font-serif text-lg lg:text-xl font-semibold text-white mb-1.5 leading-tight">{course.title}</h3>
-                  <p className="text-white/70 text-xs lg:text-sm mb-3 line-clamp-2">{course.subtitle}</p>
-                  <div className="flex flex-col gap-2 text-white/50 text-xs mb-4">
-                    <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {course.date}</span>
-                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {course.format}</span>
-                  </div>
-                  <a href={course.title === "KS Healing Systems®" ? "https://www.kshealing.com/ks-healing" : course.title === "DART — Renovación Arquetípica" ? "https://www.kshealing.com/dart" : course.title === "Desarrollo de la Consciencia" ? "https://www.institutoascendant.com/programas" : course.title === "Retiro Sagrado con YOHEV" ? "https://www.kshealing.com/club-retiro-sagrado" : course.title === "Meditación Ascendente® Nivel 1" ? "/meditacion-ascendente" : course.title === "Mujer Superpoderosa" ? "/mujer-superpoderosa" : course.title === "Todo Lo Bueno Me Sucede" ? "/todo-lo-bueno-me-sucede" : "#"} className={`inline-flex items-center justify-center gap-1.5 px-4 py-2 ${course.ctaStyle} text-white font-semibold rounded-md text-xs transition-all duration-300`}>
-                    {course.cta} <ArrowRight className="w-3 h-3" />
-                  </a>
-                </div>
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {featuredCourses.map(course => (
+            <article key={course.title} className={`flex flex-col overflow-hidden rounded-xl border bg-white ${course.featured ? "border-[#9b7b3e] ring-1 ring-[#9b7b3e]/20" : "border-[#e1dfd6]"}`}>
+              <div className="relative h-44 overflow-hidden lg:h-48"><img src={course.image} alt="" loading="lazy" className="h-full w-full object-cover" />{course.featured && <span className="absolute bottom-3 left-4 rounded bg-[#263c32] px-3 py-1.5 text-xs font-semibold text-white">{upcoming ? "Próximo inicio · 2 de octubre" : "Primera Octava"}</span>}</div>
+              <div className="flex flex-1 flex-col p-6">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-[#966927]">{course.tag}</p>
+                <h3 className="mb-3 font-serif text-2xl font-semibold leading-tight text-[#26332e]">{course.title}</h3>
+                <p className="mb-5 text-sm leading-relaxed text-[#53645c]">{course.subtitle}</p>
+                <div className="mb-5 mt-auto space-y-2 text-xs text-[#53645c]"><p className="flex items-start gap-2"><Calendar className="h-4 w-4 shrink-0" aria-hidden="true" />{course.date}</p><p className="flex items-start gap-2"><Clock className="h-4 w-4 shrink-0" aria-hidden="true" />{course.format}</p></div>
+                <a href={course.href} className={`inline-flex min-h-11 items-center justify-center gap-2 rounded px-4 py-3 text-center text-sm font-semibold transition-colors ${course.featured ? "bg-[#263c32] text-white hover:bg-[#3b5646]" : "bg-[#f0ede5] text-[#384a3d] hover:bg-[#e2e4d8]"}`}>{course.cta}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" /></a>
               </div>
-            </AnimatedSection>
+            </article>
           ))}
         </div>
-
-
       </div>
     </section>
   );
@@ -707,9 +533,9 @@ function FoundersSection() {
     {
       name: "Claribel Puga",
       role: "Fundadora del Instituto Ascendant",
-      bio: "Maestra en neurociencias aplicadas a la espiritualidad, creadora del Método Ascendant y de la Meditación Ascendente®. Su enfoque integra claridad mental, comprensión emocional y espiritualidad consciente. Con más de 218,000 suscriptores en YouTube, Claribel es la voz principal del ecosistema Ascendant.",
+      bio: "Maestra en Neurociencias aplicadas a la espiritualidad. Experta en Neurobiología de la Conducta Humana. Creadora de CLARIMENTAL, del Método Ascendant y de la Meditación Ascendente®. Su enfoque integra claridad mental, comprensión emocional y espiritualidad consciente.",
       accent: "#C4963C",
-      tags: ["Método Ascendant", "Meditación Ascendente®", "Neurociencias"],
+      tags: ["CLARIMENTAL", "Meditación Ascendente®", "Neurociencias"],
       photo: IMAGES.claribel,
     },
     {
@@ -868,109 +694,25 @@ function TestimonialsSection() {
   );
 }
 
-/* ─── SECTION 8: UPCOMING EVENTS ─── */
+/* ─── CONFIRMED UPCOMING EVENTS ─── */
 function EventsSection() {
-  const sharedEvents = getUpcomingEvents("instituto").slice(0, 4);
-  const events = sharedEvents.map((e) => {
-    const dateParts = getDateParts(e.date);
-    return {
-      day: dateParts.day,
-      month: dateParts.month,
-      year: dateParts.year,
-      tag: e.type === "taller" ? "Taller" : e.type === "certificacion" ? "Certificación" : e.type === "retiro" ? "Retiro" : "Evento",
-      tagColor: `bg-[${e.accent}]`,
-      title: e.title,
-      desc: e.description,
-      meta: [e.location, e.instructor === "yohev" ? "Impartido por YOHEV" : "Impartido por Claribel"],
-      cta: "Más Información",
-      accent: e.accent,
-      link: e.link,
-    };
-  });
-
+  const events = getUpcomingEvents("instituto").slice(0, 4);
   return (
-    <section id="eventos" className="py-16 lg:py-24 bg-[#FAF8F5]">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-        <AnimatedSection className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10 lg:mb-14">
-          <div>
-            <p className="text-[#C4963C] text-xs font-semibold tracking-[0.2em] uppercase mb-3">Agenda</p>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2D2D2D] leading-tight">Próximos eventos</h2>
-          </div>
-          <p className="text-[#2D2D2D]/60 text-sm max-w-sm">Talleres, certificaciones y retiros diseñados para cada etapa de tu recorrido.</p>
-        </AnimatedSection>
-
-        {/* Desktop: Grid layout */}
-        <div className="hidden md:block space-y-5">
-          {events.map((event, i) => (
-            <AnimatedSection key={event.title} delay={i * 0.1}>
-              <div className="group grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-5 lg:gap-8 items-center bg-white rounded-xl p-5 lg:p-7 shadow-sm hover:shadow-lg transition-all duration-500 border border-[#E8E4DF] hover:border-transparent"
-                style={{ borderLeftWidth: "4px", borderLeftColor: event.accent }}>
-                {/* Date block */}
-                <div className="flex lg:flex-col items-center lg:items-center gap-3 lg:gap-0 lg:w-20 lg:text-center">
-                  <span className="font-serif text-3xl lg:text-4xl font-bold" style={{ color: event.accent }}>{event.day}</span>
-                  <div className="flex lg:flex-col items-center gap-1">
-                    <span className="text-[#2D2D2D]/70 text-xs font-semibold uppercase">{event.month}</span>
-                    <span className="text-[#2D2D2D]/40 text-xs">{event.year}</span>
-                  </div>
-                </div>
-                {/* Content */}
-                <div>
-                  <span className={`inline-block px-2.5 py-0.5 ${event.tagColor} text-white text-[10px] font-semibold rounded-full mb-2 uppercase tracking-wider`}>
-                    {event.tag}
-                  </span>
-                  <h3 className="font-serif text-xl lg:text-2xl font-semibold text-[#2D2D2D] mb-2 leading-tight">{event.title}</h3>
-                  <p className="text-[#2D2D2D]/65 text-sm leading-relaxed mb-3 max-w-2xl">{event.desc}</p>
-                  <div className="flex flex-wrap gap-3 text-[#2D2D2D]/50 text-xs">
-                    {event.meta.map((m) => (
-                      <span key={m} className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {m}</span>
-                    ))}
-                  </div>
-                </div>
-                {/* CTA */}
-                <div className="lg:self-center">
-                  <a href={event.link || "#"} className="inline-flex items-center gap-2 px-5 py-2.5 text-white font-semibold rounded-md text-sm transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap"
-                    style={{ backgroundColor: event.accent }}>
-                    {event.cta} <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
+    <section id="eventos" className="scroll-mt-24 bg-white py-12 lg:py-16">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
+        <div className="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div><p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#966927]">Agenda del Instituto</p><h2 className="font-serif text-3xl font-semibold text-[#26332e] sm:text-4xl">Próximos inicios</h2></div>
+          <a href="/eventos" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#966927] underline underline-offset-4">Ver toda la agenda <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
         </div>
-
-        {/* Mobile: Horizontal carousel with peek effect */}
-        <div className="md:hidden overflow-x-auto -mx-4 px-4 pb-4 snap-x snap-mandatory" style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}>
-          <div className="flex gap-4" style={{ width: 'fit-content' }}>
-            {events.map((event) => (
-              <div key={event.title} className="flex-shrink-0 snap-start" style={{ width: 'calc(100vw - 32px - 32px)' }}>
-                <div className="bg-white rounded-xl p-5 shadow-sm border border-[#E8E4DF] h-full flex flex-col" style={{ borderLeftWidth: "4px", borderLeftColor: event.accent }}>
-                  {/* Date block */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-serif text-2xl font-bold" style={{ color: event.accent }}>{event.day}</span>
-                    <div className="flex flex-col items-start gap-0">
-                      <span className="text-[#2D2D2D]/70 text-xs font-semibold uppercase">{event.month}</span>
-                      <span className="text-[#2D2D2D]/40 text-xs">{event.year}</span>
-                    </div>
-                  </div>
-                  {/* Content */}
-                  <span className={`inline-block px-2.5 py-0.5 ${event.tagColor} text-white text-[10px] font-semibold rounded-full mb-2 uppercase tracking-wider w-fit`}>
-                    {event.tag}
-                  </span>
-                  <h3 className="font-serif text-lg font-semibold text-[#2D2D2D] mb-2 leading-tight">{event.title}</h3>
-                  <p className="text-[#2D2D2D]/65 text-sm leading-relaxed mb-3 flex-grow">{event.desc}</p>
-                  <div className="flex flex-col gap-2 text-[#2D2D2D]/50 text-xs mb-4">
-                    {event.meta.map((m) => (
-                      <span key={m} className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {m}</span>
-                    ))}
-                  </div>
-                  {/* CTA */}
-                  <a href={event.link || "#"} className="inline-flex items-center gap-2 px-5 py-2.5 text-white font-semibold rounded-md text-sm transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap w-full justify-center" style={{ backgroundColor: event.accent }}>
-                    {event.cta} <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="space-y-4">
+          {events.length ? events.map(event => {
+            const date = getDateParts(event.date);
+            return <article key={event.id} className="grid gap-5 rounded-xl border border-[#d8dfd2] bg-[#f8faf5] p-6 sm:grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] lg:items-center">
+              <div className="flex items-center gap-3 text-[#426652] sm:w-20 sm:flex-col sm:gap-0"><span className="font-serif text-4xl font-semibold">{date.day}</span><span className="text-sm uppercase">{date.month} {date.year}</span></div>
+              <div><p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#426652]">{event.type === "programa" ? "Programa · Inscripciones abiertas" : "Próximo evento"}</p><h3 className="mb-2 font-serif text-2xl font-semibold leading-tight text-[#26332e]">{event.title}</h3><p className="max-w-2xl text-sm leading-relaxed text-[#53645c]">{event.description}</p></div>
+              <a href={event.link} className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[#426652] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#304f3e] sm:col-start-2 lg:col-start-auto">Ver detalles <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+            </article>;
+          }) : <div className="rounded-xl border border-[#d8dfd2] bg-[#f8faf5] p-6 text-[#53645c]"><p>Estamos preparando las próximas fechas de la agenda.</p><a href="/programas" className="mt-2 inline-flex min-h-11 items-center underline underline-offset-4">Explorar los programas del Instituto</a></div>}
         </div>
       </div>
     </section>
@@ -1118,8 +860,14 @@ function Footer() {
           <div>
             <h4 className="font-semibold text-white text-sm mb-4 uppercase tracking-wider">Programas</h4>
             <ul className="space-y-2.5 text-sm">
-              {["KS Healing Systems®", "Meditación Ascendente®", "Desarrollo de la Consciencia", "Certificaciones", "Talleres Gratuitos"].map((item) => (
-                <li key={item}><a href="#" className="hover:text-[#C4963C] transition-colors">{item}</a></li>
+              {[
+                { label: "CLARIMENTAL", href: "/clarimental" },
+                { label: "Todo Lo Bueno Me Sucede", href: "/todo-lo-bueno-me-sucede" },
+                { label: "KS Healing Systems®", href: "https://www.kshealing.com/" },
+                { label: "Meditación Ascendente®", href: "/meditacion-ascendente" },
+                { label: "Todos los programas", href: "/programas" },
+              ].map(item => (
+                <li key={item.href}><a href={item.href} className="hover:text-[#C4963C] transition-colors">{item.label}</a></li>
               ))}
             </ul>
           </div>
@@ -1163,18 +911,20 @@ function Footer() {
 
 /* ─── MAIN PAGE ─── */
 export default function Home() {
+  useEffect(() => { setSEOMetadata({ ...PAGE_SEO.home, url: "https://www.institutoascendant.com/", image: IMAGES.hero }); }, []);
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       <StickyBanner />
       <Header />
-      <HeroSection />
-      <CredibilityBar />
+      <ClarimentalHomeHero imageSrc={IMAGES.hero} />
+      <ClarimentalRouteOverview />
+      <EventsSection />
       <FeaturedPrograms />
+      <CredibilityBar />
       <CategoriesSection />
       <InstitutoSection />
       <FoundersSection />
       <TestimonialsSection />
-      <EventsSection />
       <AppDownloadSection />
       <BecasBanner />
       <Footer />

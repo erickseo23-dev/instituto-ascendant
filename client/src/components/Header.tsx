@@ -5,6 +5,7 @@ import { Link } from "wouter";
 // disabled: true = visible pero sin link (próximamente)
 const programas = [
   { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
+  { label: "Todo Lo Bueno Me Sucede", href: "/todo-lo-bueno-me-sucede", disabled: false },
   { label: "Mujer Superpoderosa", href: "/mujer-superpoderosa", disabled: false },
   { label: "Meditación Ascendente®", href: "/meditacion-ascendente", disabled: true },
   { label: "KS Healing Systems®", href: "https://kshealing.com", disabled: false },
@@ -22,9 +23,9 @@ const tienda = [
 ];
 
 const navLinks = [
+  { label: "CLARIMENTAL", href: "/clarimental", disabled: false },
+  { label: "Agenda", href: "/eventos", disabled: false },
   { label: "Blog", href: "/blog", disabled: false },
-  { label: "Recursos Gratuitos", href: "/recursos-gratuitos", disabled: true },
-  { label: "Videos", href: "/videos", disabled: true },
   { label: "Sobre Nosotros", href: "/sobre", disabled: false },
 ];
 

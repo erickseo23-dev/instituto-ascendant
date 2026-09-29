@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Clock, Users, ArrowRight } from "lucide-react";
-import { getUpcomingEvents, getEventsByType, formatDate, getDateParts } from "@/lib/eventos";
+import { getUpcomingEvents, getDateParts } from "@/lib/eventos";
+import Header from "@/components/Header";
 
 export default function Eventos() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -13,6 +14,7 @@ export default function Eventos() {
 
   const eventTypes = [
     { value: null, label: "Todos", icon: "📅" },
+    { value: "programa", label: "Programas", icon: "📖" },
     { value: "taller", label: "Talleres", icon: "🎓" },
     { value: "certificacion", label: "Certificaciones", icon: "🏆" },
     { value: "retiro", label: "Retiros", icon: "🌿" },
@@ -21,6 +23,7 @@ export default function Eventos() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pt-40 pb-20">
+      <Header forceLight />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* Header */}
         <motion.div
@@ -35,7 +38,7 @@ export default function Eventos() {
             Próximos Eventos
           </h1>
           <p className="text-[#2D2D2D]/60 text-lg max-w-2xl mx-auto">
-            Talleres, certificaciones y retiros diseñados para cada etapa de tu recorrido de transformación.
+            Programas, talleres, certificaciones y retiros con próximas fechas de inicio.
           </p>
         </motion.div>
 
@@ -106,7 +109,7 @@ export default function Eventos() {
                             ? "Retiro"
                             : event.type === "masterclass"
                               ? "Masterclass"
-                              : "Evento"}
+                              : event.type === "programa" ? "Programa" : "Evento"}
                     </span>
                     <h3 className="font-serif text-xl lg:text-2xl font-semibold text-[#2D2D2D] mb-2 leading-tight">
                       {event.title}
@@ -121,10 +124,10 @@ export default function Eventos() {
                         <MapPin className="w-3 h-3" />
                         {event.location}
                       </span>
-                      <span className="flex items-center gap-1">
+                      {event.startTime && <span className="flex items-center gap-1">
                         <Clock className="w-3 h-3" />
-                        {event.startTime} - {event.endTime}
-                      </span>
+                        {event.startTime}{event.endTime ? ` – ${event.endTime}` : ""}{event.timezone === "America/Mexico_City" ? " CDMX" : ""}
+                      </span>}
                       {event.capacity && (
                         <span className="flex items-center gap-1">
                           <Users className="w-3 h-3" />

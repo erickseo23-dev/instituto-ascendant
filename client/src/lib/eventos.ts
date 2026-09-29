@@ -7,6 +7,8 @@
  * - KS Healing: getEventsBySource("kshealing")
  */
 
+import { tlbmsCohort } from "../content/tlbms";
+
 export interface Event {
   id: string;
   title: string;
@@ -16,9 +18,9 @@ export interface Event {
   startTime: string;
   endTime: string;
   timezone: string;
-  type: "taller" | "certificacion" | "retiro" | "masterclass" | "sesion";
+  type: "taller" | "certificacion" | "retiro" | "masterclass" | "sesion" | "programa";
   format: "online" | "presencial" | "hibrido";
-  instructor: "yohev" | "claribel" | "otro";
+  instructor: "yohev" | "claribel" | "ambos" | "otro";
   source: ("kshealing" | "instituto")[];
   location: string;
   capacity: number | string | null;
@@ -32,6 +34,26 @@ export interface Event {
 
 // Datos de eventos - Se sincroniza con eventos.json
 export const eventos: Event[] = [
+  {
+    id: "tlbms-2026-10-02",
+    title: "Todo Lo Bueno Me Sucede · Primera Octava de CLARIMENTAL",
+    description: "Inicio del recorrido de nueve semanas para cultivar confianza, coherencia y gozo consciente. Sesiones en vivo los viernes a las 3:00 p.m. CDMX con Claribel Puga y YOHEV.",
+    date: tlbmsCohort.startDate,
+    startTime: "15:00",
+    endTime: "",
+    timezone: tlbmsCohort.timezone,
+    type: "programa",
+    format: "online",
+    instructor: "ambos",
+    source: ["instituto"],
+    location: "Online · 3:00 p.m. CDMX",
+    capacity: null,
+    price: null,
+    currency: "MXN",
+    link: "/todo-lo-bueno-me-sucede",
+    tags: ["clarimental", "primera-octava", "transformacion"],
+    accent: "#426652",
+  },
   {
     id: "evento-003",
     title: "Certificación Internacional en KS Healing Nivel Básico",
@@ -92,9 +114,17 @@ export function getEventsBySource(source: "instituto" | "kshealing"): Event[] {
  * @param source - "instituto" o "kshealing"
  * @returns Array de eventos ordenados por fecha
  */
-export function getUpcomingEvents(source: "instituto" | "kshealing"): Event[] {
-  const filtered = getEventsBySource(source);
-  return filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+export function isUpcomingDate(date: string, timezone: string, now: Date = new Date()): boolean {
+  const parts = new Intl.DateTimeFormat("en-US", { timeZone: timezone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
+  const part = (name: string) => parts.find(item => item.type === name)?.value;
+  const today = `${part("year")}-${part("month")}-${part("day")}`;
+  return date >= today;
+}
+
+export function getUpcomingEvents(source: "instituto" | "kshealing", now: Date = new Date()): Event[] {
+  return getEventsBySource(source)
+    .filter(event => isUpcomingDate(event.date, event.timezone, now))
+    .sort((a, b) => a.date.localeCompare(b.date));
 }
 
 /**

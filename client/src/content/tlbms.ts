@@ -1,6 +1,8 @@
 // Start and session time confirmed by Erick on 2026-09-28.
 // Checkout URLs supplied by Erick for this generation on 2026-09-29.
 export const tlbmsCohort = {
+  startDate: "2026-10-02",
+  timezone: "America/Mexico_City",
   startLabel: "Viernes 2 de octubre de 2026",
   shortStartLabel: "2 de octubre de 2026",
   scheduleLabel: "Viernes · 3:00 p.m. CDMX",
