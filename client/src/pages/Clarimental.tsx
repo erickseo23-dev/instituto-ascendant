@@ -1,4 +1,5 @@
 import { AmbientLight, ExperienceControls, PresencePause, usePageReveal } from "@/components/experience/Experience";
+import WelcomeVideo from "@/components/experience/WelcomeVideo";
 import MasterclassVideo from "@/components/experience/MasterclassVideo";
 import OctaveExplorer from "@/components/experience/OctaveExplorer";
 import { useEffect } from "react";
@@ -51,6 +52,8 @@ export default function Clarimental() {
             <div className="cm-visual-caption"><span>La ruta hacia el Estado Clarimental</span><p>Un proceso que se profundiza.<br />Una claridad que se integra.</p></div>
           </div>
         </section>
+
+        <WelcomeVideo />
 
         <section className="cm-state cm-section" aria-labelledby="estado-title">
           <div className="cm-container">
