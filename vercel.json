@@ -3,6 +3,10 @@
   "outputDirectory": "client/dist",
   "rewrites": [
     {
+      "source": "/viaje-graduacion-2027",
+      "destination": "/viaje-graduacion-2027/index.html"
+    },
+    {
       "source": "/clarimental",
       "destination": "/clarimental/index.html"
     },

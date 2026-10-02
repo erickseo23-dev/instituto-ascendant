@@ -18,7 +18,7 @@ export interface Event {
   startTime: string;
   endTime: string;
   timezone: string;
-  type: "taller" | "certificacion" | "retiro" | "masterclass" | "sesion" | "programa";
+  type: "taller" | "certificacion" | "retiro" | "masterclass" | "sesion" | "programa" | "viaje";
   format: "online" | "presencial" | "hibrido";
   instructor: "yohev" | "claribel" | "ambos" | "otro";
   source: ("kshealing" | "instituto")[];
@@ -34,6 +34,7 @@ export interface Event {
 
 // Datos de eventos - Se sincroniza con eventos.json
 export const eventos: Event[] = [
+  { id: "graduacion-2027", title: "Viaje de graduación 2027 · Puerto Vallarta", description: "Secundaria del Colegio de Ciencias y Letras de Tepic. Hilton Vallarta Riviera todo incluido, Barco Pirata, fotografías al atardecer y cena de gala. Organiza Instituto Ascendant.", date: "2027-05-27", endDate: "2027-05-30", startTime: "", endTime: "", timezone: "America/Mexico_City", type: "viaje", format: "presencial", instructor: "otro", source: ["instituto"], location: "Hilton Vallarta Riviera · Puerto Vallarta", capacity: null, price: 16490, currency: "MXN", link: "/viaje-graduacion-2027", tags: ["graduacion", "familia", "puerto-vallarta"], accent: "#947342", imagen: "/media/graduacion-2027/hero.jpg" },
   {
     id: "tlbms-2026-10-02",
     title: "Todo Lo Bueno Me Sucede · Primera Octava de CLARIMENTAL",
