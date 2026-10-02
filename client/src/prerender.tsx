@@ -1,6 +1,7 @@
 import { ExperienceProvider } from "./components/experience/Experience";
 import { renderToString } from "react-dom/server";
 import { Router } from "wouter";
+import Graduacion2027 from "./pages/Graduacion2027";
 import Clarimental from "./pages/Clarimental";
 import SanoElDolor from "./pages/SanoElDolor";
 import { secondOctave, secondOctaveLevels } from "./content/segunda-octava";
@@ -11,6 +12,7 @@ import { tlbmsCohort } from "./content/tlbms";
 
 export function renderPages() {
   const pages = [
+    { path: "/viaje-graduacion-2027", component: Graduacion2027, title: "Viaje de graduación 2027 · Hilton Puerto Vallarta | Instituto Ascendant", description: "Del 27 al 30 de mayo de 2027: graduación de secundaria del Colegio de Ciencias y Letras de Tepic, Hilton todo incluido, Barco Pirata y cena de gala. Organiza Instituto Ascendant.", url: "https://www.institutoascendant.com/viaje-graduacion-2027", image: "https://www.institutoascendant.com/media/graduacion-2027/hero.jpg" },
     { ...secondOctave, component: SanoElDolor, image: clarimentalImages.path },
     { path: "/clarimental", component: Clarimental, ...clarimentalMeta, image: clarimentalImages.path },
     { path: "/todo-lo-bueno-me-sucede", component: TodoLoBueno, title: tlbmsCohort.title, description: tlbmsCohort.description, url: tlbmsCohort.url, image: clarimentalImages.path },

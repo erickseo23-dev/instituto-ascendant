@@ -17,6 +17,7 @@ export default function Eventos() {
     { value: "programa", label: "Programas", icon: "📖" },
     { value: "taller", label: "Talleres", icon: "🎓" },
     { value: "certificacion", label: "Certificaciones", icon: "🏆" },
+    { value: "viaje", label: "Viajes", icon: "🌊" },
     { value: "retiro", label: "Retiros", icon: "🌿" },
     { value: "masterclass", label: "Masterclass", icon: "⭐" },
   ];
@@ -109,7 +110,7 @@ export default function Eventos() {
                             ? "Retiro"
                             : event.type === "masterclass"
                               ? "Masterclass"
-                              : event.type === "programa" ? "Programa" : "Evento"}
+                              : event.type === "viaje" ? "Viaje" : event.type === "programa" ? "Programa" : "Evento"}
                     </span>
                     <h3 className="font-serif text-xl lg:text-2xl font-semibold text-[#2D2D2D] mb-2 leading-tight">
                       {event.title}

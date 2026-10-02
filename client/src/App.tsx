@@ -22,6 +22,7 @@ import MujerSuperpoderosa from "./pages/MujerSuperpoderosa";
 import MujerSuperpoderosaMasterclass from "./pages/MujerSuperpoderosaMasterclass";
 import Contacto from "./pages/Contacto";
 import Eventos from "./pages/Eventos";
+import Graduacion2027 from "./pages/Graduacion2027";
 import Congreso from "./pages/Congreso";
 import Becas from "./pages/Becas";
 import SolicitudBeca from "./pages/SolicitudBeca";
@@ -62,6 +63,7 @@ function Router() {
       <Route path={"/mujer-superpoderosa/masterclass"} component={MujerSuperpoderosaMasterclass} />
       <Route path={"/contacto"} component={Contacto} />
       <Route path={"/eventos"} component={Eventos} />
+      <Route path={"/viaje-graduacion-2027"} component={Graduacion2027} />
       <Route path={"/congreso"} component={Congreso} />
       <Route path={"/becas"} component={Becas} />
       <Route path={"/clarimental"} component={Clarimental} />
