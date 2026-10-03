@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useExperience } from "./Experience";
 
 // Optimized welcome media served as static assets by the existing Vercel project.
-const welcomeVideo = "/media/clarimental/claribel-bienvenida-720p-compact.mp4";
-const welcomePoster = "/media/clarimental/claribel-bienvenida-poster.jpg";
+const welcomeVideo = "/media/clarimental/clarimental-bienvenida-final-720p.mp4";
+const welcomePoster = "/media/clarimental/clarimental-bienvenida-final-poster.jpg";
 
 export default function WelcomeVideo() {
   const video = useRef<HTMLVideoElement>(null);
@@ -41,7 +41,7 @@ export default function WelcomeVideo() {
             Claribel Puga te da la bienvenida a CLARIMENTAL.
           </p>
           <p className="cm-welcome-duration">
-            Video de bienvenida · 1 min 50 s
+            Video de bienvenida · 1 min 49 s
           </p>
         </div>
         <figure className="cm-welcome-media">
@@ -49,8 +49,8 @@ export default function WelcomeVideo() {
             ref={video}
             src={welcomeVideo}
             poster={welcomePoster}
-            width={720}
-            height={1280}
+            width={1280}
+            height={720}
             controls
             playsInline
             preload="none"
