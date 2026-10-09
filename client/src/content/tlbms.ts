@@ -8,7 +8,7 @@ export const tlbmsCohort = {
   scheduleLabel: "Viernes · 4:00 p.m. CDMX",
   status: "open" as const,
   startTime: "16:00",
-  enrollmentDeadlineLabel: "22 de octubre de 2026",
+  enrollmentDeadlineLabel: "22 de octubre de 2026 a las 9:00 p. m. CDMX",
   refundLabel: "Reembolso: siete días desde el inicio del programa. Las solicitudes se derivan a Dirección.",
   masterclassVideoId: "QTv8u1sucZ4",
   paymentOptions: [
