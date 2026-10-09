@@ -11,8 +11,7 @@ import { setSEOMetadata } from "@/config/seo";
 import { X, CheckCircle, ArrowRight, Play } from "lucide-react";
 
 // ─── CONSTANTES ────────────────────────────────────────────────────────────────
-// Actualizar con el ID del video de YouTube cuando esté disponible
-const YOUTUBE_VIDEO_ID = "rFHzN-nxF5Y";
+const YOUTUBE_VIDEO_ID = tlbmsCohort.masterclassVideoId;
 
 
 const HERO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663213129151/CvcmnySNBpqPmrOD.png";
@@ -27,13 +26,13 @@ const beneficios = [
   "Acceso de por vida a las grabaciones",
 ];
 
-// Both payment options use the confirmed checkout URLs for this generation.
+// Checkout destinations and payment options supplied and confirmed by Erick.
 function PricingModal({ onClose }: { onClose: () => void }) {
   return (
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-2xl">
         <DialogTitle className="font-serif text-2xl">Todo Lo Bueno Me Sucede</DialogTitle>
-        <DialogDescription>Primera Octava de CLARIMENTAL · Elige tu forma de pago</DialogDescription>
+        <DialogDescription>Primera Octava de CLARIMENTAL · Fechas e información de inscripción</DialogDescription>
         <TlbmsCohortNotice />
       </DialogContent>
     </Dialog>
@@ -100,9 +99,10 @@ export default function TodoLoBuenoMasterclass() {
         >
           {YOUTUBE_VIDEO_ID ? (
             <iframe
-              src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1`}
+              src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1`}
               title="Masterclass Todo Lo Bueno Me Sucede"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
             />
@@ -129,6 +129,7 @@ export default function TodoLoBuenoMasterclass() {
             </div>
           )}
         </div>
+        <p className="mt-4 text-center text-sm text-[#8B6A50]"><a href={`https://www.youtube.com/watch?v=${YOUTUBE_VIDEO_ID}`} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">También puedes verla en YouTube ↗</a></p>
       </section>
 
       {/* ── CTA PRINCIPAL ── */}
@@ -155,7 +156,7 @@ export default function TodoLoBuenoMasterclass() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-base transition-all duration-300 hover:opacity-90 hover:shadow-xl hover:-translate-y-0.5 shadow-lg"
             style={{ background: "linear-gradient(135deg, #C4963C, #B08530)" }}
           >
-            Quiero inscribirme <ArrowRight className="w-5 h-5" />
+            Ver opciones de pago <ArrowRight className="w-5 h-5" />
           </button>
 
           {/* Fecha de inicio */}

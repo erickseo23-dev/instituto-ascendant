@@ -355,7 +355,7 @@ function FeaturedPrograms() {
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {featuredCourses.map(course => (
             <article key={course.title} className={`flex flex-col overflow-hidden rounded-xl border bg-white ${course.featured ? "border-[#9b7b3e] ring-1 ring-[#9b7b3e]/20" : "border-[#e1dfd6]"}`}>
-              <div className="relative h-44 overflow-hidden lg:h-48"><img src={course.image} alt="" loading="lazy" className="h-full w-full object-cover" />{course.featured && <span className="absolute bottom-3 left-4 rounded bg-[#263c32] px-3 py-1.5 text-xs font-semibold text-white">{upcoming ? "Próximo inicio · 2 de octubre" : "Primera Octava"}</span>}</div>
+              <div className="relative h-44 overflow-hidden lg:h-48"><img src={course.image} alt="" loading="lazy" className="h-full w-full object-cover" />{course.featured && <span className="absolute bottom-3 left-4 rounded bg-[#263c32] px-3 py-1.5 text-xs font-semibold text-white">{upcoming ? `Próximo inicio · ${tlbmsCohort.shortStartLabel}` : "Primera Octava"}</span>}</div>
               <div className="flex flex-1 flex-col p-6">
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-[#966927]">{course.tag}</p>
                 <h3 className="mb-3 font-serif text-2xl font-semibold leading-tight text-[#26332e]">{course.title}</h3>
