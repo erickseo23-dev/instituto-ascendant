@@ -26,7 +26,7 @@ const beneficios = [
   "Acceso de por vida a las grabaciones",
 ];
 
-// Pricing is informational until new checkout URLs are verified.
+// Checkout destinations and payment options supplied and confirmed by Erick.
 function PricingModal({ onClose }: { onClose: () => void }) {
   return (
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
@@ -156,7 +156,7 @@ export default function TodoLoBuenoMasterclass() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-base transition-all duration-300 hover:opacity-90 hover:shadow-xl hover:-translate-y-0.5 shadow-lg"
             style={{ background: "linear-gradient(135deg, #C4963C, #B08530)" }}
           >
-            Consultar inscripción <ArrowRight className="w-5 h-5" />
+            Ver opciones de pago <ArrowRight className="w-5 h-5" />
           </button>
 
           {/* Fecha de inicio */}

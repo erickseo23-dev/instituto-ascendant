@@ -3,11 +3,11 @@ import { tlbmsCohort } from "@/content/tlbms";
 export default function TlbmsCohortNotice() {
   return (
     <div className="mx-auto max-w-2xl rounded-2xl border border-[#d5b88f] bg-[#fffaf4] p-6 text-center sm:p-10">
-      <p className="text-sm font-semibold uppercase tracking-widest text-[#855526]">Próxima generación</p>
+      <p className="text-sm font-semibold uppercase tracking-widest text-[#855526]">Inscripciones abiertas</p>
       <h3 className="my-4 font-serif text-3xl font-semibold text-[#2d2420]">{tlbmsCohort.startLabel}</h3>
       <p className="text-lg text-[#5a3e35]">Sesiones en vivo: {tlbmsCohort.scheduleLabel}</p>
       <p className="mx-auto mt-5 max-w-lg leading-relaxed text-[#5a3e35]">
-        El programa completo dura nueve semanas. Los pagos en línea aún no están disponibles; escríbenos para consultar la inscripción.
+        Elige tu forma de pago para inscribirte. Ambas opciones incluyen el programa completo de nueve semanas.
       </p>
       <p className="mt-3 text-[#5a3e35]">Inscripciones hasta el {tlbmsCohort.enrollmentDeadlineLabel}.</p>
       <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -16,7 +16,7 @@ export default function TlbmsCohortNotice() {
             <h4 className="mb-3 font-serif text-2xl font-semibold text-[#2d2420]">{option.label}</h4>
             <p className="text-2xl font-semibold text-[#86572f]">{option.amountLabel}</p>
             <p className="mb-5 mt-2 text-sm leading-relaxed text-[#5a3e35]">{option.detail}</p>
-            <p className="mt-auto text-sm font-medium text-[#5a3e35]">Pago en línea próximamente</p>
+            <a href={option.url} className="mt-auto inline-flex min-h-12 items-center justify-center rounded-lg bg-[#86572f] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#68401f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#86572f]">{option.buttonLabel}</a>
           </div>
         ))}
       </div>

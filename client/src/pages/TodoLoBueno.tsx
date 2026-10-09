@@ -626,7 +626,7 @@ export default function TodoLoBueno() {
               boxShadow: "0 8px 32px rgba(201,135,74,0.4)",
             }}
           >
-            CONSULTAR INSCRIPCIÓN
+            VER OPCIONES DE PAGO
           </a>
         </div>
       </section>
