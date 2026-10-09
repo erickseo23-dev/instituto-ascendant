@@ -172,14 +172,14 @@ export default function TodoLoBueno() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="#inversion"
+                href="#masterclass"
                 className="px-8 py-4 rounded-full font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 style={{
                   background: "linear-gradient(135deg, #c9874a, #a0622a)",
                   letterSpacing: "0.05em",
                 }}
               >
-                QUIERO INSCRIBIRME
+                VER MASTERCLASS GRATUITA
               </a>
               <a
                 href="#incluye"
@@ -434,7 +434,7 @@ export default function TodoLoBueno() {
               Las 10 Sesiones en Vivo
             </h2>
             <p className="mt-4" style={{ color: "#7a5a4e" }}>
-              Todos los viernes a las 3:00 p.m. CDMX · Guiadas por Claribel Puga y YOHEV
+              {tlbmsCohort.scheduleLabel} · Guiadas por Claribel Puga y YOHEV
             </p>
           </div>
 
@@ -575,7 +575,7 @@ export default function TodoLoBueno() {
       {/* ── INVERSIÓN ────────────────────────────────────────── */}
       <section id="inversion" className="asc-reveal py-24" style={{ background: "#fff9f5" }}>
         <div className="container mx-auto max-w-4xl px-6">
-          <h2 className="mb-8 text-center font-serif text-4xl" style={{ color: "#2d2420" }}>Elige tu forma de pago</h2>
+          <h2 className="mb-8 text-center font-serif text-4xl" style={{ color: "#2d2420" }}>Fechas e inscripción</h2>
           <TlbmsCohortNotice />
         </div>
       </section>
@@ -626,7 +626,7 @@ export default function TodoLoBueno() {
               boxShadow: "0 8px 32px rgba(201,135,74,0.4)",
             }}
           >
-            QUIERO INSCRIBIRME
+            CONSULTAR INSCRIPCIÓN
           </a>
         </div>
       </section>
