@@ -22,13 +22,21 @@ Un Curso de Meditación sigue siendo una entrada de prospectos para TLBMS. Desti
 
 ## Reembolso y puntos de revisión
 
-Condición particular aprobada para TLBMS según la ficha del usuario: reembolso de 7 días desde el inicio. El repositorio no contiene esa ficha ni redacción particular; `Terminos.tsx` publica 14 días desde la compra y máximo 30% consumido. No se cambian términos generales ni se inventan exclusiones. Antes de publicar la condición particular, validar la redacción exacta y su prevalencia con la ficha/oferta nueva. Este punto no está resuelto por el PR.
+Cotejo de solo lectura completado el 09/10/2026 en [ficha de cohorte](https://app.notion.com/p/3e4d43b5b86d817297d0f542ae3cc566) y [ficha de programa](https://app.notion.com/p/3c3d43b5b86d81a1ad21d04fc0da6239), editadas el 08/10. Ambas confirman la decisión de Erick.
+
+Texto exacto de la ficha de cohorte: «Erick confirmó “rembolso sigue igual” a la consulta sobre siete días: se conservan siete días desde el inicio, conforme a la política específica anterior. No se concede ni niega un reembolso por esta ficha; las solicitudes se derivan a Dirección.»
+
+Texto exacto de la preparación de próxima cohorte en la ficha de programa: «Reembolso: siete días desde inicio, conservado por Erick.»
+
+Texto visible del PR, centralizado en `tlbmsCohort.refundLabel` y usado por la página y el modal de masterclass: «Reembolso: siete días desde el inicio del programa. Las solicitudes se derivan a Dirección.» No se agregan condiciones ni se concede o niega una solicitud.
+
+`Terminos.tsx` permanece intacto con su texto general de 14 días desde compra / 30% consumido. No se reconcilian ambas políticas por inferencia ni se cambia su alcance.
 
 El contenido actual enumera 10 sesiones y nueve semanas; se conserva el temario. Falta confirmar cómo se distribuye la sesión de bienvenida, sin inventar una fecha final.
 
 ## Activación pendiente
 
-- Verificar las dos ofertas nuevas y sus importes, cohorte, cuotas y política particular.
+- Verificar las dos ofertas nuevas y sus importes, cohorte y cuotas; comprobar que reflejen la condición particular ratificada.
 - Aprobar destino de captura y ejecutar prueba de persistencia cuando exista.
 - Revisar vista previa y autorizar publicación explícitamente.
 

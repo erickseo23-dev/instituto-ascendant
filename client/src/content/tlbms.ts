@@ -9,6 +9,7 @@ export const tlbmsCohort = {
   status: "checkout_pending" as const,
   startTime: "16:00",
   enrollmentDeadlineLabel: "22 de octubre de 2026",
+  refundLabel: "Reembolso: siete días desde el inicio del programa. Las solicitudes se derivan a Dirección.",
   masterclassVideoId: "QTv8u1sucZ4",
   paymentOptions: [
     { label: "Un solo pago", amountLabel: "$3,999 MXN", detail: "Un único pago por el programa completo" },

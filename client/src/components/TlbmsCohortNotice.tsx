@@ -20,6 +20,7 @@ export default function TlbmsCohortNotice() {
           </div>
         ))}
       </div>
+      <p className="mt-6 text-sm leading-relaxed text-[#5a3e35]">{tlbmsCohort.refundLabel}</p>
       <a href={tlbmsCohort.contactUrl} className="mt-6 inline-flex min-h-11 items-center text-sm text-[#68401f] underline underline-offset-4">
         Solicitar información por correo
       </a>
