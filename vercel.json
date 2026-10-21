@@ -23,6 +23,10 @@
       "destination": "/todo-lo-bueno-masterclass/index.html"
     },
     {
+      "source": "/congreso-digital",
+      "destination": "/congreso-digital/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
