@@ -27,6 +27,10 @@
       "destination": "/congreso-digital/index.html"
     },
     {
+      "source": "/ingenieria-del-alter-ego",
+      "destination": "/ingenieria-del-alter-ego/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
