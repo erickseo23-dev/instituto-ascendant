@@ -34,19 +34,21 @@ h1 em{color:#87672e;font-weight:400}
 .video-frame iframe:focus-visible{outline-offset:-4px}
 .masterclass-media figcaption{font-size:11px;line-height:1.8;text-align:right;color:var(--muted);margin-top:13px}
 .masterclass-media figcaption a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.next-step{display:flex;align-items:center;justify-content:space-between;gap:48px;border-top:1px solid var(--line);padding-block:46px 66px}
-.next-step .eyebrow{font-size:8px;margin-bottom:15px;letter-spacing:1.8px}
+.next-step{display:flex;align-items:center;justify-content:space-between;gap:40px;background:var(--navy);color:var(--ivory);border-top:3px solid var(--gold);padding:48px;margin-bottom:64px}
+.next-step .eyebrow{font-size:9px;margin-bottom:15px;letter-spacing:1.8px;color:var(--gold-light)}
 h2{font-size:clamp(30px,3vw,42px);line-height:1.16;letter-spacing:-1px}
 h2 em{font-weight:400}
-.next-copy{max-width:400px;margin-top:17px;font-size:12px;line-height:1.8;color:var(--muted)}
-.button{min-height:54px;display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:16px 24px;background:var(--navy);color:var(--ivory);font-size:12px;font-weight:600;border:1px solid var(--navy);transition:background .2s;flex-shrink:0}
-.button svg{color:var(--gold-light)}
-.button:hover{background:var(--navy-light)}
+.next-copy{max-width:400px;margin-top:17px;font-size:14px;line-height:1.8;color:#dce3e6}
+.button{min-height:76px;min-width:340px;display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:22px 28px;background:var(--gold-light);color:var(--navy);font-size:18px;font-weight:700;line-height:1.35;text-align:center;border:2px solid var(--gold-light);box-shadow:0 8px 24px #00000020;transition:background .2s,border-color .2s;flex-shrink:0}
+.button svg{width:22px;height:22px;color:currentColor}
+.button:hover{background:#fff0d6;border-color:#fff0d6}
+.button:focus-visible{outline:3px solid #fff;outline-offset:6px}
 .site-footer{background:var(--navy-deep);color:#c1cbd1;padding-block:27px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:10px}
 .footer-inner>span{font-size:8px;letter-spacing:2px;color:var(--gold)}
 .footer-inner a{text-decoration:underline;text-underline-offset:4px}
-@media(max-width:1100px){.wrap{width:calc(100% - 72px)}.masterclass{gap:32px;padding-top:62px}h1{font-size:43px}.byline{font-size:21px}}
+@media(max-width:1100px){.wrap{width:calc(100% - 72px)}.masterclass{gap:32px;padding-top:62px}h1{font-size:43px}.byline{font-size:21px}.next-step{padding:36px;gap:32px}.button{min-width:300px;font-size:17px;padding-inline:22px}}
+@media(min-width:761px) and (max-width:900px){.next-step{align-items:flex-start;flex-direction:column}.button{align-self:stretch}}
 @media(max-width:760px){
   .wrap{width:calc(100% - 44px)}
   .site-header{height:77px}
@@ -63,13 +65,14 @@ h2 em{font-weight:400}
   .masterclass-intro{max-width:380px;font-size:13px;margin-top:14px}
   .video-frame{box-shadow:0 12px 30px #071e3210}
   .masterclass-media figcaption{font-size:10px;text-align:left}
-  .next-step{display:block;padding-block:33px 44px}
+  .next-step{display:block;padding:30px 24px 32px;margin-bottom:38px}
   h2{font-size:34px;letter-spacing:-1px}
-  .next-copy{font-size:12px;max-width:330px}
-  .button{width:100%;margin-top:26px;gap:22px;padding-inline:16px}
+  .next-copy{font-size:14px;max-width:330px}
+  .button{width:100%;min-width:0;min-height:72px;margin-top:28px;gap:16px;padding:18px 16px;font-size:16px}
+  .button svg{width:20px;height:20px}
   .footer-inner{flex-wrap:wrap;gap:16px;font-size:9px}
   .footer-inner>span{width:100%;font-size:7px}
   .footer-inner a{margin-left:auto}
 }
-@media(max-width:360px){.wrap{width:calc(100% - 36px)}.wordmark strong{font-size:21px}.header-link{font-size:9px}.header-inner{gap:12px}h1{font-size:41px}h2{font-size:31px}.button{font-size:11px;gap:18px}}
+@media(max-width:360px){.wrap{width:calc(100% - 36px)}.wordmark strong{font-size:21px}.header-link{font-size:9px}.header-inner{gap:12px}h1{font-size:41px}h2{font-size:31px}.next-step{padding-inline:20px}.button{gap:12px;padding-inline:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
