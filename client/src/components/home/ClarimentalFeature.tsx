@@ -31,7 +31,7 @@ export function ClarimentalHomeHero({ imageSrc }: { imageSrc: string }) {
         <article aria-labelledby="home-first-octave" className="rounded-xl border border-[#dfd7c6] bg-[#faf8f2] p-6 text-[#26332e] shadow-xl sm:p-8">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#8a642e]">Primera Octava</span>
-            <span className="rounded-full bg-[#e6ecdf] px-3 py-1 text-xs font-medium text-[#38523c]">{upcoming ? "Inscripciones abiertas" : "Conoce el programa"}</span>
+            <span className="rounded-full bg-[#e6ecdf] px-3 py-1 text-xs font-medium text-[#38523c]">{upcoming ? "Próximo inicio" : "Conoce el programa"}</span>
           </div>
           <h2 id="home-first-octave" className="font-serif text-4xl font-medium leading-[1.05] sm:text-[2.8rem]">Todo Lo Bueno<br />Me Sucede</h2>
           <p className="mb-4 mt-4 text-sm leading-relaxed text-[#53645c]">Nueve semanas para cultivar confianza, coherencia y gozo consciente.</p>
@@ -40,7 +40,7 @@ export function ClarimentalHomeHero({ imageSrc }: { imageSrc: string }) {
             <p className="flex items-start gap-3"><Calendar className="mt-0.5 h-5 w-5 shrink-0 text-[#8a642e]" aria-hidden="true" /><span className="text-sm"><span className="mb-1 block text-xs uppercase tracking-wider text-[#53645c]">{upcoming ? "Próximo inicio" : "Próximas aperturas"}</span><strong className="font-semibold">{upcoming ? tlbmsCohort.startLabel : "Consulta la próxima generación"}</strong></span></p>
             <p className="flex items-center gap-3 text-sm text-[#53645c]"><Clock className="h-5 w-5 shrink-0 text-[#8a642e]" aria-hidden="true" />{upcoming ? tlbmsCohort.scheduleLabel : "Online · 9 semanas"}</p>
           </div>
-          <a href="/todo-lo-bueno-me-sucede" className="flex min-h-12 items-center justify-center gap-3 rounded bg-[#263c32] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#3b5646] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263c32]">{upcoming ? "Conocer el programa e inscribirme" : "Conocer el programa"}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" /></a>
+          <a href="/todo-lo-bueno-me-sucede" className="flex min-h-12 items-center justify-center gap-3 rounded bg-[#263c32] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#3b5646] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263c32]">Conocer el programa<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" /></a>
           <a href="/todo-lo-bueno-masterclass" className="mt-3 flex min-h-11 items-center justify-center text-sm text-[#53645c] underline underline-offset-4">Ver la masterclass</a>
         </article>
       </div>
