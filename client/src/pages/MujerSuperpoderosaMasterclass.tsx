@@ -1,39 +1,8 @@
-import { useState } from "react";
-import { useCurrency } from "@/hooks/useCurrency";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
 import { ChevronDown } from "lucide-react";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TransformationChart from "@/components/TransformationChart";
-import BuyButton from "@/components/BuyButton";
 
 export default function Masterclass() {
-  const { prices: { currency } } = useCurrency();
-  const mcPrice = currency === 'MXN' ? '$5,200 MXN' : currency === 'EUR' ? '€297 EUR' : '$297 USD';
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!name || !email) {
-      toast.error("Por favor completa todos los campos");
-      return;
-    }
-
-    setIsLoading(true);
-    
-    // Simular envío de formulario
-    setTimeout(() => {
-      toast.success(`¡Bienvenida ${name}! Revisa tu email para los detalles de la Masterclass`);
-      setEmail("");
-      setName("");
-      setIsLoading(false);
-    }, 1000);
-  };
-
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#fffaf5" }}>
       {/* Header */}
@@ -215,60 +184,14 @@ export default function Masterclass() {
         </div>
       </section>
 
-      {/* Registration Section */}
-      <section id="masterclass" className="py-20" style={{ backgroundColor: "#f5f0fa" }}>
-        <div className="container max-w-2xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif mb-4" style={{ color: "#5a4a6a" }}>
-              Regístrate Ahora
-            </h2>
-            <p style={{ color: "#7a6a8a" }}>
-              Acceso exclusivo a la Masterclass gratuita. Cupos limitados.
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <Input
-                type="text"
-                placeholder="Tu nombre completo"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="h-12 text-base"
-                style={{
-                  borderColor: "#d4a5d4",
-                  backgroundColor: "#fff",
-                }}
-              />
-            </div>
-            <div>
-              <Input
-                type="email"
-                placeholder="Tu email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-12 text-base"
-                style={{
-                  borderColor: "#d4a5d4",
-                  backgroundColor: "#fff",
-                }}
-              />
-            </div>
-            <Button
-              type="submit"
-              disabled={isLoading}
-              className="w-full h-12 text-base font-medium"
-              style={{
-                backgroundColor: "#d4749f",
-                color: "#fff",
-              }}
-            >
-              {isLoading ? "Registrando..." : "Acceder a la Masterclass"}
-            </Button>
-          </form>
-
-          <p className="text-center text-sm mt-6" style={{ color: "#8a7a9a" }}>
-            Recibirás un email con los detalles de acceso en los próximos 5 minutos
+      {/* Registration paused until the next launch is confirmed. */}
+      <section id="masterclass" className="py-16" style={{ backgroundColor: "#f5f0fa" }}>
+        <div className="container max-w-2xl text-center">
+          <h2 className="text-4xl font-serif mb-4" style={{ color: "#5a4a6a" }}>
+            Inscripciones en pausa
+          </h2>
+          <p style={{ color: "#7a6a8a" }}>
+            Por ahora no hay una nueva fecha ni inscripciones abiertas.
           </p>
         </div>
       </section>
@@ -314,19 +237,15 @@ export default function Masterclass() {
             {[
               {
                 q: "¿Cuándo es la Masterclass?",
-                a: "La Masterclass será en vivo el próximo jueves a las 7 PM (hora de tu zona). También recibirás acceso a la grabación.",
+                a: "Aún no hay una nueva fecha confirmada.",
               },
               {
                 q: "¿Cuál es el costo?",
-                a: "La Masterclass es completamente gratuita. Después, tendrás la opción de acceder al curso completo de 4 semanas.",
+                a: "Por ahora no hay inscripciones abiertas al programa.",
               },
               {
                 q: "¿Necesito experiencia previa?",
                 a: "No. Este programa está diseñado para mujeres de todos los niveles. Solo necesitas estar abierta a aprender.",
-              },
-              {
-                q: "¿Qué recibiré después de registrarme?",
-                a: "Recibirás un email con el enlace de acceso, materiales previos, y acceso a la comunidad privada de alumnas.",
               },
             ].map((faq, i) => (
               <div
@@ -347,7 +266,7 @@ export default function Masterclass() {
         </div>
       </section>
 
-      {/* Buy Course Section */}
+      {/* Course information, without checkout while paused. */}
       <section id="curso" className="py-20" style={{ background: "linear-gradient(135deg, #ffe8f0 0%, #f0e8ff 50%, #e8f5ff 100%)" }}>
         <div className="container max-w-2xl text-center">
           <h2 className="text-4xl font-serif mb-4" style={{ color: "#5a4a6a" }}>
@@ -358,9 +277,6 @@ export default function Masterclass() {
           </p>
 
           <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-            <div className="text-5xl font-bold mb-2" style={{ color: "#5a4a6a" }}>{mcPrice}</div>
-            <p className="text-sm mb-6" style={{ color: "#a89ab8" }}>Pago único · Acceso por 6 meses</p>
-            
             <ul className="text-left space-y-3 mb-8">
               {[
                 "4 módulos de contenido pregrabado",
@@ -378,14 +294,8 @@ export default function Masterclass() {
               ))}
             </ul>
 
-            <BuyButton
-              productType="course"
-              label="Inscribirme al Curso Completo"
-              className="w-full h-14 text-base font-semibold text-white"
-            />
-            
-            <p className="text-xs mt-4" style={{ color: "#a89ab8" }}>
-              Pago seguro con Stripe · Tarjeta de crédito o débito
+            <p className="text-sm" style={{ color: "#7a6a8a" }}>
+              Por ahora no hay una nueva fecha ni inscripciones abiertas.
             </p>
           </div>
         </div>
